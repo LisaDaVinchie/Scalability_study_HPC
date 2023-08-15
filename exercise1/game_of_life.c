@@ -20,54 +20,73 @@
 #define INIT 1
 #define RUN 2
 
+//minimum size of the playground
+#define MINSIZE 100
+
+//default number of steps
+#define DFT_STEPS 10000
+
 
 int main(int argc, char **argv){
 
 
 int opt;
 
-int action; //action = 1 => initialise, action = 2 => run
-int k; //playground size
-int e; //evolution type
-string filename; //name of the file
-int n_steps; // number of steps
+int action = ORDERED; //action = 1 => initialise, action = 2 => run
+int k = MINSIZE; //playground size
+int e = INIT; //evolution type
+string filename = "playground"; //name of the file
+int n_steps = DFT_STEPS; // number of steps
 int n_dump; //Every how many steps a dump of the system is saved on a file (0 meaning only at the end)
 
 
 while(opt = getopt(argc, argv, optstring) != -1){
     switch (opt){
         case 'i':
-            action = 1
+            action = INIT; //initialise
             break;
+
         case 'r':
-            action = 2
+            action = RUN; //run
             break;
+
         case 'k':
-            k = atoi(optstring)
+            k = atoi(optstring); //playground size
+            if k < MINSIZE{
+                printf("Playground size must be greater than %d\n", MINSIZE);
+                return 1;
+            }
             break;
+
         case 'e':
-            action =
+            e = atoi(optstring);
+            if (e != ORDERED || e != STATIC){
+                printf("The value of e must be %d or %d.\n", ORDERED, STATIC);
+                return 1;
+            }
             break;
+
         case 'f':
-            action =
+            filename = 
             break;
+
         case 'n':
-            action =
+            n_steps = atoi(optstring);
+            if n_steps < 1{
+                printf("The number of steps must be positive\n");
+                return 1;
+            }
             break;
+
         case 's':
-            action =
+            n_dump = atoi(optstring);
             break;
         
-    }
-    {
-    case /* constant-expression */:
-        /* code */
-        break;
-    
-    default:
-        break;
-    }
+        default:
+            printf("Argument %s not valid\n", opt);
+            break;
 
+    }
 }
 
 }
