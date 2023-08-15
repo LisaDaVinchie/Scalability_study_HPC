@@ -67,7 +67,7 @@ while(opt = getopt(argc, argv, optstring) != -1){
             break;
 
         case 'f':
-            filename = 
+            filename = optarg;
             break;
 
         case 'n':
@@ -89,4 +89,6 @@ while(opt = getopt(argc, argv, optstring) != -1){
     }
 }
 
+printf("action = %d\nk = %d\ne = %d\nf = %s, n_steps = %d\nn_dump = %d\n", action, k, e, filename, n_steps, n_dump);
+return 0;
 }
