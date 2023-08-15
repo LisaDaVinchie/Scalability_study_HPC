@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <mpi.h>
 #include <string.h>
+#include <stdlib.h>
 
 // Read arguments
 // -i: Initialise a playground
