@@ -8,6 +8,7 @@
 #include <mpi.h>
 
 
+//Definitions for the argument getting part
 #define INIT 1
 #define RUN  2
 
@@ -27,8 +28,30 @@ int   s      = 1;
 char *fname  = NULL;
 
 
+//Definitions for the read and write pgm file
+// #include <stdlib.h>
+// #include <stdio.h> 
+
+
+#define XWIDTH 256
+#define YWIDTH 256
+#define MAXVAL 65535
+
+
+#if ((0x100 & 0xf) == 0x0)
+#define I_M_LITTLE_ENDIAN 1
+#define swap(mem) (( (mem) & (short int)0xff00) >> 8) +	\
+  ( ((mem) & (short int)0x00ff) << 8)
+#else
+#define I_M_LITTLE_ENDIAN 0
+#define swap(mem) (mem)
+#endif
+
+
 int main ( int argc, char **argv )
 {
+
+//Get the arguments, copy of Tornatore's "get_args.c" program
   int action = 0;
   char *optstring = "irk:e:f:n:s:";
 
@@ -66,5 +89,7 @@ int main ( int argc, char **argv )
 printf("action = %d\nk = %d\ne = %d\nf = %s\nn_steps = %d\nn_dump = %d\n", action, k, e, fname, n, s);
     if ( fname != NULL )
       free ( fname );
+
+//
   return 0;
 }
