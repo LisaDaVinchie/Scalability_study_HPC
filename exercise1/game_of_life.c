@@ -41,7 +41,7 @@ int n_steps = DFT_STEPS; // number of steps
 int n_dump; //Every how many steps a dump of the system is saved on a file (0 meaning only at the end)
 
 
-while(opt = getopt(argc, argv, optstring) != -1){
+while((opt = getopt(argc, argv, optstring)) != -1){
     switch (opt){
         case 'i':
             action = INIT; //initialise
