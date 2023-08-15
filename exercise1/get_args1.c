@@ -1,11 +1,8 @@
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
 #include <getopt.h>
-
-
-#include <omp.h>
-#include <mpi.h>
 
 
 #define INIT 1
