@@ -4,7 +4,7 @@
 #include <getopt.h>
 
 
-#include <omp.h>
+// #include <omp.h>
 #include <mpi.h>
 
 
@@ -29,8 +29,10 @@ char *fname  = NULL;
 
 
 //Definitions for the read and write pgm file
+// #ifndef 
 // #include <stdlib.h>
 // #include <stdio.h> 
+// #endif
 
 
 #define XWIDTH 256
@@ -47,7 +49,9 @@ char *fname  = NULL;
 #define swap(mem) (mem)
 #endif
 
-
+#include "./functions/read_pgm_image.c"
+#include "./functions/write_pgm_image.c"
+#include "./functions/generate_gradient.c"
 int main ( int argc, char **argv )
 {
 
@@ -90,6 +94,10 @@ printf("action = %d\nk = %d\ne = %d\nf = %s\nn_steps = %d\nn_dump = %d\n", actio
     if ( fname != NULL )
       free ( fname );
 
-//
+//write starting pgm image
+
+void *ptr = generate_gradient( maxval, xsize, ysize );
+
+
   return 0;
 }
