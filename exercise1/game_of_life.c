@@ -99,10 +99,11 @@ printf("action = %d\nk = %d\ne = %d\nf = %s\nn_steps = %d\nn_dump = %d\n", actio
 //write starting pgm image
 int maxval = 255;
 
-void *ptr = generate_gradient( maxval, k, k );
+void *ptr = generate_gradient(maxval, k, k);
 
-write_pgm_image( ptr, maxval, k, k, fname);
+write_pgm_image(ptr, maxval, k, k, fname);
 
+free(ptr);
 
-  return 0;
+return 0;
 }
