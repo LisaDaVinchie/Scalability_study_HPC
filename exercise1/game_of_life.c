@@ -35,8 +35,8 @@ char *fname  = NULL;
 // #endif
 
 
-#define XWIDTH 256
-#define YWIDTH 256
+// #define XWIDTH 256
+// #define YWIDTH 256
 #define MAXVAL 65535
 
 
@@ -51,7 +51,9 @@ char *fname  = NULL;
 
 #include "./functions/read_pgm_image.c"
 #include "./functions/write_pgm_image.c"
+// #include "./functions/swap_image.c"
 #include "./functions/generate_gradient.c"
+
 int main ( int argc, char **argv )
 {
 
@@ -91,12 +93,15 @@ int main ( int argc, char **argv )
     }
   }
 printf("action = %d\nk = %d\ne = %d\nf = %s\nn_steps = %d\nn_dump = %d\n", action, k, e, fname, n, s);
-    if ( fname != NULL )
-      free ( fname );
+    // if ( fname != NULL )
+    //   free ( fname );
 
 //write starting pgm image
+int maxval = 255;
 
-void *ptr = generate_gradient( maxval, xsize, ysize );
+void *ptr = generate_gradient( maxval, k, k );
+
+write_pgm_image( ptr, maxval, k, k, fname);
 
 
   return 0;
