@@ -13,7 +13,7 @@
 #SBATCH --time=1:0:0
 
 # Load needen modules
-module load architecture/INTEL
+module load architecture/Intel
 module load mkl
 module load openBLAS/0.3.21-omp
 
