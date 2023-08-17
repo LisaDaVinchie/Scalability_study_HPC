@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # requested nodes
-#SBATCH --nodes=12
+#SBATCH --nodes=1
 
 # Tasks per node
-#SBATCH --ntasks-per-node=128
+#SBATCH --ntasks-per-node=24
 
 # Partition
 #SBATCH --partition=THIN
@@ -13,7 +13,7 @@
 #SBATCH --time=1:0:0
 
 # Load needen modules
-module load architecture/AMD
+module load architecture/INTEL
 module load mkl
 module load openBLAS/0.3.21-omp
 
@@ -23,12 +23,12 @@ matrix_dim = 2000
 # run dgemm with double precision
 srun -n1 make double
 
-#execute requiring 128 cpus per task
-srun -n1 --cpus-per-task=128 ./gemm_mkl.exe $matrix_dim $matrix_dim $matrix_dim
+#execute requiring 24 cpus per task
+srun -n1 --cpus-per-task=24 ./gemm_mkl.exe $matrix_dim $matrix_dim $matrix_dim
 
 
-srun -n1 --cpus-per-task=128 ./gemm_openblas.exe $matrix_dim $matrix_dim $matrix_dim
+srun -n1 --cpus-per-task=24 ./gemm_openblas.exe $matrix_dim $matrix_dim $matrix_dim
 
 
-# srun -n1 --cpus-per-task=128 ./gemm_blis.exe $matrix_dim $matrix_dim $matrix_dim
+srun -n1 --cpus-per-task=24 ./gemm_blis.exe $matrix_dim $matrix_dim $matrix_dim
 
