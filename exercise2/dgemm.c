@@ -51,6 +51,33 @@ struct timespec diff(struct timespec start, struct timespec end)
 }
 
 
+//Added by me: change the name of the output file depending on the library and method used 
+#ifdef USE_FLOAT
+  #ifdef MKL
+    #define FILENAME "float_mkl.csv"
+  #endif
+  #ifdef MKL
+    #define FILENAME "float_openblas.csv"
+  #endif
+  #ifdef MKL
+    #define FILENAME "float_openblis.csv"
+  #endif
+#endif
+
+#ifdef USE_FLOAT
+  #ifdef MKL
+    #define FILENAME "double_mkl.csv"
+  #endif
+  #ifdef MKL
+    #define FILENAME "double_openblas.csv"
+  #endif
+  #ifdef MKL
+    #define FILENAME "double_openblis.csv"
+  #endif
+#endif
+//------------------------------------------------------------------------------------------
+
+
 int main(int argc, char** argv)
 {
     MYFLOAT *A, *B, *C;
@@ -146,6 +173,20 @@ int main(int argc, char** argv)
       printf ("\n");
     }
 #endif
+
+
+//Added by me, part needed to save the results instead of printing them
+#ifndef SAVE
+  FILE *file;
+  file = fopen(FILENAME, "a"); //append mode
+  fprint(file, "%d, %d, %d, %lf, %lf\n", m, n, k, elapsed, gflops);
+  fclose(file);
+  printf("File saved successfully\n");
+#else
+printf(file, "%d, %d, %d, %lf, %lf\n", m, n, k, elapsed, gflops);
+#endif
+//---------------------------------------------------------------------
+
     free(A);
     free(B);
     free(C);
