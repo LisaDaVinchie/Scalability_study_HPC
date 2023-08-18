@@ -179,7 +179,7 @@ int main(int argc, char** argv)
 #ifndef SAVE
   FILE *file;
   file = fopen(FILENAME, "a"); //append mode
-  fprint(file, "%d, %d, %d, %lf, %lf\n", m, n, k, elapsed, gflops);
+  fprintf(file, "%d, %d, %d, %lf, %lf\n", m, n, k, elapsed, gflops);
   fclose(file);
   printf("File saved successfully\n");
 #else
