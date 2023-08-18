@@ -15,25 +15,25 @@ DOUBLE_FLAGS = gcc -DUSE_DOUBLE
 
 float: FLOAT/mkl/gemm_mkl.exe FLOAT/openblas/gemm_openblas.exe FLOAT/blis/gemm_blis.exe
 
-gemm_mkl.exe : gemm.c
+FLOAT/mkl/gemm_mkl.exe : gemm.c
 	$(FLOAT_FLAGS) -DMKL $^ -m64 -I${MKLROOT}/include $(MKL)  -o $@ -DSAVE_RESULTS
 
-gemm_openblas.exe : gemm.c
+FLOAT/openblas/gemm_openblas.exe : gemm.c
 	$(FLOAT_FLAGS) -DOPENBLAS $^ -m64 -I${OPENBLAS_ROOT}/include $(OPENBLAS)  -o $@ -fopenmp -DSAVE_RESULTS
 
-gemm_blis.exe : gemm.c
+FLOAT/blis/gemm_blis.exe : gemm.c
 	$(FLOAT_FLAGS) -DBLIS $^ -m64 -I${BLISROOT}/include/blis $(BLIS) -o $@ -fopenmp -DSAVE_RESULTS
 
 
 double: DOUBLE/mkl/gemm_mkl.exe DOUBLE/openblas/gemm_openblas.exe DOUBLE/blis/gemm_blis.exe
 
-gemm_mkl.exe : gemm.c
+DOUBLE/mkl/gemm_mkl.exe : gemm.c
 	$(DOUBLE_FLAGS) -DMKL $^ -m64 -I${MKLROOT}/include $(MKL)  -o $@ -DSAVE_RESULTS
 
-gemm_openblas.exe : gemm.c
+DOUBLE/openblas/gemm_openblas.exe : gemm.c
 	$(DOUBLE_FLAGS) -DOPENBLAS $^ -m64 -I${OPENBLAS_ROOT}/include $(OPENBLAS)  -o $@ -fopenmp -DSAVE_RESULTS
 
-gemm_blis.exe : gemm.c
+DOUBLE/blis/gemm_blis.exe : gemm.c
 	$(DOUBLE_FLAGS) -DBLIS $^ -m64 -I${BLISROOT}/include/blis $(BLIS)  -o $@ -fopenmp -DSAVE_RESULTS	
 
 
