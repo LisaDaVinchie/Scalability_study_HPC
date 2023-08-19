@@ -54,25 +54,25 @@ struct timespec diff(struct timespec start, struct timespec end)
 //Added by me: change the name of the output file depending on the library and method used 
 #ifdef USE_FLOAT
   #ifdef MKL
-    #define FILENAME "FLOAT/mkl/mkl.csv"
+    #define FILENAME "FLOAT/mkl.csv"
   #endif
   #ifdef OPENBLAS
-    #define FILENAME "float_openblas.csv"
+    #define FILENAME "FLOAT/openblas.csv"
   #endif
   #ifdef BLIS
-    #define FILENAME "float_openblis.csv"
+    #define FILENAME "FLOAT/blis.csv"
   #endif
 #endif
 
 #ifdef USE_DOUBLE
   #ifdef MKL
-    #define FILENAME "double_mkl.csv"
+    #define FILENAME "DOUBLE/mkl.csv"
   #endif
   #ifdef OPENBLAS
-    #define FILENAME "double_openblas.csv"
+    #define FILENAME "DOUBLE/openblas.csv"
   #endif
   #ifdef BLIS
-    #define FILENAME "double_openblis.csv"
+    #define FILENAME "DOUBLE/blis.csv"
   #endif
 #endif
 //------------------------------------------------------------------------------------------
