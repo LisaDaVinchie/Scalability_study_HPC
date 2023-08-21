@@ -54,25 +54,25 @@ struct timespec diff(struct timespec start, struct timespec end)
 //Added by me: change the name of the output file depending on the library and method used 
 #ifdef USE_FLOAT
   #ifdef MKL
-    #define FILENAME "float_mkl.csv"
+    #define FILENAME "mkl_f.csv"
   #endif
-  #ifdef MKL
-    #define FILENAME "float_openblas.csv"
+  #ifdef OPENBLAS
+    #define FILENAME "openblas_f.csv"
   #endif
-  #ifdef MKL
-    #define FILENAME "float_openblis.csv"
+  #ifdef BLIS
+    #define FILENAME "blis_f.csv"
   #endif
 #endif
 
 #ifdef USE_DOUBLE
   #ifdef MKL
-    #define FILENAME "double_mkl.csv"
+    #define FILENAME "mkl_d.csv"
   #endif
-  #ifdef MKL
-    #define FILENAME "double_openblas.csv"
+  #ifdef OPENBLAS
+    #define FILENAME "openblas_d.csv"
   #endif
-  #ifdef MKL
-    #define FILENAME "double_openblis.csv"
+  #ifdef BLIS
+    #define FILENAME "blis_d.csv"
   #endif
 #endif
 //------------------------------------------------------------------------------------------
@@ -179,7 +179,7 @@ int main(int argc, char** argv)
 #ifndef SAVE
   FILE *file;
   file = fopen(FILENAME, "a"); //append mode
-  fprint(file, "%d, %d, %d, %lf, %lf\n", m, n, k, elapsed, gflops);
+  fprintf(file, "%d, %d, %d, %lf, %lf\n", m, n, k, elapsed, gflops);
   fclose(file);
   printf("File saved successfully\n");
 #else
