@@ -6,9 +6,9 @@ MKL= -L${MKLROOT}/lib/intel64  -lmkl_intel_lp64 -lmkl_gnu_thread -lmkl_core -lgo
 ### OpenBLAS libraries 
 OPENBLASROOT=${OPENBLAS_ROOT}
 OPENBLAS = -L${OPENBLAS_ROOT}/lib -lopenblas -lpthread
+
 ### BLIS library
 BLISROOT=/u/dssc/ldavin00/myblis
-
 BLIS = -L$(BLISROOT)/lib -lpthread -lblis
 
 FLOAT_FLAGS = gcc -DUSE_FLOAT
@@ -26,7 +26,7 @@ MKL_d=$(DATA_FOLDER)/gemm_mkl_d.exe
 OPENBLAS_d=$(DATA_FOLDER)/gemm_openblas_d.exe
 BLIS_d=$(DATA_FOLDER)/gemm_blis_d.exe
 
-.PHONY: float double
+.PHONY: double float
 
 float: $(MKL_f) $(OPENBLAS_f) $(BLIS_f)
 
@@ -64,4 +64,4 @@ $(BLIS_d) : $(GEMM)
 #gemm_blis.x: $(GEMM)
 #	gcc -DUSE_DOUBLE  -DBLIS $^ -m64 -I${BLISROOT}/include/blis -L/${BLISROOT}/lib -o $@ -lpthread  -lblis -fopenmp -lm
 clean:
-	rm -rf $(DATA_FOLDER)/*.exe
+	rm -rf *.exe
