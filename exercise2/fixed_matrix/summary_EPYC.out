@@ -1,0 +1,750 @@
+Memory allocated
+
+Loading modules
+Lmod Warning: The architecture selection module has been deprecated. The
+module system will now autonomously handle the proper selection of binaries. 
+While processing the following module(s):
+    Module fullname   Module Filename
+    ---------------   ---------------
+    architecture/AMD  /orfeo/opt/modules/profiles/architecture/AMD.lua
+
+Loading mkl version 2022.2.1
+Loading tbb version 2021.7.1
+Loading compiler-rt version 2022.2.1
+modules loaded
+configure: detected Linux kernel version 6.2.15-100.fc36.x86_64.
+configure: python interpreter search list is: python python3 python2.
+configure: found 'python3'.
+configure: using 'python3' as python interpreter.
+configure: found python version 3.10.11 (maj: 3, min: 10, rev: 11).
+configure: python 3.10.11 appears to be supported.
+configure: C compiler search list is: gcc clang cc.
+configure: found 'gcc'.
+configure: using 'gcc' as C compiler.
+configure: found gcc version 12.2.1 (maj: 12, min: 2, rev: 1).
+configure: checking for blacklisted configurations due to gcc 12.2.1.
+configure: checking gcc 12.2.1 against known consequential version ranges.
+configure: found assembler ('as') version 2.37 (maj: 2, min: 37, rev: ).
+configure: checking for blacklisted configurations due to as 2.37.
+configure: C++ compiler search list is: g++ clang++ c++.
+configure: found 'g++'.
+configure: using 'g++' as C++ compiler.
+configure: Fortran compiler search list is: gfortran ifort.
+configure: found 'gfortran'.
+configure: using 'gfortran' as Fortran compiler.
+configure: library archiver search list is: ar.
+configure: found 'ar'.
+configure: using 'ar' as library archiver.
+configure: archive indexer search list is: ranlib.
+configure: found 'ranlib'.
+configure: using 'ranlib' as archive indexer.
+configure: reading configuration registry...done.
+configure: determining default version string.
+configure: found '.git' directory; assuming git clone.
+configure: executing: git describe --tags.
+configure: got back 0.9.0-118-g634e532c.
+configure: truncating to 0.9.0-118.
+configure: starting configuration of BLIS 0.9.0-118.
+configure: configuring with official version string.
+configure: found shared library .so version '4.0.0'.
+configure:   .so major version: 4
+configure:   .so minor.build version: 0.0
+configure: automatic configuration requested.
+configure: hardware detection driver returned 'zen2'.
+configure: checking configuration against contents of 'config_registry'.
+configure: configuration 'zen2' is registered.
+configure: 'zen2' is defined as having the following sub-configurations:
+configure:    zen2
+configure: which collectively require the following kernels:
+configure:    zen2 zen haswell
+configure: checking sub-configurations:
+configure:   'zen2' is registered...and exists.
+configure: checking sub-configurations' requisite kernels:
+configure:   'zen2' kernels...exist.
+configure:   'zen' kernels...exist.
+configure:   'haswell' kernels...exist.
+configure: detected --prefix='/u/dssc/ldavin00/myblis'.
+configure: no install exec_prefix option given; defaulting to PREFIX.
+configure: no install libdir option given; defaulting to EXECPREFIX/lib.
+configure: no install includedir option given; defaulting to PREFIX/include.
+configure: no install sharedir option given; defaulting to PREFIX/share.
+configure: final installation directories:
+configure:   prefix:      /u/dssc/ldavin00/myblis
+configure:   exec_prefix: /u/dssc/ldavin00/myblis
+configure:   libdir:      /u/dssc/ldavin00/myblis/lib
+configure:   includedir:  /u/dssc/ldavin00/myblis/include
+configure:   sharedir:    /u/dssc/ldavin00/myblis/share
+configure: NOTE: the variables above can be overridden when running make.
+configure: no preset CFLAGS detected.
+configure: no preset LDFLAGS detected.
+configure: disabling verbose make output. (enable with 'make V=1'.)
+configure: disabling ARG_MAX hack.
+configure: debug symbols disabled.
+configure: AddressSanitizer support disabled.
+configure: building BLIS as both static and shared libraries.
+configure: exporting only public symbols within shared library.
+configure: enabling operating system support.
+configure: enabling thread-local storage (TLS) support.
+configure: enabling support for threading via OpenMP.
+configure: enabling support for single-threading.
+configure: threading will default to OpenMP.
+configure: requesting slab work partitioning in jr and/or ir loops.
+configure: internal memory pools for packing blocks are enabled.
+configure: internal memory pools for small blocks are enabled.
+configure: memory tracing output is disabled.
+configure: libmemkind not found; disabling.
+configure: compiler appears to support #pragma omp simd.
+configure: the BLAS compatibility layer is enabled.
+configure: the CBLAS compatibility layer is enabled.
+configure: mixed datatype support is enabled.
+configure: mixed datatype optimizations requiring extra memory are enabled.
+configure: sup (skinny/unpacked) matrix handling is enabled.
+configure: trsm diagonal element pre-inversion is enabled.
+configure: the BLIS API integer size is automatically determined.
+configure: the BLAS/CBLAS API integer size is 32-bit.
+configure: AMD-specific framework files will not be considered.
+configure: configuring with no addons.
+configure: configuring for conventional gemm implementation.
+configure: configuring complex return type as "gnu".
+configure: creating ./config.mk from /orfeo/cephfs/home/dssc/ldavin00/blis/./build/config.mk.in
+configure: creating ./bli_config.h from /orfeo/cephfs/home/dssc/ldavin00/blis/./build/bli_config.h.in
+configure: creating ./bli_addon.h from /orfeo/cephfs/home/dssc/ldavin00/blis/./build/bli_addon.h.in
+configure: creating ./obj/zen2
+configure: creating ./obj/zen2/config/zen2
+configure: creating ./obj/zen2/kernels/zen2
+configure: creating ./obj/zen2/kernels/zen
+configure: creating ./obj/zen2/kernels/haswell
+configure: creating ./obj/zen2/ref_kernels/zen2
+configure: creating ./obj/zen2/frame
+configure: creating ./obj/zen2/blastest
+configure: creating ./obj/zen2/testsuite
+configure: creating ./lib/zen2
+configure: creating ./include/zen2
+configure: mirroring /orfeo/cephfs/home/dssc/ldavin00/blis/./config/zen2 to ./obj/zen2/config/zen2
+configure: mirroring /orfeo/cephfs/home/dssc/ldavin00/blis/./kernels/zen2 to ./obj/zen2/kernels/zen2
+configure: mirroring /orfeo/cephfs/home/dssc/ldavin00/blis/./kernels/zen to ./obj/zen2/kernels/zen
+configure: mirroring /orfeo/cephfs/home/dssc/ldavin00/blis/./kernels/haswell to ./obj/zen2/kernels/haswell
+configure: mirroring /orfeo/cephfs/home/dssc/ldavin00/blis/./ref_kernels to ./obj/zen2/ref_kernels
+configure: mirroring /orfeo/cephfs/home/dssc/ldavin00/blis/./ref_kernels to ./obj/zen2/ref_kernels/zen2
+configure: mirroring /orfeo/cephfs/home/dssc/ldavin00/blis/./frame to ./obj/zen2/frame
+configure: creating makefile fragments in ./obj/zen2/config/zen2
+configure: creating makefile fragments in ./obj/zen2/kernels/zen2
+configure: creating makefile fragments in ./obj/zen2/kernels/zen
+configure: creating makefile fragments in ./obj/zen2/kernels/haswell
+configure: creating makefile fragments in ./obj/zen2/ref_kernels
+configure: creating makefile fragments in ./obj/zen2/frame
+configure: configured to build within top-level directory of source distribution.
+Generating monolithic blis.h.............................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+Generated include/zen2/blis.h
+Compiling obj/zen2/kernels/zen/1/bli_amaxv_zen_int.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/config/zen2/bli_cntx_init_zen2.o ('zen2' CFLAGS for config code)
+Compiling obj/zen2/kernels/zen/1/bli_axpyv_zen_int10.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/zen/1/bli_axpyv_zen_int.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/zen/1/bli_copyv_zen_int.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/zen/1/bli_dotv_zen_int.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/zen/1/bli_dotv_zen_int10.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/zen/1/bli_dotxv_zen_int.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/zen/1/bli_scalv_zen_int10.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/zen/1/bli_scalv_zen_int.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/zen/1/bli_setv_zen_int.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/zen/1/bli_swapv_zen_int8.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/zen/1f/bli_axpyf_zen_int_4.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/zen/1f/bli_axpyf_zen_int_5.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/zen/1f/bli_axpyf_zen_int_8.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/zen/1f/bli_dotxf_zen_int_8.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/zen/3/bli_gemm_small.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/zen/3/bli_gemmt_small.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/zen/3/bli_trsm_small.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/haswell/1m/bli_packm_haswell_asm_c3xk.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/haswell/1m/bli_packm_haswell_asm_c8xk.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/haswell/1m/bli_packm_haswell_asm_d6xk.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/haswell/1m/bli_packm_haswell_asm_d8xk.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/haswell/1m/bli_packm_haswell_asm_s16xk.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/haswell/1m/bli_packm_haswell_asm_s6xk.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/haswell/1m/bli_packm_haswell_asm_z3xk.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/haswell/1m/bli_packm_haswell_asm_z4xk.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/haswell/3/bli_gemm_haswell_asm_d6x8.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/haswell/3/bli_gemm_haswell_asm_d8x6.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/haswell/3/bli_gemmtrsm_l_haswell_asm_d6x8.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/haswell/3/bli_gemmtrsm_u_haswell_asm_d6x8.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/haswell/3/sup/bli_gemmsup_rd_haswell_asm_d6x8m.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/haswell/3/sup/bli_gemmsup_rd_haswell_asm_d6x8n.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/haswell/3/sup/bli_gemmsup_rd_haswell_asm_s6x16m.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/haswell/3/sup/bli_gemmsup_rd_haswell_asm_s6x16n.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/haswell/3/sup/bli_gemmsup_rv_haswell_asm_d6x8m.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/haswell/3/sup/bli_gemmsup_rv_haswell_asm_d6x8n.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/haswell/3/sup/bli_gemmsup_rv_haswell_asm_s6x16m.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/haswell/3/sup/bli_gemmsup_rv_haswell_asm_s6x16n.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/haswell/3/sup/d6x8/bli_gemmsup_rd_haswell_asm_dMx1.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/haswell/3/sup/d6x8/bli_gemmsup_rd_haswell_asm_dMx2.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/haswell/3/sup/d6x8/bli_gemmsup_rd_haswell_asm_dMx4.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/haswell/3/sup/d6x8/bli_gemmsup_rd_haswell_asm_dMx8.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/haswell/3/sup/d6x8/bli_gemmsup_r_haswell_ref_dMx1.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/haswell/3/sup/d6x8/bli_gemmsup_rv_haswell_asm_dMx2.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/haswell/3/sup/d6x8/bli_gemmsup_rv_haswell_asm_dMx4.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/haswell/3/sup/d6x8/bli_gemmsup_rv_haswell_asm_dMx6.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/haswell/3/sup/d6x8/bli_gemmsup_rv_haswell_asm_dMx8.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/haswell/3/sup/s6x16/bli_gemmsup_rd_haswell_asm_sMx12.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/haswell/3/sup/s6x16/bli_gemmsup_rd_haswell_asm_sMx16.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/haswell/3/sup/s6x16/bli_gemmsup_rd_haswell_asm_sMx1.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/haswell/3/sup/s6x16/bli_gemmsup_rd_haswell_asm_sMx2.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/haswell/3/sup/s6x16/bli_gemmsup_rd_haswell_asm_sMx4.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/haswell/3/sup/s6x16/bli_gemmsup_rd_haswell_asm_sMx8.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/haswell/3/sup/s6x16/bli_gemmsup_r_haswell_ref_sMx1.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/haswell/3/sup/s6x16/bli_gemmsup_rv_haswell_asm_sMx12.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/haswell/3/sup/s6x16/bli_gemmsup_rv_haswell_asm_sMx16.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/haswell/3/sup/s6x16/bli_gemmsup_rv_haswell_asm_sMx2.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/haswell/3/sup/s6x16/bli_gemmsup_rv_haswell_asm_sMx4.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/haswell/3/sup/s6x16/bli_gemmsup_rv_haswell_asm_sMx6.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/haswell/3/sup/s6x16/bli_gemmsup_rv_haswell_asm_sMx8.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/ref_kernels/zen2/bli_cntx_zen2_ref.o ('zen2' CFLAGS for ref. kernel init)
+Compiling obj/zen2/ref_kernels/zen2/1/bli_addv_zen2_ref.o ('zen2' CFLAGS for ref. kernels)
+Compiling obj/zen2/ref_kernels/zen2/1/bli_amaxv_zen2_ref.o ('zen2' CFLAGS for ref. kernels)
+Compiling obj/zen2/ref_kernels/zen2/1/bli_axpbyv_zen2_ref.o ('zen2' CFLAGS for ref. kernels)
+Compiling obj/zen2/ref_kernels/zen2/1/bli_axpyv_zen2_ref.o ('zen2' CFLAGS for ref. kernels)
+Compiling obj/zen2/ref_kernels/zen2/1/bli_copyv_zen2_ref.o ('zen2' CFLAGS for ref. kernels)
+Compiling obj/zen2/ref_kernels/zen2/1/bli_dotv_zen2_ref.o ('zen2' CFLAGS for ref. kernels)
+Compiling obj/zen2/ref_kernels/zen2/1/bli_dotxv_zen2_ref.o ('zen2' CFLAGS for ref. kernels)
+Compiling obj/zen2/ref_kernels/zen2/1/bli_invertv_zen2_ref.o ('zen2' CFLAGS for ref. kernels)
+Compiling obj/zen2/ref_kernels/zen2/1/bli_invscalv_zen2_ref.o ('zen2' CFLAGS for ref. kernels)
+Compiling obj/zen2/ref_kernels/zen2/1/bli_scal2v_zen2_ref.o ('zen2' CFLAGS for ref. kernels)
+Compiling obj/zen2/ref_kernels/zen2/1/bli_scalv_zen2_ref.o ('zen2' CFLAGS for ref. kernels)
+Compiling obj/zen2/ref_kernels/zen2/1/bli_setv_zen2_ref.o ('zen2' CFLAGS for ref. kernels)
+Compiling obj/zen2/ref_kernels/zen2/1/bli_subv_zen2_ref.o ('zen2' CFLAGS for ref. kernels)
+Compiling obj/zen2/ref_kernels/zen2/1/bli_swapv_zen2_ref.o ('zen2' CFLAGS for ref. kernels)
+Compiling obj/zen2/ref_kernels/zen2/1/bli_xpbyv_zen2_ref.o ('zen2' CFLAGS for ref. kernels)
+Compiling obj/zen2/ref_kernels/zen2/1f/bli_axpy2v_zen2_ref.o ('zen2' CFLAGS for ref. kernels)
+Compiling obj/zen2/ref_kernels/zen2/1f/bli_axpyf_zen2_ref.o ('zen2' CFLAGS for ref. kernels)
+Compiling obj/zen2/ref_kernels/zen2/1f/bli_dotaxpyv_zen2_ref.o ('zen2' CFLAGS for ref. kernels)
+Compiling obj/zen2/ref_kernels/zen2/1f/bli_dotxaxpyf_zen2_ref.o ('zen2' CFLAGS for ref. kernels)
+Compiling obj/zen2/ref_kernels/zen2/1f/bli_dotxf_zen2_ref.o ('zen2' CFLAGS for ref. kernels)
+Compiling obj/zen2/ref_kernels/zen2/1m/bli_packm_cxc_diag_1er_zen2_ref.o ('zen2' CFLAGS for ref. kernels)
+Compiling obj/zen2/ref_kernels/zen2/1m/bli_packm_cxc_diag_zen2_ref.o ('zen2' CFLAGS for ref. kernels)
+Compiling obj/zen2/ref_kernels/zen2/1m/bli_packm_cxk_1er_zen2_ref.o ('zen2' CFLAGS for ref. kernels)
+Compiling obj/zen2/ref_kernels/zen2/1m/bli_packm_cxk_zen2_ref.o ('zen2' CFLAGS for ref. kernels)
+Compiling obj/zen2/ref_kernels/zen2/1m/bli_unpackm_cxk_zen2_ref.o ('zen2' CFLAGS for ref. kernels)
+Compiling obj/zen2/ref_kernels/zen2/3/bli_gemm_zen2_ref.o ('zen2' CFLAGS for ref. kernels)
+Compiling obj/zen2/ref_kernels/zen2/3/bli_gemmsup_zen2_ref.o ('zen2' CFLAGS for ref. kernels)
+Compiling obj/zen2/ref_kernels/zen2/3/bli_gemmtrsm_zen2_ref.o ('zen2' CFLAGS for ref. kernels)
+Compiling obj/zen2/ref_kernels/zen2/3/bli_trsm_zen2_ref.o ('zen2' CFLAGS for ref. kernels)
+Compiling obj/zen2/ref_kernels/zen2/ind/bli_gemm1m_zen2_ref.o ('zen2' CFLAGS for ref. kernels)
+Compiling obj/zen2/ref_kernels/zen2/ind/bli_gemmtrsm1m_zen2_ref.o ('zen2' CFLAGS for ref. kernels)
+Compiling obj/zen2/ref_kernels/zen2/ind/bli_trsm1m_zen2_ref.o ('zen2' CFLAGS for ref. kernels)
+Compiling obj/zen2/frame/0/bli_l0_check.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/0/bli_l0_fpa.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/0/bli_l0_oapi.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/0/copysc/bli_copysc.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/1/bli_l1v_check.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/0/bli_l0_tapi.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/1/bli_l1v_fpa.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/1/bli_l1v_oapi_ba.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/1/bli_l1v_oapi.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/1/bli_l1v_oapi_ex.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/1/bli_l1v_tapi_ba.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/1/bli_l1v_tapi.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/1d/bli_l1d_check.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/1d/bli_l1d_fpa.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/1d/bli_l1d_oapi_ba.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/1d/bli_l1d_oapi.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/1d/bli_l1d_oapi_ex.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/1d/bli_l1d_tapi_ba.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/1d/bli_l1d_tapi.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/1d/bli_l1d_tapi_ex.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/1/bli_l1v_tapi_ex.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/1f/bli_l1f_check.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/1f/bli_l1f_fpa.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/1f/bli_l1f_oapi_ba.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/1f/bli_l1f_oapi.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/1f/bli_l1f_oapi_ex.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/1f/bli_l1f_tapi.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/1f/bli_l1f_tapi_ex.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/1f/bli_l1f_tapi_ba.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/1m/bli_l1m_fpa.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/1m/bli_l1m_oapi_ba.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/1m/bli_l1m_oapi.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/1m/bli_l1m_check.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/1m/bli_l1m_oapi_ex.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/1m/bli_l1m_tapi_ba.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/1m/bli_l1m_tapi.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/1m/bli_l1m_tapi_ex.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/1m/bli_l1m_unb_var1.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/1m/packm/bli_packm_alloc.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/1m/packm/bli_packm_blk_var1.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/1m/packm/bli_packm_check.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/1m/packm/bli_packm_cntl.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/1m/packm/bli_packm_init.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/1m/packm/bli_packm_int.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/1m/packm/bli_packm_part.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/1m/packm/bli_packm_scalar.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/1m/packm/bli_packm_struc_cxk.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/1m/packm/bli_packm_struc_cxk_md.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/1m/unpackm/bli_unpackm_blk_var1.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/1m/unpackm/bli_unpackm_check.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/1m/unpackm/bli_unpackm_cntl.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/1m/unpackm/bli_unpackm_int.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/bli_l2_check.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/bli_l2_fpa.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/bli_l2_oapi_ba.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/bli_l2_oapi.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/bli_l2_oapi_ex.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/bli_l2_tapi_ba.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/bli_l2_tapi.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/bli_l2_tapi_ex.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/gemv/bli_gemv_unb_var1.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/gemv/bli_gemv_unb_var2.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/gemv/bli_gemv_unf_var1.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/gemv/bli_gemv_unf_var2.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/gemv/bli_gemv_var_oapi.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/ger/bli_ger_unb_var1.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/ger/bli_ger_unb_var2.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/ger/bli_ger_var_oapi.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/hemv/bli_hemv_unb_var1.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/hemv/bli_hemv_unb_var2.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/hemv/bli_hemv_unb_var3.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/hemv/bli_hemv_unb_var4.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/hemv/bli_hemv_unf_var1a.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/hemv/bli_hemv_unf_var1.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/hemv/bli_hemv_unf_var3a.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/hemv/bli_hemv_unf_var3.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/hemv/bli_hemv_var_oapi.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/her/bli_her_unb_var1.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/her/bli_her_unb_var2.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/her/bli_her_var_oapi.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/her2/bli_her2_unb_var1.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/her2/bli_her2_unb_var2.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/her2/bli_her2_unb_var3.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/her2/bli_her2_unb_var4.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/her2/bli_her2_unf_var4.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/her2/bli_her2_unf_var1.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/trmv/bli_trmv_unb_var1.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/her2/bli_her2_var_oapi.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/trmv/bli_trmv_unb_var2.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/trmv/bli_trmv_unf_var2.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/trmv/bli_trmv_unf_var1.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/trmv/bli_trmv_var_oapi.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/trsv/bli_trsv_unb_var1.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/trsv/bli_trsv_unb_var2.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/trsv/bli_trsv_unf_var1.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/trsv/bli_trsv_unf_var2.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/trsv/bli_trsv_var_oapi.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/bli_l3_blocksize.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/bli_l3_check.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/bli_l3_cntl.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/bli_l3_direct.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/bli_l3_decor.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/bli_l3_ind.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/bli_l3_int.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/bli_l3_oapi.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/bli_l3_prune.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/bli_l3_oapi_ex.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/bli_l3_packab.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/bli_l3_schema.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/bli_l3_sup.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/bli_l3_sup_int.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/bli_l3_sup_decor.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/bli_l3_sup_packm.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/bli_l3_sup_packm_var.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/bli_l3_sup_var12.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/bli_l3_sup_ref.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/bli_l3_sup_var1n2m.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/bli_l3_tapi.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/bli_l3_tapi_ex.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/bli_l3_thrinfo.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/bli_l3_ukr_fpa.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/bli_l3_ukr_oapi.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/bli_l3_ukr_tapi.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/gemm/bli_gemm_blk_var1.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/gemm/bli_gemm_blk_var2.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/gemm/bli_gemm_blk_var3.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/gemm/bli_gemm_cntl.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/gemm/bli_gemm_front.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/gemm/bli_gemm_ker_var2.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/gemm/bli_gemm_md.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/gemm/bli_gemm_md_c2r_ref.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/gemmt/bli_gemmt_front.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/gemmt/bli_gemmt_l_ker_var2b.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/gemmt/bli_gemmt_l_ker_var2.o ('zen2' CFLAGS for framework code)
+In file included from /orfeo/cephfs/home/dssc/ldavin00/blis/./ref_kernels/3/bli_gemm_ref.c:35:
+/orfeo/cephfs/home/dssc/ldavin00/blis/./frame/include//bli_complex_macro_defs.h: In function ‘bli_cgemm_zen2_ref’:
+/orfeo/cephfs/home/dssc/ldavin00/blis/./frame/include//bli_complex_macro_defs.h:52:30: warning: ‘ab[<unknown>].real’ may be used uninitialized [-Wmaybe-uninitialized]
+   52 | #define bli_cimag( x )  ( (x).imag )
+      |                              ^
+/orfeo/cephfs/home/dssc/ldavin00/blis/./ref_kernels/3/bli_gemm_ref.c:197:21: note: ‘ab’ declared here
+  197 |               ctype ab[ BLIS_STACK_BUF_MAX_SIZE \
+      |                     ^~
+/orfeo/cephfs/home/dssc/ldavin00/blis/./frame/include//bli_gentfunc_macro_defs.h:153:1: note: in expansion of macro ‘GENTFUNC’
+  153 | GENTFUNC( dcomplex, z, __VA_ARGS__ )
+      | ^~~~~~~~
+/orfeo/cephfs/home/dssc/ldavin00/blis/./ref_kernels/3/bli_gemm_ref.c:300:1: note: in expansion of macro ‘INSERT_GENTFUNC_BASIC’
+  300 | INSERT_GENTFUNC_BASIC( gemm, BLIS_CNAME_INFIX, BLIS_REF_SUFFIX )
+      | ^~~~~~~~~~~~~~~~~~~~~
+/orfeo/cephfs/home/dssc/ldavin00/blis/./frame/include//bli_complex_macro_defs.h:53:30: warning: ‘ab[<unknown>].imag’ may be used uninitialized [-Wmaybe-uninitialized]
+   53 | #define bli_zreal( x )  ( (x).real )
+      |                              ^
+/orfeo/cephfs/home/dssc/ldavin00/blis/./ref_kernels/3/bli_gemm_ref.c:197:21: note: ‘ab’ declared here
+  197 |               ctype ab[ BLIS_STACK_BUF_MAX_SIZE \
+      |                     ^~
+/orfeo/cephfs/home/dssc/ldavin00/blis/./frame/include//bli_gentfunc_macro_defs.h:153:1: note: in expansion of macro ‘GENTFUNC’
+  153 | GENTFUNC( dcomplex, z, __VA_ARGS__ )
+      | ^~~~~~~~
+/orfeo/cephfs/home/dssc/ldavin00/blis/./ref_kernels/3/bli_gemm_ref.c:300:1: note: in expansion of macro ‘INSERT_GENTFUNC_BASIC’
+  300 | INSERT_GENTFUNC_BASIC( gemm, BLIS_CNAME_INFIX, BLIS_REF_SUFFIX )
+      | ^~~~~~~~~~~~~~~~~~~~~
+Compiling obj/zen2/frame/3/gemmt/bli_gemmt_u_ker_var2b.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/gemmt/bli_gemmt_x_ker_var2b.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/gemmt/bli_gemmt_u_ker_var2.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/gemmt/bli_gemmt_x_ker_var2.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/hemm/bli_hemm_front.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/symm/bli_symm_front.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/trmm/bli_trmm_front.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/trmm/bli_trmm_ll_ker_var2b.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/trmm/bli_trmm_ll_ker_var2.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/trmm/bli_trmm_lu_ker_var2b.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/trmm/bli_trmm_lu_ker_var2.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/trmm/bli_trmm_rl_ker_var2b.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/trmm/bli_trmm_rl_ker_var2.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/trmm/bli_trmm_ru_ker_var2b.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/trmm/bli_trmm_ru_ker_var2.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/trmm/bli_trmm_xx_ker_var2b.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/trmm/bli_trmm_xx_ker_var2.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/trmm3/bli_trmm3_front.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/trsm/bli_trsm_blk_var1.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/trsm/bli_trsm_blk_var2.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/trsm/bli_trsm_blk_var3.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/trsm/bli_trsm_cntl.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/trsm/bli_trsm_front.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/trsm/bli_trsm_ll_ker_var2.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/trsm/bli_trsm_lu_ker_var2.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/trsm/bli_trsm_rl_ker_var2.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/trsm/bli_trsm_ru_ker_var2.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/trsm/bli_trsm_xx_ker_var2.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/base/bli_apool.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/base/bli_arch.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/base/bli_array.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/base/bli_blksz.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/base/bli_check.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/base/bli_clock.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/base/bli_cntl.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/base/bli_cntx.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/base/bli_const.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/base/bli_cpuid.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/base/bli_error.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/base/bli_env.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/base/bli_func.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/base/bli_getopt.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/base/bli_gks.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/base/bli_ind.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/base/bli_info.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/base/bli_init.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/base/bli_machval.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/base/bli_malloc.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/base/bli_mbool.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/base/bli_memsys.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/base/bli_obj.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/base/bli_obj_scalar.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/base/bli_pack.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/base/bli_param_map.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/base/bli_part.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/base/bli_pba.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/base/bli_pool.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/base/bli_prune.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/base/bli_rntm.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/base/bli_query.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/base/bli_sba.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/base/bli_setgetijm.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/base/bli_setgetijv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/base/bli_setri.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/base/bli_string.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/base/bli_winsys.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/base/cast/bli_castm.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/base/cast/bli_castnzm.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/base/cast/bli_castv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/base/check/bli_obj_check.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/base/check/bli_part_check.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/base/noopt/bli_dlamch.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/base/noopt/bli_lsame.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/base/noopt/bli_slamch.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/base/proj/bli_projm.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/bla_amax.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/base/proj/bli_projv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/bla_asum.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/bla_axpy.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/bla_copy.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/bla_dot.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/bla_gemm.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/bla_gemv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/bla_ger.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/bla_hemm.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/bla_hemv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/bla_her2.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/bla_her2k.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/bla_her.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/bla_herk.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/bla_nrm2.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/bla_scal.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/bla_swap.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/bla_symm.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/bla_symv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/bla_syr2.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/bla_syr.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/bla_syrk.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/bla_syr2k.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/bla_trmm.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/bla_trmv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/bla_trsm.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/blis/thread/b77_thread.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/bla_trsv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/f77_sub/f77_amax_sub.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/f77_sub/f77_asum_sub.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/f77_sub/f77_dot_sub.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_caxpy.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/f77_sub/f77_nrm2_sub.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_ccopy.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_cdotc_sub.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_cdotu_sub.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_cgbmv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_cgemm.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_cgemv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_cgerc.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_cgeru.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_chbmv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_chemm.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_chemv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_cher2.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_cher2k.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_cher.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_cherk.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_chpr2.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_chpmv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_chpr.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_cscal.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_csscal.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_cswap.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_csymm.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_csyr2k.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_ctbsv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_ctbmv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_csyrk.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_ctpsv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_ctpmv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_ctrmm.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_ctrmv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_ctrsm.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_ctrsv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_dasum.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_daxpy.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_ddot.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_dcopy.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_dgbmv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_dgemm.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_dgemv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_dnrm2.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_drot.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_dger.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_drotg.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_drotm.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_drotmg.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_dsbmv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_dscal.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_dsdot.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_dspmv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_dspr2.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_dspr.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_dsymm.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_dswap.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_dsymv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_dsyr2.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_dsyr2k.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_dsyr.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_dsyrk.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_dtbmv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_dtbsv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_dtpmv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_dtpsv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_dtrmm.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_dtrmv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_dtrsm.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_dtrsv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_dzasum.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_dznrm2.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_globals.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_icamax.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_idamax.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_isamax.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_izamax.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_sasum.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_saxpy.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_scasum.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_scnrm2.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_scopy.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_sdot.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_sdsdot.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_sgbmv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_sgemm.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_sgemv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_sger.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_snrm2.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_srot.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_srotg.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_srotm.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_srotmg.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_ssbmv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_sscal.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_sspmv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_sspr2.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_sspr.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_sswap.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_ssymm.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_ssymv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_ssyr2.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_ssyr2k.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_ssyr.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_ssyrk.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_stbmv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_stbsv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_stpmv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_stpsv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_strmm.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_strmv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_strsm.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_strsv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_xerbla.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_zaxpy.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_zcopy.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_zdotc_sub.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_zdotu_sub.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_zdscal.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_zgemm.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_zgbmv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_zgemv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_zgerc.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_zgeru.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_zhbmv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_zhemm.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_zhemv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_zher2.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_zher2k.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_zher.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_zherk.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_zhpmv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_zhpr.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_zscal.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_zswap.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_zhpr2.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_zsymm.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_zsyr2k.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_zsyrk.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_ztbmv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_ztbsv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_ztpmv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_ztpsv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_ztrmm.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_ztrmv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_ztrsm.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_ztrsv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/extra/cblas_caxpby.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/extra/cblas_cgemm3m.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/extra/cblas_cgemmt.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/extra/cblas_cgemm_batch.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/extra/cblas_daxpby.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/extra/cblas_dgemm_batch.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/extra/cblas_dgemmt.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/extra/cblas_saxpby.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/extra/cblas_sgemmt.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/extra/cblas_sgemm_batch.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/extra/cblas_zaxpby.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/extra/cblas_zgemm3m.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/extra/cblas_zgemm_batch.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/extra/cblas_zgemmt.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/extra/bla_axpby.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/extra/bla_gemm3m.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/extra/bla_gemm_batch.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/extra/bla_gemmt.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/f2c/bla_cabs1.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/f2c/bla_gbmv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/f2c/bla_hbmv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/f2c/bla_hpmv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/f2c/bla_hpr2.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/f2c/bla_hpr.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/f2c/bla_lsame.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/f2c/bla_rot.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/f2c/bla_rotg.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/f2c/bla_rotm.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/f2c/bla_rotmg.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/f2c/bla_sbmv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/f2c/bla_spmv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/f2c/bla_spr2.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/f2c/bla_spr.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/f2c/bla_tbmv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/f2c/bla_tbsv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/f2c/bla_tpmv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/f2c/bla_tpsv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/f2c/bla_xerbla_array.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/f2c/bla_xerbla.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/f2c/util/bla_c_abs.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/f2c/util/bla_c_div.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/f2c/util/bla_d_abs.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/f2c/util/bla_d_cnjg.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/f2c/util/bla_d_imag.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/f2c/util/bla_d_sign.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/f2c/util/bla_f__cabs.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/f2c/util/bla_r_abs.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/f2c/util/bla_r_cnjg.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/f2c/util/bla_r_imag.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/f2c/util/bla_r_sign.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/f2c/util/bla_z_abs.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/f2c/util/bla_z_div.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/thread/bli_pthread.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/thread/bli_thrcomm.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/thread/bli_thrcomm_openmp.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/thread/bli_thrcomm_pthreads.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/thread/bli_thrcomm_single.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/thread/bli_thread.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/thread/bli_thread_openmp.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/thread/bli_thread_pthreads.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/thread/bli_thread_range.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/thread/bli_thread_range_slab_rr.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/thread/bli_thread_range_tlb.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/thread/bli_thread_single.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/thread/bli_thrinfo.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/util/bli_util_check.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/util/bli_util_fpa.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/util/bli_util_oapi_ba.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/util/bli_util_oapi.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/util/bli_util_tapi_ba.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/util/bli_util_oapi_ex.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/util/bli_util_tapi.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/util/bli_util_tapi_ex.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/util/bli_util_unb_var1.o ('zen2' CFLAGS for framework code)
+Archiving lib/zen2/libblis.a
+Dynamically linking lib/zen2/libblis.so
+Creating symlink lib/zen2/libblis.so.4
+Installing libblis.a into /u/dssc/ldavin00/myblis/lib/
+Installing libblis.so.4.0.0 into /u/dssc/ldavin00/myblis/lib/
+Installing symlink libblis.so into /u/dssc/ldavin00/myblis/lib/
+Installing symlink libblis.so.4 into /u/dssc/ldavin00/myblis/lib/
+Generating monolithic cblas.h........
+Generated include/zen2/cblas.h
+Installing blis.h cblas.h into /u/dssc/ldavin00/myblis/include/blis/
+Installing config.mk common.mk into /u/dssc/ldavin00/myblis/share/blis/
+Installing config/zen2/make_defs.mk into /u/dssc/ldavin00/myblis/share/blis/config/zen2
+mkdir -p /u/dssc/ldavin00/myblis/share/pkgconfig
+Installing blis.pc into /u/dssc/ldavin00/myblis/share/pkgconfig/
+install -c -m 0644 blis.pc /u/dssc/ldavin00/myblis/share/pkgconfig
+blis installed
+returning to /u/dssc/ldavin00/Foundations_of_HPC_final_project/exercise2/fixed_matrix
+returned to previous path
+setting number of cores and their topology
+setted number of cores and their topology
+
+exporting settings
+settings exported
+
+path to results is ./EPYC/close_cores
+
+compile files, specifying in which folder the results will be stored
+gcc -DUSE_DOUBLE -DMKL ../gemm.c -m64 -I/opt/area/shared/programs/x86/oneAPI/2022.3.1/mkl/2022.2.1/include -L/opt/area/shared/programs/x86/oneAPI/2022.3.1/mkl/2022.2.1/lib/intel64  -lmkl_intel_lp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl  -o EPYC/close_cores/gemm_mkl_d.exe -DSAVE_RESULTS
+gcc -DUSE_DOUBLE -DOPENBLAS ../gemm.c -m64 -I/opt/programs/openBLAS/0.3.23-omp/include -L/opt/programs/openBLAS/0.3.23-omp/lib -lopenblas -lpthread  -o EPYC/close_cores/gemm_openblas_d.exe -fopenmp -DSAVE_RESULTS
+gcc -DUSE_DOUBLE -DBLIS ../gemm.c -m64 -I/u/dssc/ldavin00/myblis/include/blis -L/u/dssc/ldavin00/myblis/lib -lpthread -lblis  -o EPYC/close_cores/gemm_blis_d.exe -fopenmp -DSAVE_RESULTS	
+gcc -DUSE_FLOAT -DMKL ../gemm.c -m64 -I/opt/area/shared/programs/x86/oneAPI/2022.3.1/mkl/2022.2.1/include -L/opt/area/shared/programs/x86/oneAPI/2022.3.1/mkl/2022.2.1/lib/intel64  -lmkl_intel_lp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl  -o EPYC/close_cores/gemm_mkl_f.exe -DSAVE_RESULTS
+gcc -DUSE_FLOAT -DOPENBLAS ../gemm.c -m64 -I/opt/programs/openBLAS/0.3.23-omp/include -L/opt/programs/openBLAS/0.3.23-omp/lib -lopenblas -lpthread  -o EPYC/close_cores/gemm_openblas_f.exe -fopenmp -DSAVE_RESULTS

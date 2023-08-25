@@ -7,13 +7,13 @@
 #SBATCH --job-name="core_scal"
 
 #Partition that will be used
-#SBATCH --partition=THIN
+#SBATCH --partition=EPYC
 
 #Number of nodes that will be requested
 #SBATCH -N 1
 
 #Number of processes that will be executed in parallel
-#SBATCH -n 24
+#SBATCH -n 128
 
 #The job has exclusive acces to the requested node
 #SBATCH --exclusive
@@ -22,12 +22,12 @@
 #SBATCH --time=2:00:00
 
 #Name of the output of this sbatch file
-#SBATCH --output="summary.out"
+#SBATCH --output="summary_EPYC.out"
 
 echo Memory allocated
 echo
 echo Loading modules
-module load architecture/Intel
+module load architecture/AMD
 module load mkl
 module load openBLAS/0.3.23-omp
 echo modules loaded
@@ -39,7 +39,7 @@ cd blis
 blis_path=/u/dssc/ldavin00/myblis
 
 srun -n1 ./configure --enable-cblas --enable-threading=openmp --prefix=${blis_path} auto
-srun  -n 1 --cpus-per-task=24 make -j 24
+srun  -n 1 --cpus-per-task=128 make -j 128
 make install
 echo blis installed
 #Make the variable LD_LIBRARY_PATH an environmental variable, i.e. make it accessible by programs and scripts
@@ -49,10 +49,10 @@ cd $sbatch_path
 echo returned to previous path
 
 echo setting number of cores and their topology
-size=5000
+size=10000
 node=THIN
-alloc=spread
-#alloc=close
+#alloc=spread
+alloc=close
 echo setted number of cores and their topology
 echo
 echo exporting settings
@@ -69,7 +69,7 @@ export OMP_PROC_BIND=$alloc
 echo settings exported
 echo
 
-result_path=./THIN
+result_path=./EPYC
 
 if [ "$alloc" = "close" ];
 then
@@ -98,7 +98,7 @@ cd ${result_path}
 echo moved to ${result_path}
 
 echo run files
-for idx in $(seq 1 1 24)
+for idx in $(seq 1 1 128)
 do
 	echo Specify how many cores of the partition will be used
 	export OMP_NUM_THREADS=$idx
@@ -110,32 +110,26 @@ do
 		echo -n "$idx," >> mkl_d.csv
 		#srun -n 1 --cpus-per-task=$idx gemm_mkl_d.exe $size $size $size
 		./gemm_mkl_d.exe $size $size $size
-		#echo -n ",$idx" >> mkl_d.csv
 		
 		echo -n "$idx," >> openblas_d.csv
 		#srun -n 1 --cpus-per-task=$idx gemm_openblas_d.exe $size $size $size
 		./gemm_openblas_d.exe $size $size $size
-		#echo -n ",$idx" >> openblas_d.csv
 		
 		echo -n "$idx," >> blis_d.csv
 		#srun -n 1 --cpus-per-task=$idx gemm_blis_d.exe $size $size $size
 		./gemm_blis_d.exe $size $size $size
-		#echo -n ",$idx" >> blis_d.csv
 		
 		echo -n "$idx," >> mkl_f.csv
 		#srun -n 1 --cpus-per-task=$idx gemm_mkl_f.exe $size $size $size
                 ./gemm_mkl_f.exe $size $size $size
-		#echo -n ",$idx" >> mkl_f.csv
 		
 		echo -n "$idx," >> openblas_f.csv
 		#srun -n 1 --cpus-per-task=$idx gemm_openblas_f.exe $size $size $size
                 ./gemm_openblas_f.exe $size $size $size
-		#echo -n ",$idx" >> openblas_f.csv
 		
 		echo -n "$idx," >> blis_f.csv
 		#srun -n 1 --cpus-per-task=$idx gemm_blis_f.exe $size $size $size
 		./gemm_blis_f.exe $size $size $size	
-		#echo -n ",$idx" >> blis_f.csv
 		
 		echo Number of cores = $idx iteration=$iteration
 	done
