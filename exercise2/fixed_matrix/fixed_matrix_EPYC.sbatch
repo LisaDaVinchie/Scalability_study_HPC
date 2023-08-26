@@ -50,9 +50,9 @@ echo returned to previous path
 
 echo setting number of cores and their topology
 size=10000
-node=THIN
-#alloc=spread
-alloc=close
+node=EPYC
+alloc=spread
+#alloc=close
 echo setted number of cores and their topology
 echo
 echo exporting settings

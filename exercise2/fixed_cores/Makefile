@@ -26,7 +26,7 @@ MKL_d=$(DATA_FOLDER)/gemm_mkl_d.exe
 OPENBLAS_d=$(DATA_FOLDER)/gemm_openblas_d.exe
 BLIS_d=$(DATA_FOLDER)/gemm_blis_d.exe
 
-.PHONY: float double
+.PHONY: float double clean
 
 float: $(MKL_f) $(OPENBLAS_f) $(BLIS_f)
 

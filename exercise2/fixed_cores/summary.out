@@ -138,64 +138,64 @@ configure: configured to build within top-level directory of source distribution
 Generating monolithic blis.h.............................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
 Generated include/zen2/blis.h
 Compiling obj/zen2/config/zen2/bli_cntx_init_zen2.o ('zen2' CFLAGS for config code)
-Compiling obj/zen2/kernels/zen/1/bli_amaxv_zen_int.o ('zen2' CFLAGS for kernels)
 Compiling obj/zen2/kernels/zen/1/bli_axpyv_zen_int10.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/zen/1/bli_amaxv_zen_int.o ('zen2' CFLAGS for kernels)
 Compiling obj/zen2/kernels/zen/1/bli_axpyv_zen_int.o ('zen2' CFLAGS for kernels)
 Compiling obj/zen2/kernels/zen/1/bli_dotv_zen_int10.o ('zen2' CFLAGS for kernels)
 Compiling obj/zen2/kernels/zen/1/bli_copyv_zen_int.o ('zen2' CFLAGS for kernels)
 Compiling obj/zen2/kernels/zen/1/bli_dotv_zen_int.o ('zen2' CFLAGS for kernels)
 Compiling obj/zen2/kernels/zen/1/bli_dotxv_zen_int.o ('zen2' CFLAGS for kernels)
 Compiling obj/zen2/kernels/zen/1/bli_scalv_zen_int10.o ('zen2' CFLAGS for kernels)
-Compiling obj/zen2/kernels/zen/1/bli_setv_zen_int.o ('zen2' CFLAGS for kernels)
 Compiling obj/zen2/kernels/zen/1/bli_scalv_zen_int.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/zen/1/bli_setv_zen_int.o ('zen2' CFLAGS for kernels)
 Compiling obj/zen2/kernels/zen/1/bli_swapv_zen_int8.o ('zen2' CFLAGS for kernels)
 Compiling obj/zen2/kernels/zen/1f/bli_axpyf_zen_int_4.o ('zen2' CFLAGS for kernels)
-Compiling obj/zen2/kernels/zen/1f/bli_axpyf_zen_int_8.o ('zen2' CFLAGS for kernels)
 Compiling obj/zen2/kernels/zen/1f/bli_axpyf_zen_int_5.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/zen/1f/bli_axpyf_zen_int_8.o ('zen2' CFLAGS for kernels)
 Compiling obj/zen2/kernels/zen/1f/bli_dotxf_zen_int_8.o ('zen2' CFLAGS for kernels)
 Compiling obj/zen2/kernels/zen/3/bli_gemm_small.o ('zen2' CFLAGS for kernels)
 Compiling obj/zen2/kernels/zen/3/bli_gemmt_small.o ('zen2' CFLAGS for kernels)
 Compiling obj/zen2/kernels/zen/3/bli_trsm_small.o ('zen2' CFLAGS for kernels)
-Compiling obj/zen2/kernels/haswell/1m/bli_packm_haswell_asm_c3xk.o ('zen2' CFLAGS for kernels)
 Compiling obj/zen2/kernels/haswell/1m/bli_packm_haswell_asm_c8xk.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/haswell/1m/bli_packm_haswell_asm_c3xk.o ('zen2' CFLAGS for kernels)
 Compiling obj/zen2/kernels/haswell/1m/bli_packm_haswell_asm_d6xk.o ('zen2' CFLAGS for kernels)
-Compiling obj/zen2/kernels/haswell/1m/bli_packm_haswell_asm_d8xk.o ('zen2' CFLAGS for kernels)
 Compiling obj/zen2/kernels/haswell/1m/bli_packm_haswell_asm_s16xk.o ('zen2' CFLAGS for kernels)
 Compiling obj/zen2/kernels/haswell/1m/bli_packm_haswell_asm_s6xk.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/haswell/1m/bli_packm_haswell_asm_d8xk.o ('zen2' CFLAGS for kernels)
 Compiling obj/zen2/kernels/haswell/1m/bli_packm_haswell_asm_z3xk.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/haswell/1m/bli_packm_haswell_asm_z4xk.o ('zen2' CFLAGS for kernels)
 Compiling obj/zen2/kernels/haswell/3/bli_gemm_haswell_asm_d6x8.o ('zen2' CFLAGS for kernels)
 Compiling obj/zen2/kernels/haswell/3/bli_gemm_haswell_asm_d8x6.o ('zen2' CFLAGS for kernels)
-Compiling obj/zen2/kernels/haswell/1m/bli_packm_haswell_asm_z4xk.o ('zen2' CFLAGS for kernels)
 Compiling obj/zen2/kernels/haswell/3/bli_gemmtrsm_l_haswell_asm_d6x8.o ('zen2' CFLAGS for kernels)
 Compiling obj/zen2/kernels/haswell/3/bli_gemmtrsm_u_haswell_asm_d6x8.o ('zen2' CFLAGS for kernels)
 Compiling obj/zen2/kernels/haswell/3/sup/bli_gemmsup_rd_haswell_asm_d6x8m.o ('zen2' CFLAGS for kernels)
 Compiling obj/zen2/kernels/haswell/3/sup/bli_gemmsup_rd_haswell_asm_d6x8n.o ('zen2' CFLAGS for kernels)
-Compiling obj/zen2/kernels/haswell/3/sup/bli_gemmsup_rd_haswell_asm_s6x16m.o ('zen2' CFLAGS for kernels)
 Compiling obj/zen2/kernels/haswell/3/sup/bli_gemmsup_rd_haswell_asm_s6x16n.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/haswell/3/sup/bli_gemmsup_rd_haswell_asm_s6x16m.o ('zen2' CFLAGS for kernels)
 Compiling obj/zen2/kernels/haswell/3/sup/bli_gemmsup_rv_haswell_asm_d6x8m.o ('zen2' CFLAGS for kernels)
 Compiling obj/zen2/kernels/haswell/3/sup/bli_gemmsup_rv_haswell_asm_d6x8n.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/haswell/3/sup/bli_gemmsup_rv_haswell_asm_s6x16m.o ('zen2' CFLAGS for kernels)
 Compiling obj/zen2/kernels/haswell/3/sup/bli_gemmsup_rv_haswell_asm_s6x16n.o ('zen2' CFLAGS for kernels)
 Compiling obj/zen2/kernels/haswell/3/sup/d6x8/bli_gemmsup_rd_haswell_asm_dMx1.o ('zen2' CFLAGS for kernels)
-Compiling obj/zen2/kernels/haswell/3/sup/bli_gemmsup_rv_haswell_asm_s6x16m.o ('zen2' CFLAGS for kernels)
 Compiling obj/zen2/kernels/haswell/3/sup/d6x8/bli_gemmsup_rd_haswell_asm_dMx2.o ('zen2' CFLAGS for kernels)
-Compiling obj/zen2/kernels/haswell/3/sup/d6x8/bli_gemmsup_rd_haswell_asm_dMx8.o ('zen2' CFLAGS for kernels)
-Compiling obj/zen2/kernels/haswell/3/sup/d6x8/bli_gemmsup_r_haswell_ref_dMx1.o ('zen2' CFLAGS for kernels)
 Compiling obj/zen2/kernels/haswell/3/sup/d6x8/bli_gemmsup_rd_haswell_asm_dMx4.o ('zen2' CFLAGS for kernels)
-Compiling obj/zen2/kernels/haswell/3/sup/d6x8/bli_gemmsup_rv_haswell_asm_dMx4.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/haswell/3/sup/d6x8/bli_gemmsup_rd_haswell_asm_dMx8.o ('zen2' CFLAGS for kernels)
 Compiling obj/zen2/kernels/haswell/3/sup/d6x8/bli_gemmsup_rv_haswell_asm_dMx2.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/haswell/3/sup/d6x8/bli_gemmsup_rv_haswell_asm_dMx4.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/haswell/3/sup/d6x8/bli_gemmsup_r_haswell_ref_dMx1.o ('zen2' CFLAGS for kernels)
 Compiling obj/zen2/kernels/haswell/3/sup/d6x8/bli_gemmsup_rv_haswell_asm_dMx6.o ('zen2' CFLAGS for kernels)
-Compiling obj/zen2/kernels/haswell/3/sup/s6x16/bli_gemmsup_rd_haswell_asm_sMx12.o ('zen2' CFLAGS for kernels)
 Compiling obj/zen2/kernels/haswell/3/sup/d6x8/bli_gemmsup_rv_haswell_asm_dMx8.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/haswell/3/sup/s6x16/bli_gemmsup_rd_haswell_asm_sMx12.o ('zen2' CFLAGS for kernels)
 Compiling obj/zen2/kernels/haswell/3/sup/s6x16/bli_gemmsup_rd_haswell_asm_sMx16.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/haswell/3/sup/s6x16/bli_gemmsup_rd_haswell_asm_sMx1.o ('zen2' CFLAGS for kernels)
 Compiling obj/zen2/kernels/haswell/3/sup/s6x16/bli_gemmsup_rd_haswell_asm_sMx2.o ('zen2' CFLAGS for kernels)
 Compiling obj/zen2/kernels/haswell/3/sup/s6x16/bli_gemmsup_rd_haswell_asm_sMx4.o ('zen2' CFLAGS for kernels)
-Compiling obj/zen2/kernels/haswell/3/sup/s6x16/bli_gemmsup_rd_haswell_asm_sMx1.o ('zen2' CFLAGS for kernels)
 Compiling obj/zen2/kernels/haswell/3/sup/s6x16/bli_gemmsup_rd_haswell_asm_sMx8.o ('zen2' CFLAGS for kernels)
 Compiling obj/zen2/kernels/haswell/3/sup/s6x16/bli_gemmsup_r_haswell_ref_sMx1.o ('zen2' CFLAGS for kernels)
 Compiling obj/zen2/kernels/haswell/3/sup/s6x16/bli_gemmsup_rv_haswell_asm_sMx12.o ('zen2' CFLAGS for kernels)
 Compiling obj/zen2/kernels/haswell/3/sup/s6x16/bli_gemmsup_rv_haswell_asm_sMx16.o ('zen2' CFLAGS for kernels)
-Compiling obj/zen2/kernels/haswell/3/sup/s6x16/bli_gemmsup_rv_haswell_asm_sMx2.o ('zen2' CFLAGS for kernels)
 Compiling obj/zen2/kernels/haswell/3/sup/s6x16/bli_gemmsup_rv_haswell_asm_sMx4.o ('zen2' CFLAGS for kernels)
+Compiling obj/zen2/kernels/haswell/3/sup/s6x16/bli_gemmsup_rv_haswell_asm_sMx2.o ('zen2' CFLAGS for kernels)
 Compiling obj/zen2/kernels/haswell/3/sup/s6x16/bli_gemmsup_rv_haswell_asm_sMx6.o ('zen2' CFLAGS for kernels)
 Compiling obj/zen2/kernels/haswell/3/sup/s6x16/bli_gemmsup_rv_haswell_asm_sMx8.o ('zen2' CFLAGS for kernels)
 Compiling obj/zen2/ref_kernels/zen2/bli_cntx_zen2_ref.o ('zen2' CFLAGS for ref. kernel init)
@@ -204,23 +204,23 @@ Compiling obj/zen2/ref_kernels/zen2/1/bli_amaxv_zen2_ref.o ('zen2' CFLAGS for re
 Compiling obj/zen2/ref_kernels/zen2/1/bli_axpbyv_zen2_ref.o ('zen2' CFLAGS for ref. kernels)
 Compiling obj/zen2/ref_kernels/zen2/1/bli_axpyv_zen2_ref.o ('zen2' CFLAGS for ref. kernels)
 Compiling obj/zen2/ref_kernels/zen2/1/bli_copyv_zen2_ref.o ('zen2' CFLAGS for ref. kernels)
-Compiling obj/zen2/ref_kernels/zen2/1/bli_dotxv_zen2_ref.o ('zen2' CFLAGS for ref. kernels)
 Compiling obj/zen2/ref_kernels/zen2/1/bli_dotv_zen2_ref.o ('zen2' CFLAGS for ref. kernels)
+Compiling obj/zen2/ref_kernels/zen2/1/bli_dotxv_zen2_ref.o ('zen2' CFLAGS for ref. kernels)
 Compiling obj/zen2/ref_kernels/zen2/1/bli_invertv_zen2_ref.o ('zen2' CFLAGS for ref. kernels)
 Compiling obj/zen2/ref_kernels/zen2/1/bli_invscalv_zen2_ref.o ('zen2' CFLAGS for ref. kernels)
+Compiling obj/zen2/ref_kernels/zen2/1/bli_scal2v_zen2_ref.o ('zen2' CFLAGS for ref. kernels)
 Compiling obj/zen2/ref_kernels/zen2/1/bli_scalv_zen2_ref.o ('zen2' CFLAGS for ref. kernels)
 Compiling obj/zen2/ref_kernels/zen2/1/bli_setv_zen2_ref.o ('zen2' CFLAGS for ref. kernels)
-Compiling obj/zen2/ref_kernels/zen2/1/bli_scal2v_zen2_ref.o ('zen2' CFLAGS for ref. kernels)
 Compiling obj/zen2/ref_kernels/zen2/1/bli_subv_zen2_ref.o ('zen2' CFLAGS for ref. kernels)
 Compiling obj/zen2/ref_kernels/zen2/1/bli_swapv_zen2_ref.o ('zen2' CFLAGS for ref. kernels)
-Compiling obj/zen2/ref_kernels/zen2/1/bli_xpbyv_zen2_ref.o ('zen2' CFLAGS for ref. kernels)
 Compiling obj/zen2/ref_kernels/zen2/1f/bli_axpy2v_zen2_ref.o ('zen2' CFLAGS for ref. kernels)
+Compiling obj/zen2/ref_kernels/zen2/1/bli_xpbyv_zen2_ref.o ('zen2' CFLAGS for ref. kernels)
+Compiling obj/zen2/ref_kernels/zen2/1f/bli_axpyf_zen2_ref.o ('zen2' CFLAGS for ref. kernels)
 Compiling obj/zen2/ref_kernels/zen2/1f/bli_dotaxpyv_zen2_ref.o ('zen2' CFLAGS for ref. kernels)
 Compiling obj/zen2/ref_kernels/zen2/1f/bli_dotxaxpyf_zen2_ref.o ('zen2' CFLAGS for ref. kernels)
-Compiling obj/zen2/ref_kernels/zen2/1f/bli_axpyf_zen2_ref.o ('zen2' CFLAGS for ref. kernels)
 Compiling obj/zen2/ref_kernels/zen2/1f/bli_dotxf_zen2_ref.o ('zen2' CFLAGS for ref. kernels)
-Compiling obj/zen2/ref_kernels/zen2/1m/bli_packm_cxc_diag_1er_zen2_ref.o ('zen2' CFLAGS for ref. kernels)
 Compiling obj/zen2/ref_kernels/zen2/1m/bli_packm_cxc_diag_zen2_ref.o ('zen2' CFLAGS for ref. kernels)
+Compiling obj/zen2/ref_kernels/zen2/1m/bli_packm_cxc_diag_1er_zen2_ref.o ('zen2' CFLAGS for ref. kernels)
 Compiling obj/zen2/ref_kernels/zen2/1m/bli_packm_cxk_1er_zen2_ref.o ('zen2' CFLAGS for ref. kernels)
 Compiling obj/zen2/ref_kernels/zen2/1m/bli_packm_cxk_zen2_ref.o ('zen2' CFLAGS for ref. kernels)
 Compiling obj/zen2/ref_kernels/zen2/1m/bli_unpackm_cxk_zen2_ref.o ('zen2' CFLAGS for ref. kernels)
@@ -232,8 +232,8 @@ Compiling obj/zen2/ref_kernels/zen2/ind/bli_gemm1m_zen2_ref.o ('zen2' CFLAGS for
 Compiling obj/zen2/ref_kernels/zen2/ind/bli_gemmtrsm1m_zen2_ref.o ('zen2' CFLAGS for ref. kernels)
 Compiling obj/zen2/ref_kernels/zen2/ind/bli_trsm1m_zen2_ref.o ('zen2' CFLAGS for ref. kernels)
 Compiling obj/zen2/frame/0/bli_l0_fpa.o ('zen2' CFLAGS for framework code)
-Compiling obj/zen2/frame/0/bli_l0_check.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/0/bli_l0_oapi.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/0/bli_l0_check.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/0/bli_l0_tapi.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/0/copysc/bli_copysc.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/1/bli_l1v_check.o ('zen2' CFLAGS for framework code)
@@ -245,8 +245,8 @@ Compiling obj/zen2/frame/1/bli_l1v_tapi_ba.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/1/bli_l1v_tapi.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/1/bli_l1v_tapi_ex.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/1d/bli_l1d_check.o ('zen2' CFLAGS for framework code)
-Compiling obj/zen2/frame/1d/bli_l1d_oapi_ba.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/1d/bli_l1d_fpa.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/1d/bli_l1d_oapi_ba.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/1d/bli_l1d_oapi.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/1d/bli_l1d_oapi_ex.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/1d/bli_l1d_tapi_ba.o ('zen2' CFLAGS for framework code)
@@ -283,6 +283,24 @@ Compiling obj/zen2/frame/1m/unpackm/bli_unpackm_blk_var1.o ('zen2' CFLAGS for fr
 Compiling obj/zen2/frame/1m/unpackm/bli_unpackm_check.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/1m/unpackm/bli_unpackm_cntl.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/1m/unpackm/bli_unpackm_int.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/bli_l2_check.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/bli_l2_fpa.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/bli_l2_oapi.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/bli_l2_oapi_ex.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/bli_l2_oapi_ba.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/bli_l2_tapi_ba.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/bli_l2_tapi.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/bli_l2_tapi_ex.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/gemv/bli_gemv_unb_var1.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/gemv/bli_gemv_unb_var2.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/gemv/bli_gemv_unf_var1.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/gemv/bli_gemv_unf_var2.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/gemv/bli_gemv_var_oapi.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/ger/bli_ger_unb_var1.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/ger/bli_ger_unb_var2.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/ger/bli_ger_var_oapi.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/hemv/bli_hemv_unb_var1.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/hemv/bli_hemv_unb_var2.o ('zen2' CFLAGS for framework code)
 In file included from /orfeo/cephfs/home/dssc/ldavin00/blis/./ref_kernels/3/bli_gemm_ref.c:35:
 /orfeo/cephfs/home/dssc/ldavin00/blis/./frame/include//bli_complex_macro_defs.h: In function ‘bli_cgemm_zen2_ref’:
 /orfeo/cephfs/home/dssc/ldavin00/blis/./frame/include//bli_complex_macro_defs.h:52:30: warning: ‘ab[<unknown>].real’ may be used uninitialized [-Wmaybe-uninitialized]
@@ -309,24 +327,6 @@ In file included from /orfeo/cephfs/home/dssc/ldavin00/blis/./ref_kernels/3/bli_
 /orfeo/cephfs/home/dssc/ldavin00/blis/./ref_kernels/3/bli_gemm_ref.c:300:1: note: in expansion of macro ‘INSERT_GENTFUNC_BASIC’
   300 | INSERT_GENTFUNC_BASIC( gemm, BLIS_CNAME_INFIX, BLIS_REF_SUFFIX )
       | ^~~~~~~~~~~~~~~~~~~~~
-Compiling obj/zen2/frame/2/bli_l2_check.o ('zen2' CFLAGS for framework code)
-Compiling obj/zen2/frame/2/bli_l2_fpa.o ('zen2' CFLAGS for framework code)
-Compiling obj/zen2/frame/2/bli_l2_oapi_ba.o ('zen2' CFLAGS for framework code)
-Compiling obj/zen2/frame/2/bli_l2_oapi.o ('zen2' CFLAGS for framework code)
-Compiling obj/zen2/frame/2/bli_l2_oapi_ex.o ('zen2' CFLAGS for framework code)
-Compiling obj/zen2/frame/2/bli_l2_tapi_ba.o ('zen2' CFLAGS for framework code)
-Compiling obj/zen2/frame/2/bli_l2_tapi.o ('zen2' CFLAGS for framework code)
-Compiling obj/zen2/frame/2/bli_l2_tapi_ex.o ('zen2' CFLAGS for framework code)
-Compiling obj/zen2/frame/2/gemv/bli_gemv_unb_var1.o ('zen2' CFLAGS for framework code)
-Compiling obj/zen2/frame/2/gemv/bli_gemv_unb_var2.o ('zen2' CFLAGS for framework code)
-Compiling obj/zen2/frame/2/gemv/bli_gemv_unf_var1.o ('zen2' CFLAGS for framework code)
-Compiling obj/zen2/frame/2/gemv/bli_gemv_unf_var2.o ('zen2' CFLAGS for framework code)
-Compiling obj/zen2/frame/2/gemv/bli_gemv_var_oapi.o ('zen2' CFLAGS for framework code)
-Compiling obj/zen2/frame/2/ger/bli_ger_unb_var1.o ('zen2' CFLAGS for framework code)
-Compiling obj/zen2/frame/2/ger/bli_ger_var_oapi.o ('zen2' CFLAGS for framework code)
-Compiling obj/zen2/frame/2/ger/bli_ger_unb_var2.o ('zen2' CFLAGS for framework code)
-Compiling obj/zen2/frame/2/hemv/bli_hemv_unb_var1.o ('zen2' CFLAGS for framework code)
-Compiling obj/zen2/frame/2/hemv/bli_hemv_unb_var2.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/2/hemv/bli_hemv_unb_var3.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/2/hemv/bli_hemv_unb_var4.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/2/hemv/bli_hemv_unf_var1a.o ('zen2' CFLAGS for framework code)
@@ -339,32 +339,32 @@ Compiling obj/zen2/frame/2/her/bli_her_unb_var2.o ('zen2' CFLAGS for framework c
 Compiling obj/zen2/frame/2/her/bli_her_var_oapi.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/2/her2/bli_her2_unb_var1.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/2/her2/bli_her2_unb_var2.o ('zen2' CFLAGS for framework code)
-Compiling obj/zen2/frame/2/her2/bli_her2_unb_var3.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/2/her2/bli_her2_unb_var4.o ('zen2' CFLAGS for framework code)
-Compiling obj/zen2/frame/2/her2/bli_her2_unf_var1.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/2/her2/bli_her2_unf_var4.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/2/her2/bli_her2_var_oapi.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/her2/bli_her2_unf_var1.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/2/trmv/bli_trmv_unb_var1.o ('zen2' CFLAGS for framework code)
-Compiling obj/zen2/frame/2/trmv/bli_trmv_unf_var1.o ('zen2' CFLAGS for framework code)
-Compiling obj/zen2/frame/2/trmv/bli_trmv_unf_var2.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/her2/bli_her2_unb_var3.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/2/trmv/bli_trmv_unb_var2.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/trmv/bli_trmv_unf_var1.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/2/trmv/bli_trmv_var_oapi.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/trmv/bli_trmv_unf_var2.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/2/trsv/bli_trsv_unb_var1.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/2/trsv/bli_trsv_unb_var2.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/2/trsv/bli_trsv_unf_var1.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/2/trsv/bli_trsv_unf_var2.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/2/trsv/bli_trsv_var_oapi.o ('zen2' CFLAGS for framework code)
-Compiling obj/zen2/frame/2/trsv/bli_trsv_unf_var1.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/3/bli_l3_blocksize.o ('zen2' CFLAGS for framework code)
-Compiling obj/zen2/frame/3/bli_l3_cntl.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/3/bli_l3_check.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/bli_l3_cntl.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/3/bli_l3_decor.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/3/bli_l3_direct.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/3/bli_l3_ind.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/3/bli_l3_int.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/3/bli_l3_oapi.o ('zen2' CFLAGS for framework code)
-Compiling obj/zen2/frame/3/bli_l3_oapi_ex.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/3/bli_l3_packab.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/3/bli_l3_prune.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/bli_l3_oapi_ex.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/3/bli_l3_schema.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/3/bli_l3_sup.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/3/bli_l3_sup_decor.o ('zen2' CFLAGS for framework code)
@@ -387,15 +387,15 @@ Compiling obj/zen2/frame/3/gemm/bli_gemm_cntl.o ('zen2' CFLAGS for framework cod
 Compiling obj/zen2/frame/3/gemm/bli_gemm_front.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/3/gemm/bli_gemm_ker_var2.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/3/gemm/bli_gemm_md.o ('zen2' CFLAGS for framework code)
-Compiling obj/zen2/frame/3/gemmt/bli_gemmt_front.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/3/gemm/bli_gemm_md_c2r_ref.o ('zen2' CFLAGS for framework code)
-Compiling obj/zen2/frame/3/gemmt/bli_gemmt_l_ker_var2b.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/gemmt/bli_gemmt_front.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/3/gemmt/bli_gemmt_l_ker_var2.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/gemmt/bli_gemmt_l_ker_var2b.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/3/gemmt/bli_gemmt_u_ker_var2b.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/3/gemmt/bli_gemmt_u_ker_var2.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/3/gemmt/bli_gemmt_x_ker_var2b.o ('zen2' CFLAGS for framework code)
-Compiling obj/zen2/frame/3/hemm/bli_hemm_front.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/3/gemmt/bli_gemmt_x_ker_var2.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/hemm/bli_hemm_front.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/3/symm/bli_symm_front.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/3/trmm/bli_trmm_front.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/3/trmm/bli_trmm_ll_ker_var2b.o ('zen2' CFLAGS for framework code)
@@ -406,13 +406,13 @@ Compiling obj/zen2/frame/3/trmm/bli_trmm_rl_ker_var2b.o ('zen2' CFLAGS for frame
 Compiling obj/zen2/frame/3/trmm/bli_trmm_rl_ker_var2.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/3/trmm/bli_trmm_ru_ker_var2b.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/3/trmm/bli_trmm_ru_ker_var2.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/trmm/bli_trmm_xx_ker_var2b.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/3/trmm/bli_trmm_xx_ker_var2.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/3/trmm3/bli_trmm3_front.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/3/trsm/bli_trsm_blk_var1.o ('zen2' CFLAGS for framework code)
-Compiling obj/zen2/frame/3/trmm/bli_trmm_xx_ker_var2b.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/3/trsm/bli_trsm_blk_var2.o ('zen2' CFLAGS for framework code)
-Compiling obj/zen2/frame/3/trsm/bli_trsm_cntl.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/3/trsm/bli_trsm_blk_var3.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/3/trsm/bli_trsm_cntl.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/3/trsm/bli_trsm_front.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/3/trsm/bli_trsm_ll_ker_var2.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/3/trsm/bli_trsm_lu_ker_var2.o ('zen2' CFLAGS for framework code)
@@ -426,10 +426,10 @@ Compiling obj/zen2/frame/base/bli_blksz.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/base/bli_check.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/base/bli_clock.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/base/bli_cntl.o ('zen2' CFLAGS for framework code)
-Compiling obj/zen2/frame/base/bli_const.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/base/bli_cntx.o ('zen2' CFLAGS for framework code)
-Compiling obj/zen2/frame/base/bli_env.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/base/bli_const.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/base/bli_cpuid.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/base/bli_env.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/base/bli_error.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/base/bli_func.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/base/bli_getopt.o ('zen2' CFLAGS for framework code)
@@ -452,15 +452,15 @@ Compiling obj/zen2/frame/base/bli_prune.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/base/bli_query.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/base/bli_sba.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/base/bli_rntm.o ('zen2' CFLAGS for framework code)
-Compiling obj/zen2/frame/base/bli_setgetijv.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/base/bli_setgetijm.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/base/bli_setgetijv.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/base/bli_setri.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/base/bli_string.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/base/bli_winsys.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/base/cast/bli_castm.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/base/cast/bli_castnzm.o ('zen2' CFLAGS for framework code)
-Compiling obj/zen2/frame/base/check/bli_obj_check.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/base/cast/bli_castv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/base/check/bli_obj_check.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/base/check/bli_part_check.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/base/noopt/bli_dlamch.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/base/noopt/bli_lsame.o ('zen2' CFLAGS for framework code)
@@ -507,8 +507,8 @@ Compiling obj/zen2/frame/compat/cblas/src/cblas_cgbmv.o ('zen2' CFLAGS for frame
 Compiling obj/zen2/frame/compat/cblas/src/cblas_cgemm.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/cblas_cgemv.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/cblas_cgerc.o ('zen2' CFLAGS for framework code)
-Compiling obj/zen2/frame/compat/cblas/src/cblas_chbmv.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/cblas_cgeru.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_chbmv.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/cblas_chemm.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/cblas_chemv.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/cblas_cher2.o ('zen2' CFLAGS for framework code)
@@ -519,10 +519,10 @@ Compiling obj/zen2/frame/compat/cblas/src/cblas_chpmv.o ('zen2' CFLAGS for frame
 Compiling obj/zen2/frame/compat/cblas/src/cblas_chpr2.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/cblas_chpr.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/cblas_cscal.o ('zen2' CFLAGS for framework code)
-Compiling obj/zen2/frame/compat/cblas/src/cblas_cswap.o ('zen2' CFLAGS for framework code)
-Compiling obj/zen2/frame/compat/cblas/src/cblas_csyr2k.o ('zen2' CFLAGS for framework code)
-Compiling obj/zen2/frame/compat/cblas/src/cblas_csymm.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/cblas_csscal.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_cswap.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_csymm.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_csyr2k.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/cblas_csyrk.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/cblas_ctbmv.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/cblas_ctbsv.o ('zen2' CFLAGS for framework code)
@@ -532,13 +532,13 @@ Compiling obj/zen2/frame/compat/cblas/src/cblas_ctrmm.o ('zen2' CFLAGS for frame
 Compiling obj/zen2/frame/compat/cblas/src/cblas_ctrmv.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/cblas_ctrsm.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/cblas_ctrsv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_daxpy.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/cblas_dasum.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/cblas_dcopy.o ('zen2' CFLAGS for framework code)
-Compiling obj/zen2/frame/compat/cblas/src/cblas_daxpy.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/cblas_ddot.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/cblas_dgbmv.o ('zen2' CFLAGS for framework code)
-Compiling obj/zen2/frame/compat/cblas/src/cblas_dgemm.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/cblas_dgemv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_dgemm.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/cblas_dger.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/cblas_dnrm2.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/cblas_drot.o ('zen2' CFLAGS for framework code)
@@ -557,41 +557,41 @@ Compiling obj/zen2/frame/compat/cblas/src/cblas_dsymv.o ('zen2' CFLAGS for frame
 Compiling obj/zen2/frame/compat/cblas/src/cblas_dsyr2.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/cblas_dsyr2k.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/cblas_dsyr.o ('zen2' CFLAGS for framework code)
-Compiling obj/zen2/frame/compat/cblas/src/cblas_dtbmv.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/cblas_dsyrk.o ('zen2' CFLAGS for framework code)
-Compiling obj/zen2/frame/compat/cblas/src/cblas_dtpmv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_dtbmv.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/cblas_dtbsv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_dtpmv.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/cblas_dtpsv.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/cblas_dtrmm.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/cblas_dtrmv.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/cblas_dtrsm.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/cblas_dtrsv.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/cblas_dzasum.o ('zen2' CFLAGS for framework code)
-Compiling obj/zen2/frame/compat/cblas/src/cblas_globals.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/cblas_dznrm2.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_globals.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/cblas_icamax.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/cblas_idamax.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/cblas_isamax.o ('zen2' CFLAGS for framework code)
-Compiling obj/zen2/frame/compat/cblas/src/cblas_izamax.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/cblas_sasum.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_izamax.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/cblas_saxpy.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/cblas_scasum.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/cblas_scnrm2.o ('zen2' CFLAGS for framework code)
-Compiling obj/zen2/frame/compat/cblas/src/cblas_sdot.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/cblas_scopy.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/cblas_sdsdot.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/cblas_sgbmv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_sdot.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/cblas_sgemm.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/cblas_sgemv.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/cblas_sger.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/cblas_snrm2.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/cblas_srot.o ('zen2' CFLAGS for framework code)
-Compiling obj/zen2/frame/compat/cblas/src/cblas_srotg.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/cblas_srotm.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_srotg.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/cblas_srotmg.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/cblas_ssbmv.o ('zen2' CFLAGS for framework code)
-Compiling obj/zen2/frame/compat/cblas/src/cblas_sspmv.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/cblas_sscal.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_sspmv.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/cblas_sspr2.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/cblas_sspr.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/cblas_sswap.o ('zen2' CFLAGS for framework code)
@@ -615,8 +615,8 @@ Compiling obj/zen2/frame/compat/cblas/src/cblas_zcopy.o ('zen2' CFLAGS for frame
 Compiling obj/zen2/frame/compat/cblas/src/cblas_zdotu_sub.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/cblas_zdotc_sub.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/cblas_zdscal.o ('zen2' CFLAGS for framework code)
-Compiling obj/zen2/frame/compat/cblas/src/cblas_zgbmv.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/cblas_zgemm.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_zgbmv.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/cblas_zgemv.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/cblas_zgerc.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/cblas_zgeru.o ('zen2' CFLAGS for framework code)
@@ -640,10 +640,10 @@ Compiling obj/zen2/frame/compat/cblas/src/cblas_ztbsv.o ('zen2' CFLAGS for frame
 Compiling obj/zen2/frame/compat/cblas/src/cblas_ztpmv.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/cblas_ztpsv.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/cblas_ztrmm.o ('zen2' CFLAGS for framework code)
-Compiling obj/zen2/frame/compat/cblas/src/cblas_ztrsm.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/cblas_ztrmv.o ('zen2' CFLAGS for framework code)
-Compiling obj/zen2/frame/compat/cblas/src/extra/cblas_caxpby.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/cblas_ztrsm.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/cblas_ztrsv.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/cblas/src/extra/cblas_caxpby.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/extra/cblas_cgemm3m.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/extra/cblas_cgemm_batch.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/cblas/src/extra/cblas_cgemmt.o ('zen2' CFLAGS for framework code)
@@ -668,8 +668,8 @@ Compiling obj/zen2/frame/compat/f2c/bla_hpmv.o ('zen2' CFLAGS for framework code
 Compiling obj/zen2/frame/compat/f2c/bla_hpr2.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/f2c/bla_hpr.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/f2c/bla_lsame.o ('zen2' CFLAGS for framework code)
-Compiling obj/zen2/frame/compat/f2c/bla_rot.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/f2c/bla_rotg.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/f2c/bla_rot.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/f2c/bla_rotm.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/f2c/bla_rotmg.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/f2c/bla_sbmv.o ('zen2' CFLAGS for framework code)
@@ -680,15 +680,15 @@ Compiling obj/zen2/frame/compat/f2c/bla_tbmv.o ('zen2' CFLAGS for framework code
 Compiling obj/zen2/frame/compat/f2c/bla_tbsv.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/f2c/bla_tpmv.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/f2c/bla_tpsv.o ('zen2' CFLAGS for framework code)
-Compiling obj/zen2/frame/compat/f2c/bla_xerbla.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/f2c/bla_xerbla_array.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/f2c/bla_xerbla.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/f2c/util/bla_c_abs.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/f2c/util/bla_c_div.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/f2c/util/bla_d_abs.o ('zen2' CFLAGS for framework code)
-Compiling obj/zen2/frame/compat/f2c/util/bla_d_imag.o ('zen2' CFLAGS for framework code)
-Compiling obj/zen2/frame/compat/f2c/util/bla_d_sign.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/f2c/util/bla_d_cnjg.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/f2c/util/bla_d_imag.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/f2c/util/bla_f__cabs.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/compat/f2c/util/bla_d_sign.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/f2c/util/bla_r_abs.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/f2c/util/bla_r_cnjg.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/compat/f2c/util/bla_r_imag.o ('zen2' CFLAGS for framework code)
@@ -706,8 +706,8 @@ Compiling obj/zen2/frame/thread/bli_thread_pthreads.o ('zen2' CFLAGS for framewo
 Compiling obj/zen2/frame/thread/bli_thread_range.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/thread/bli_thread_range_slab_rr.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/thread/bli_thread_range_tlb.o ('zen2' CFLAGS for framework code)
-Compiling obj/zen2/frame/thread/bli_thrinfo.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/thread/bli_thread_single.o ('zen2' CFLAGS for framework code)
+Compiling obj/zen2/frame/thread/bli_thrinfo.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/util/bli_util_check.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/util/bli_util_fpa.o ('zen2' CFLAGS for framework code)
 Compiling obj/zen2/frame/util/bli_util_oapi_ba.o ('zen2' CFLAGS for framework code)
@@ -742,14 +742,18 @@ exporting settings
 settings exported
 
 establishing path to results
-path to results is ./EPYC/close_cores
+path to results is ./EPYC/spread_cores
 
 compile files, specifying in which folder the results will be stored
-make: Nothing to be done for 'double'.
-make: Nothing to be done for 'float'.
+gcc -DUSE_DOUBLE -DMKL ../gemm.c -m64 -I/opt/area/shared/programs/x86/oneAPI/2022.3.1/mkl/2022.2.1/include -L/opt/area/shared/programs/x86/oneAPI/2022.3.1/mkl/2022.2.1/lib/intel64  -lmkl_intel_lp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl  -o EPYC/spread_cores/gemm_mkl_d.exe -DSAVE_RESULTS
+gcc -DUSE_DOUBLE -DOPENBLAS ../gemm.c -m64 -I/opt/programs/openBLAS/0.3.23-omp/include -L/opt/programs/openBLAS/0.3.23-omp/lib -lopenblas -lpthread  -o EPYC/spread_cores/gemm_openblas_d.exe -fopenmp -DSAVE_RESULTS
+gcc -DUSE_DOUBLE -DBLIS ../gemm.c -m64 -I/u/dssc/ldavin00/myblis/include/blis -L/u/dssc/ldavin00/myblis/lib -lpthread -lblis  -o EPYC/spread_cores/gemm_blis_d.exe -fopenmp -DSAVE_RESULTS	
+gcc -DUSE_FLOAT -DMKL ../gemm.c -m64 -I/opt/area/shared/programs/x86/oneAPI/2022.3.1/mkl/2022.2.1/include -L/opt/area/shared/programs/x86/oneAPI/2022.3.1/mkl/2022.2.1/lib/intel64  -lmkl_intel_lp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl  -o EPYC/spread_cores/gemm_mkl_f.exe -DSAVE_RESULTS
+gcc -DUSE_FLOAT -DOPENBLAS ../gemm.c -m64 -I/opt/programs/openBLAS/0.3.23-omp/include -L/opt/programs/openBLAS/0.3.23-omp/lib -lopenblas -lpthread  -o EPYC/spread_cores/gemm_openblas_f.exe -fopenmp -DSAVE_RESULTS
+gcc -DUSE_FLOAT -DBLIS ../gemm.c -m64 -I/u/dssc/ldavin00/myblis/include/blis -L/u/dssc/ldavin00/myblis/lib -lpthread -lblis -o EPYC/spread_cores/gemm_blis_f.exe -fopenmp -DSAVE_RESULTS
 files compiled
 move to the result path
-moved to ./EPYC/close_cores
+moved to ./EPYC/spread_cores
 run files
 
  This example computes real matrix C=alpha*A*B+beta*C using 
@@ -763,10 +767,10 @@ run files
 
  Computing matrix product using gemm function via CBLAS interface 
 
- Elapsed time 18.570114469 s
+ Elapsed time 14.735403504 s
 
 
-19500x19500x19500	18.570114 s	798.581507 GFLOPS
+19500x19500x19500	14.735404 s	1006.402709 GFLOPS
 File saved successfully
 
  This example computes real matrix C=alpha*A*B+beta*C using 
@@ -780,10 +784,10 @@ File saved successfully
 
  Computing matrix product using gemm function via CBLAS interface 
 
- Elapsed time 15.591958478 s
+ Elapsed time 13.465849422 s
 
 
-19500x19500x19500	15.591958 s	951.115283 GFLOPS
+19500x19500x19500	13.465849 s	1101.285893 GFLOPS
 File saved successfully
 
  This example computes real matrix C=alpha*A*B+beta*C using 
@@ -797,10 +801,10 @@ File saved successfully
 
  Computing matrix product using gemm function via CBLAS interface 
 
- Elapsed time 13.85011859 s
+ Elapsed time 13.57229660 s
 
 
-19500x19500x19500	13.085012 s	1133.338675 GFLOPS
+19500x19500x19500	13.057230 s	1135.750108 GFLOPS
 File saved successfully
 
  This example computes real matrix C=alpha*A*B+beta*C using 
@@ -814,10 +818,10 @@ File saved successfully
 
  Computing matrix product using gemm function via CBLAS interface 
 
- Elapsed time 10.513776277 s
+ Elapsed time 10.660929462 s
 
 
-19500x19500x19500	10.513776 s	1410.506521 GFLOPS
+19500x19500x19500	10.660929 s	1391.037250 GFLOPS
 File saved successfully
 
  This example computes real matrix C=alpha*A*B+beta*C using 
@@ -831,10 +835,10 @@ File saved successfully
 
  Computing matrix product using gemm function via CBLAS interface 
 
- Elapsed time 5.895220723 s
+ Elapsed time 6.700141949 s
 
 
-19500x19500x19500	5.895221 s	2515.554667 GFLOPS
+19500x19500x19500	6.700142 s	2213.348629 GFLOPS
 File saved successfully
 
  This example computes real matrix C=alpha*A*B+beta*C using 
@@ -848,10 +852,10 @@ File saved successfully
 
  Computing matrix product using gemm function via CBLAS interface 
 
- Elapsed time 7.392199256 s
+ Elapsed time 8.193522432 s
 
 
-19500x19500x19500	7.392199 s	2006.135047 GFLOPS
+19500x19500x19500	8.193522 s	1809.935852 GFLOPS
 File saved successfully
 
  This example computes real matrix C=alpha*A*B+beta*C using 
@@ -865,10 +869,10 @@ File saved successfully
 
  Computing matrix product using gemm function via CBLAS interface 
 
- Elapsed time 17.606882901 s
+ Elapsed time 20.301972057 s
 
 
-19500x19500x19500	17.606883 s	842.270042 GFLOPS
+19500x19500x19500	20.301972 s	730.458596 GFLOPS
 File saved successfully
 
  This example computes real matrix C=alpha*A*B+beta*C using 
@@ -882,10 +886,10 @@ File saved successfully
 
  Computing matrix product using gemm function via CBLAS interface 
 
- Elapsed time 15.512447464 s
+ Elapsed time 15.624584624 s
 
 
-19500x19500x19500	15.512447 s	955.990345 GFLOPS
+19500x19500x19500	15.624585 s	949.129232 GFLOPS
 File saved successfully
 
  This example computes real matrix C=alpha*A*B+beta*C using 
@@ -899,10 +903,10 @@ File saved successfully
 
  Computing matrix product using gemm function via CBLAS interface 
 
- Elapsed time 13.692455075 s
+ Elapsed time 11.41474882 s
 
 
-19500x19500x19500	13.692455 s	1083.059971 GFLOPS
+19500x19500x19500	11.041475 s	1343.095027 GFLOPS
 File saved successfully
 
  This example computes real matrix C=alpha*A*B+beta*C using 
@@ -916,10 +920,10 @@ File saved successfully
 
  Computing matrix product using gemm function via CBLAS interface 
 
- Elapsed time 10.488556229 s
+ Elapsed time 10.653450171 s
 
 
-19500x19500x19500	10.488556 s	1413.898126 GFLOPS
+19500x19500x19500	10.653450 s	1392.013832 GFLOPS
 File saved successfully
 
  This example computes real matrix C=alpha*A*B+beta*C using 
@@ -933,10 +937,10 @@ File saved successfully
 
  Computing matrix product using gemm function via CBLAS interface 
 
- Elapsed time 6.85705636 s
+ Elapsed time 6.530047979 s
 
 
-19500x19500x19500	6.085706 s	2436.816844 GFLOPS
+19500x19500x19500	6.530048 s	2271.001691 GFLOPS
 File saved successfully
 
  This example computes real matrix C=alpha*A*B+beta*C using 
@@ -950,10 +954,10 @@ File saved successfully
 
  Computing matrix product using gemm function via CBLAS interface 
 
- Elapsed time 6.328395060 s
+ Elapsed time 8.569873916 s
 
 
-19500x19500x19500	6.328395 s	2343.366661 GFLOPS
+19500x19500x19500	8.569874 s	1730.451363 GFLOPS
 File saved successfully
 
  This example computes real matrix C=alpha*A*B+beta*C using 
@@ -967,10 +971,10 @@ File saved successfully
 
  Computing matrix product using gemm function via CBLAS interface 
 
- Elapsed time 17.694765242 s
+ Elapsed time 18.102401023 s
 
 
-19500x19500x19500	17.694765 s	838.086846 GFLOPS
+19500x19500x19500	18.102401 s	819.214533 GFLOPS
 File saved successfully
 
  This example computes real matrix C=alpha*A*B+beta*C using 
@@ -984,10 +988,10 @@ File saved successfully
 
  Computing matrix product using gemm function via CBLAS interface 
 
- Elapsed time 15.294468156 s
+ Elapsed time 15.651769334 s
 
 
-19500x19500x19500	15.294468 s	969.615278 GFLOPS
+19500x19500x19500	15.651769 s	947.480741 GFLOPS
 File saved successfully
 
  This example computes real matrix C=alpha*A*B+beta*C using 
@@ -1001,10 +1005,10 @@ File saved successfully
 
  Computing matrix product using gemm function via CBLAS interface 
 
- Elapsed time 14.371290424 s
+ Elapsed time 15.54181268 s
 
 
-19500x19500x19500	14.371290 s	1031.901072 GFLOPS
+19500x19500x19500	15.054181 s	985.091765 GFLOPS
 File saved successfully
 
  This example computes real matrix C=alpha*A*B+beta*C using 
@@ -1018,10 +1022,10 @@ File saved successfully
 
  Computing matrix product using gemm function via CBLAS interface 
 
- Elapsed time 9.79633569 s
+ Elapsed time 10.671371388 s
 
 
-19500x19500x19500	9.079634 s	1633.298292 GFLOPS
+19500x19500x19500	10.671371 s	1389.676121 GFLOPS
 File saved successfully
 
  This example computes real matrix C=alpha*A*B+beta*C using 
@@ -1035,10 +1039,10 @@ File saved successfully
 
  Computing matrix product using gemm function via CBLAS interface 
 
- Elapsed time 5.761989890 s
+ Elapsed time 6.543653107 s
 
 
-19500x19500x19500	5.761990 s	2573.720240 GFLOPS
+19500x19500x19500	6.543653 s	2266.279975 GFLOPS
 File saved successfully
 
  This example computes real matrix C=alpha*A*B+beta*C using 
@@ -1052,10 +1056,10 @@ File saved successfully
 
  Computing matrix product using gemm function via CBLAS interface 
 
- Elapsed time 7.349541720 s
+ Elapsed time 8.215881708 s
 
 
-19500x19500x19500	7.349542 s	2017.778872 GFLOPS
+19500x19500x19500	8.215882 s	1805.010165 GFLOPS
 File saved successfully
 
  This example computes real matrix C=alpha*A*B+beta*C using 
@@ -1069,10 +1073,10 @@ File saved successfully
 
  Computing matrix product using gemm function via CBLAS interface 
 
- Elapsed time 19.898094909 s
+ Elapsed time 18.530006405 s
 
 
-19500x19500x19500	19.898095 s	745.284916 GFLOPS
+19500x19500x19500	18.530006 s	800.310031 GFLOPS
 File saved successfully
 
  This example computes real matrix C=alpha*A*B+beta*C using 
@@ -1086,10 +1090,10 @@ File saved successfully
 
  Computing matrix product using gemm function via CBLAS interface 
 
- Elapsed time 13.332993196 s
+ Elapsed time 13.785255408 s
 
 
-19500x19500x19500	13.332993 s	1112.259624 GFLOPS
+19500x19500x19500	13.785255 s	1075.768969 GFLOPS
 File saved successfully
 
  This example computes real matrix C=alpha*A*B+beta*C using 
@@ -1103,10 +1107,10 @@ File saved successfully
 
  Computing matrix product using gemm function via CBLAS interface 
 
- Elapsed time 14.172438621 s
+ Elapsed time 13.86847738 s
 
 
-19500x19500x19500	14.172439 s	1046.379554 GFLOPS
+19500x19500x19500	13.086848 s	1133.179685 GFLOPS
 File saved successfully
 
  This example computes real matrix C=alpha*A*B+beta*C using 
@@ -1120,10 +1124,10 @@ File saved successfully
 
  Computing matrix product using gemm function via CBLAS interface 
 
- Elapsed time 9.41843117 s
+ Elapsed time 9.21174402 s
 
 
-19500x19500x19500	9.041843 s	1640.124675 GFLOPS
+19500x19500x19500	9.021174 s	1643.882419 GFLOPS
 File saved successfully
 
  This example computes real matrix C=alpha*A*B+beta*C using 
@@ -1137,10 +1141,10 @@ File saved successfully
 
  Computing matrix product using gemm function via CBLAS interface 
 
- Elapsed time 6.511782329 s
+ Elapsed time 6.680904713 s
 
 
-19500x19500x19500	6.511782 s	2277.371885 GFLOPS
+19500x19500x19500	6.680905 s	2219.721825 GFLOPS
 File saved successfully
 
  This example computes real matrix C=alpha*A*B+beta*C using 
@@ -1154,10 +1158,10 @@ File saved successfully
 
  Computing matrix product using gemm function via CBLAS interface 
 
- Elapsed time 7.142972384 s
+ Elapsed time 8.598250250 s
 
 
-19500x19500x19500	7.142972 s	2076.131504 GFLOPS
+19500x19500x19500	8.598250 s	1724.740449 GFLOPS
 File saved successfully
 
  This example computes real matrix C=alpha*A*B+beta*C using 
@@ -1171,10 +1175,10 @@ File saved successfully
 
  Computing matrix product using gemm function via CBLAS interface 
 
- Elapsed time 16.604996891 s
+ Elapsed time 20.353577834 s
 
 
-19500x19500x19500	16.604997 s	893.089598 GFLOPS
+19500x19500x19500	20.353578 s	728.606544 GFLOPS
 File saved successfully
 
  This example computes real matrix C=alpha*A*B+beta*C using 
@@ -1188,10 +1192,10 @@ File saved successfully
 
  Computing matrix product using gemm function via CBLAS interface 
 
- Elapsed time 15.203500736 s
+ Elapsed time 14.967014912 s
 
 
-19500x19500x19500	15.203501 s	975.416798 GFLOPS
+19500x19500x19500	14.967015 s	990.828838 GFLOPS
 File saved successfully
 
  This example computes real matrix C=alpha*A*B+beta*C using 
@@ -1205,10 +1209,10 @@ File saved successfully
 
  Computing matrix product using gemm function via CBLAS interface 
 
- Elapsed time 13.911956035 s
+ Elapsed time 13.116629288 s
 
 
-19500x19500x19500	13.911956 s	1065.971598 GFLOPS
+19500x19500x19500	13.116629 s	1130.606780 GFLOPS
 File saved successfully
 
  This example computes real matrix C=alpha*A*B+beta*C using 
@@ -1222,10 +1226,10 @@ File saved successfully
 
  Computing matrix product using gemm function via CBLAS interface 
 
- Elapsed time 8.933834523 s
+ Elapsed time 9.9895453 s
 
 
-19500x19500x19500	8.933835 s	1659.953513 GFLOPS
+19500x19500x19500	9.009895 s	1645.940297 GFLOPS
 File saved successfully
 
  This example computes real matrix C=alpha*A*B+beta*C using 
@@ -1239,10 +1243,10 @@ File saved successfully
 
  Computing matrix product using gemm function via CBLAS interface 
 
- Elapsed time 6.498889754 s
+ Elapsed time 6.534391918 s
 
 
-19500x19500x19500	6.498890 s	2281.889763 GFLOPS
+19500x19500x19500	6.534392 s	2269.491972 GFLOPS
 File saved successfully
 
  This example computes real matrix C=alpha*A*B+beta*C using 
@@ -1256,10 +1260,10 @@ File saved successfully
 
  Computing matrix product using gemm function via CBLAS interface 
 
- Elapsed time 8.283347402 s
+ Elapsed time 8.622343917 s
 
 
-19500x19500x19500	8.283347 s	1790.308831 GFLOPS
+19500x19500x19500	8.622344 s	1719.920957 GFLOPS
 File saved successfully
 
  This example computes real matrix C=alpha*A*B+beta*C using 
@@ -1273,10 +1277,10 @@ File saved successfully
 
  Computing matrix product using gemm function via CBLAS interface 
 
- Elapsed time 17.906967921 s
+ Elapsed time 18.922363463 s
 
 
-20000x20000x20000	17.906968 s	893.506934 GFLOPS
+20000x20000x20000	18.922363 s	845.560336 GFLOPS
 File saved successfully
 
  This example computes real matrix C=alpha*A*B+beta*C using 
@@ -1290,10 +1294,10 @@ File saved successfully
 
  Computing matrix product using gemm function via CBLAS interface 
 
- Elapsed time 16.124611113 s
+ Elapsed time 14.497968221 s
 
 
-20000x20000x20000	16.124611 s	992.271993 GFLOPS
+20000x20000x20000	14.497968 s	1103.602916 GFLOPS
 File saved successfully
 
  This example computes real matrix C=alpha*A*B+beta*C using 
@@ -1307,10 +1311,10 @@ File saved successfully
 
  Computing matrix product using gemm function via CBLAS interface 
 
- Elapsed time 13.805638837 s
+ Elapsed time 13.462563101 s
 
 
-20000x20000x20000	13.805639 s	1158.946731 GFLOPS
+20000x20000x20000	13.462563 s	1188.480966 GFLOPS
 File saved successfully
 
  This example computes real matrix C=alpha*A*B+beta*C using 
@@ -1324,10 +1328,10 @@ File saved successfully
 
  Computing matrix product using gemm function via CBLAS interface 
 
- Elapsed time 11.565893067 s
+ Elapsed time 11.529865285 s
 
 
-20000x20000x20000	11.565893 s	1383.377825 GFLOPS
+20000x20000x20000	11.529865 s	1387.700516 GFLOPS
 File saved successfully
 
  This example computes real matrix C=alpha*A*B+beta*C using 
@@ -1341,10 +1345,10 @@ File saved successfully
 
  Computing matrix product using gemm function via CBLAS interface 
 
- Elapsed time 7.397399508 s
+ Elapsed time 7.85806477 s
 
 
-20000x20000x20000	7.397400 s	2162.922252 GFLOPS
+20000x20000x20000	7.085806 s	2258.035137 GFLOPS
 File saved successfully
 
  This example computes real matrix C=alpha*A*B+beta*C using 
@@ -1358,10 +1362,10 @@ File saved successfully
 
  Computing matrix product using gemm function via CBLAS interface 
 
- Elapsed time 7.755264373 s
+ Elapsed time 9.205128344 s
 
 
-20000x20000x20000	7.755264 s	2063.114709 GFLOPS
+20000x20000x20000	9.205128 s	1738.161534 GFLOPS
 File saved successfully
 
  This example computes real matrix C=alpha*A*B+beta*C using 
@@ -1375,10 +1379,10 @@ File saved successfully
 
  Computing matrix product using gemm function via CBLAS interface 
 
- Elapsed time 21.473852449 s
+ Elapsed time 17.876470566 s
 
 
-20000x20000x20000	21.473852 s	745.092202 GFLOPS
+20000x20000x20000	17.876471 s	895.031261 GFLOPS
 File saved successfully
 
  This example computes real matrix C=alpha*A*B+beta*C using 
@@ -1392,10 +1396,10 @@ File saved successfully
 
  Computing matrix product using gemm function via CBLAS interface 
 
- Elapsed time 16.755370334 s
+ Elapsed time 14.484963264 s
 
 
-20000x20000x20000	16.755370 s	954.917718 GFLOPS
+20000x20000x20000	14.484963 s	1104.593758 GFLOPS
 File saved successfully
 
  This example computes real matrix C=alpha*A*B+beta*C using 
@@ -1409,10 +1413,10 @@ File saved successfully
 
  Computing matrix product using gemm function via CBLAS interface 
 
- Elapsed time 13.876655993 s
+ Elapsed time 13.394404304 s
 
 
-20000x20000x20000	13.876656 s	1153.015540 GFLOPS
+20000x20000x20000	13.394404 s	1194.528673 GFLOPS
 File saved successfully
 
  This example computes real matrix C=alpha*A*B+beta*C using 
@@ -1426,10 +1430,10 @@ File saved successfully
 
  Computing matrix product using gemm function via CBLAS interface 
 
- Elapsed time 11.399252743 s
+ Elapsed time 11.522194103 s
 
 
-20000x20000x20000	11.399253 s	1403.600776 GFLOPS
+20000x20000x20000	11.522194 s	1388.624411 GFLOPS
 File saved successfully
 
  This example computes real matrix C=alpha*A*B+beta*C using 
@@ -1443,10 +1447,10 @@ File saved successfully
 
  Computing matrix product using gemm function via CBLAS interface 
 
- Elapsed time 7.44902157 s
+ Elapsed time 7.124457757 s
 
 
-20000x20000x20000	7.044902 s	2271.145808 GFLOPS
+20000x20000x20000	7.124458 s	2245.784949 GFLOPS
 File saved successfully
 
  This example computes real matrix C=alpha*A*B+beta*C using 
@@ -1460,10 +1464,10 @@ File saved successfully
 
  Computing matrix product using gemm function via CBLAS interface 
 
- Elapsed time 9.233107133 s
+ Elapsed time 9.210343784 s
 
 
-20000x20000x20000	9.233107 s	1732.894438 GFLOPS
+20000x20000x20000	9.210344 s	1737.177284 GFLOPS
 File saved successfully
 
  This example computes real matrix C=alpha*A*B+beta*C using 
@@ -1477,10 +1481,10 @@ File saved successfully
 
  Computing matrix product using gemm function via CBLAS interface 
 
- Elapsed time 16.321490953 s
+ Elapsed time 15.83134255 s
 
 
-20000x20000x20000	16.321491 s	980.302599 GFLOPS
+20000x20000x20000	15.083134 s	1060.787482 GFLOPS
 File saved successfully
 
  This example computes real matrix C=alpha*A*B+beta*C using 
@@ -1494,10 +1498,10 @@ File saved successfully
 
  Computing matrix product using gemm function via CBLAS interface 
 
- Elapsed time 17.269717173 s
+ Elapsed time 12.107390137 s
 
 
-20000x20000x20000	17.269717 s	926.477246 GFLOPS
+20000x20000x20000	12.107390 s	1321.506932 GFLOPS
 File saved successfully
 
  This example computes real matrix C=alpha*A*B+beta*C using 
@@ -1511,10 +1515,10 @@ File saved successfully
 
  Computing matrix product using gemm function via CBLAS interface 
 
- Elapsed time 13.781442751 s
+ Elapsed time 17.203988843 s
 
 
-20000x20000x20000	13.781443 s	1160.981494 GFLOPS
+20000x20000x20000	17.203989 s	930.016878 GFLOPS
 File saved successfully
 
  This example computes real matrix C=alpha*A*B+beta*C using 
@@ -1528,10 +1532,10 @@ File saved successfully
 
  Computing matrix product using gemm function via CBLAS interface 
 
- Elapsed time 11.486171538 s
+ Elapsed time 11.497322071 s
 
 
-20000x20000x20000	11.486172 s	1392.979371 GFLOPS
+20000x20000x20000	11.497322 s	1391.628407 GFLOPS
 File saved successfully
 
  This example computes real matrix C=alpha*A*B+beta*C using 
@@ -1545,10 +1549,10 @@ File saved successfully
 
  Computing matrix product using gemm function via CBLAS interface 
 
- Elapsed time 7.60563963 s
+ Elapsed time 7.115334260 s
 
 
-20000x20000x20000	7.060564 s	2266.107932 GFLOPS
+20000x20000x20000	7.115334 s	2248.664562 GFLOPS
 File saved successfully
 
  This example computes real matrix C=alpha*A*B+beta*C using 
@@ -1562,10 +1566,10 @@ File saved successfully
 
  Computing matrix product using gemm function via CBLAS interface 
 
- Elapsed time 8.869724735 s
+ Elapsed time 8.856230831 s
 
 
-20000x20000x20000	8.869725 s	1803.889126 GFLOPS
+20000x20000x20000	8.856231 s	1806.637644 GFLOPS
 File saved successfully
 
  This example computes real matrix C=alpha*A*B+beta*C using 
@@ -1579,10 +1583,10 @@ File saved successfully
 
  Computing matrix product using gemm function via CBLAS interface 
 
- Elapsed time 17.937778599 s
+ Elapsed time 18.917593589 s
 
 
-20000x20000x20000	17.937779 s	891.972209 GFLOPS
+20000x20000x20000	18.917594 s	845.773535 GFLOPS
 File saved successfully
 
  This example computes real matrix C=alpha*A*B+beta*C using 
@@ -1596,10 +1600,10 @@ File saved successfully
 
  Computing matrix product using gemm function via CBLAS interface 
 
- Elapsed time 16.531269699 s
+ Elapsed time 14.325623847 s
 
 
-20000x20000x20000	16.531270 s	967.862741 GFLOPS
+20000x20000x20000	14.325624 s	1116.879807 GFLOPS
 File saved successfully
 
  This example computes real matrix C=alpha*A*B+beta*C using 
@@ -1613,10 +1617,10 @@ File saved successfully
 
  Computing matrix product using gemm function via CBLAS interface 
 
- Elapsed time 17.237024977 s
+ Elapsed time 13.535747795 s
 
 
-20000x20000x20000	17.237025 s	928.234427 GFLOPS
+20000x20000x20000	13.535748 s	1182.055121 GFLOPS
 File saved successfully
 
  This example computes real matrix C=alpha*A*B+beta*C using 
@@ -1630,10 +1634,10 @@ File saved successfully
 
  Computing matrix product using gemm function via CBLAS interface 
 
- Elapsed time 11.456509273 s
+ Elapsed time 11.509781307 s
 
 
-20000x20000x20000	11.456509 s	1396.585960 GFLOPS
+20000x20000x20000	11.509781 s	1390.121982 GFLOPS
 File saved successfully
 
  This example computes real matrix C=alpha*A*B+beta*C using 
@@ -1647,10 +1651,10 @@ File saved successfully
 
  Computing matrix product using gemm function via CBLAS interface 
 
- Elapsed time 7.302894501 s
+ Elapsed time 7.86486515 s
 
 
-20000x20000x20000	7.302895 s	2190.912110 GFLOPS
+20000x20000x20000	7.086487 s	2257.818450 GFLOPS
 File saved successfully
 
  This example computes real matrix C=alpha*A*B+beta*C using 
@@ -1664,10 +1668,10 @@ File saved successfully
 
  Computing matrix product using gemm function via CBLAS interface 
 
- Elapsed time 8.887481835 s
+ Elapsed time 9.305649666 s
 
 
-20000x20000x20000	8.887482 s	1800.284974 GFLOPS
+20000x20000x20000	9.305650 s	1719.385596 GFLOPS
 File saved successfully
 
  This example computes real matrix C=alpha*A*B+beta*C using 
@@ -1681,10 +1685,10 @@ File saved successfully
 
  Computing matrix product using gemm function via CBLAS interface 
 
- Elapsed time 21.957029131 s
+ Elapsed time 17.983772556 s
 
 
-20000x20000x20000	21.957029 s	728.696032 GFLOPS
+20000x20000x20000	17.983773 s	889.690967 GFLOPS
 File saved successfully
 
  This example computes real matrix C=alpha*A*B+beta*C using 
@@ -1698,10 +1702,10 @@ File saved successfully
 
  Computing matrix product using gemm function via CBLAS interface 
 
- Elapsed time 16.747472361 s
+ Elapsed time 15.905099089 s
 
 
-20000x20000x20000	16.747472 s	955.368049 GFLOPS
+20000x20000x20000	15.905099 s	1005.966697 GFLOPS
 File saved successfully
 
  This example computes real matrix C=alpha*A*B+beta*C using 
@@ -1715,10 +1719,10 @@ File saved successfully
 
  Computing matrix product using gemm function via CBLAS interface 
 
- Elapsed time 13.785390440 s
+ Elapsed time 13.807540502 s
 
 
-20000x20000x20000	13.785390 s	1160.649027 GFLOPS
+20000x20000x20000	13.807541 s	1158.787113 GFLOPS
 File saved successfully
 
  This example computes real matrix C=alpha*A*B+beta*C using 
@@ -1732,10 +1736,10 @@ File saved successfully
 
  Computing matrix product using gemm function via CBLAS interface 
 
- Elapsed time 11.521351674 s
+ Elapsed time 11.516865002 s
 
 
-20000x20000x20000	11.521352 s	1388.725946 GFLOPS
+20000x20000x20000	11.516865 s	1389.266957 GFLOPS
 File saved successfully
 
  This example computes real matrix C=alpha*A*B+beta*C using 
@@ -1749,10 +1753,10 @@ File saved successfully
 
  Computing matrix product using gemm function via CBLAS interface 
 
- Elapsed time 7.424763573 s
+ Elapsed time 7.124935914 s
 
 
-20000x20000x20000	7.424764 s	2154.950773 GFLOPS
+20000x20000x20000	7.124936 s	2245.634234 GFLOPS
 File saved successfully
 
  This example computes real matrix C=alpha*A*B+beta*C using 
@@ -1766,10 +1770,10 @@ File saved successfully
 
  Computing matrix product using gemm function via CBLAS interface 
 
- Elapsed time 8.891451363 s
+ Elapsed time 9.233690206 s
 
 
-20000x20000x20000	8.891451 s	1799.481249 GFLOPS
+20000x20000x20000	9.233690 s	1732.785013 GFLOPS
 File saved successfully
 files run
 clean exe files

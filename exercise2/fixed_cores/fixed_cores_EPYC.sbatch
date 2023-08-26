@@ -19,7 +19,7 @@
 #SBATCH --exclusive
 
 #Maximum time
-#SBATCH --time=2:00:00
+#SBATCH --time=1:00:00
 
 #Name of the output of this sbatch file
 #SBATCH --output="summary.out"
@@ -51,8 +51,8 @@ echo returned to previous path
 echo setting number of cores and their topology
 ncores=64
 node=EPYC
-#alloc=spread
-alloc=close
+alloc=spread
+#alloc=close
 echo setted number of cores and their topology
 echo
 echo exporting settings
