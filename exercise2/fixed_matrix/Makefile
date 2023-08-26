@@ -64,4 +64,4 @@ $(BLIS_d) : $(GEMM)
 #gemm_blis.x: $(GEMM)
 #	gcc -DUSE_DOUBLE  -DBLIS $^ -m64 -I${BLISROOT}/include/blis -L/${BLISROOT}/lib -o $@ -lpthread  -lblis -fopenmp -lm
 clean:
-	rm -rf *.exe
+	rm -rf $(DATA_FOLDER)/*.exe
