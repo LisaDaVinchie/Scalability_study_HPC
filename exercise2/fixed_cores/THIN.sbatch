@@ -32,10 +32,10 @@ module load mkl
 module load openBLAS/0.3.23-omp
 echo modules loaded
 sbatch_path=$(pwd)
-cd
-cd blis
-
 blis_path=/u/dssc/ldavin00/myblis
+blis_makefile=/u/dssc/ldavin00/blis
+
+cd $blis_makefile
 
 srun -n1 ./configure --enable-cblas --enable-threading=openmp --prefix=${blis_path} auto
 srun  -n 1 --cpus-per-task=12 make -j 12
@@ -91,8 +91,8 @@ echo
 
 
 echo compile files, specifying in which folder the results will be stored
-make double data_folder=${result_path}
-make float data_folder=${result_path}
+make double data_folder=${result_path} blis_root=${blis_path}
+make float data_folder=${result_path} blis_root=${blis_path}
 echo files compiled
 
 

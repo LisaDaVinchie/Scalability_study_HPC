@@ -22,7 +22,7 @@
 #SBATCH --time=2:00:00
 
 #Name of the output of this sbatch file
-#SBATCH --output="summary_EPYC.out"
+#SBATCH --output="summary.out"
 
 echo Memory allocated
 echo
@@ -49,7 +49,7 @@ cd $sbatch_path
 echo returned to previous path
 
 echo setting number of cores and their topology
-size=10000
+size=5000
 node=EPYC
 alloc=spread
 #alloc=close

@@ -7,7 +7,7 @@ MKL= -L${MKLROOT}/lib/intel64  -lmkl_intel_lp64 -lmkl_gnu_thread -lmkl_core -lgo
 OPENBLASROOT=${OPENBLAS_ROOT}
 OPENBLAS = -L${OPENBLAS_ROOT}/lib -lopenblas -lpthread
 ### BLIS library
-BLISROOT=/u/dssc/ldavin00/myblis
+BLISROOT=${blis_root}
 
 BLIS = -L$(BLISROOT)/lib -lpthread -lblis
 

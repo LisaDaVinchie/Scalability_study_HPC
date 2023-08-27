@@ -19,7 +19,7 @@
 #SBATCH --exclusive
 
 #Maximum time
-#SBATCH --time=1:00:00
+#SBATCH --time=2:00:00
 
 #Name of the output of this sbatch file
 #SBATCH --output="summary.out"
@@ -34,10 +34,10 @@ echo modules loaded
 echo load blis
 
 sbatch_path=$(pwd)
-cd
-cd blis
-
 blis_path=/u/dssc/ldavin00/myblis
+blis_makefile=/u/dssc/ldavin00/blis
+
+cd $blis_makefile
 
 srun -n1 ./configure --enable-cblas --enable-threading=openmp --prefix=${blis_path} auto
 srun  -n 1 --cpus-per-task=64 make -j 64
@@ -90,8 +90,8 @@ echo
 
 
 echo compile files, specifying in which folder the results will be stored
-make double data_folder=${result_path}
-make float data_folder=${result_path}
+make double data_folder=${result_path} blis_root=${blis_path}
+make float data_folder=${result_path} blis_root=${blis_path}
 echo files compiled
 
 
