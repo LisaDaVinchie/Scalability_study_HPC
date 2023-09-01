@@ -527,15 +527,13 @@ int main ( int argc, char **argv )
       printf("Invalid value for flag \"-e\"\n");
       return 1;
     }
-  
+   free(image); 
   }
 
   else{
     printf("Invalid value for variable \"action\"\n");
     return 1;
   }
-
-  free(image);
   MPI_Finalize();
   return 0;
 }
