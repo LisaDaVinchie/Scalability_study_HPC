@@ -393,9 +393,9 @@ int main ( int argc, char **argv )
   int maxval = 1;
 
   int rank, n_procs;
-  int mpi_provided_threaD_level;
+  int mpi_provided_thread_level;
 
-  MPI_Init_thread( &argc, &argv, MPI_THREAD_FUNNELED, &mpi_provided_threaD_level);
+  MPI_Init_thread( &argc, &argv, MPI_THREAD_FUNNELED, &mpi_provided_thread_level);
   // MPI_THREAD_FUNNELED: The process may be multi-threaded, but only the main
   // thread will make MPI calls (funneled through the main thread).
 
@@ -404,7 +404,7 @@ int main ( int argc, char **argv )
   // of thread support provided by the MPI library.
 
 
-  printf("Provided Thread level: %d\n", mpi_provided_threaD_level);
+  printf("Provided Thread level: %d\n", mpi_provided_thread_level);
 
   if ( mpi_provided_thread_level < MPI_THREAD_FUNNELED ){
     printf("a problem arise when asking for MPI_THREAD_FUNNELED level\n");
