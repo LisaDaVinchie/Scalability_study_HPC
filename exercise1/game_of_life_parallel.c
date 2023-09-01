@@ -454,7 +454,7 @@ int main ( int argc, char **argv )
     // distribute rows between MPI processes
 
     int row_per_proc = xwidth / n_procs; // rows for each process
-    int remaining_rows = xwidth % nprocs; // remaining rows
+    int remaining_rows = xwidth % n_procs; // remaining rows
 
     if (rank < remaining_rows){
       row_per_proc++;
@@ -467,13 +467,13 @@ int main ( int argc, char **argv )
 
     #pragma omp parallel
     {
-      int thread_id = omp_get_num_thread();
+      int thread_id = omp_get_num_threads();
       
       int idx = 0;
       srand(time(NULL));
 
       #pragma omp for scedule(static, row_per_proc)
-      for (int y = 0; y < ysize; y++){
+      for (int y = 0; y < ywidth; y++){
           for (int x = 0; x < row_per_proc; x++){
               // image[idx] = (char)((double)rand()/(double)RAND_MAX+0.5);
               image[idx] = (char)((int)rand()%2);
