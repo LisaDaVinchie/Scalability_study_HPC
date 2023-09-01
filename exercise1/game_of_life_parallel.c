@@ -500,7 +500,7 @@ int main ( int argc, char **argv )
   }
 
   else if(action == RUN){
-    // char* image = NULL;
+    char* image = NULL;
     // int maxval, xsize, ysize;
     // image = (char*)malloc(xwidth * ywidth * sizeof(char));
     printf("About to read playground\n");
