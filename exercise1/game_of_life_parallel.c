@@ -463,7 +463,8 @@ int main ( int argc, char **argv )
     int n_cells = row_per_proc * ywidth;
 
 
-    char* image = (char*)malloc(n_cells * sizeof(char));
+    char* image = NULL;
+    image = (char*)malloc(n_cells * sizeof(char));
 
     #pragma omp parallel
     {

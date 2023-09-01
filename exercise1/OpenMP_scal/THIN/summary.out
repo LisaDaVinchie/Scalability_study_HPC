@@ -1,0 +1,23 @@
+Load Modules
+Lmod Warning: The architecture selection module has been deprecated. The
+module system will now autonomously handle the proper selection of binaries. 
+While processing the following module(s):
+    Module fullname     Module Filename
+    ---------------     ---------------
+    architecture/Intel  /orfeo/opt/modules/profiles/architecture/Intel.lua
+
+set topology
+data folder is /u/dssc/ldavin00/Foundations_of_HPC_final_project/exercise1/OpenMP_scal/THIN
+moved to program directory /u/dssc/ldavin00/Foundations_of_HPC_final_project/exercise1
+compile c file
+file compiled, executable is game_of_life_parallel.exe
+initialise playground
+malloc(): invalid size (unsorted)
+malloc(): invalid size (unsorted)
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 0 with PID 10454 on node thin010 exited on signal 6 (Aborted).
+--------------------------------------------------------------------------
