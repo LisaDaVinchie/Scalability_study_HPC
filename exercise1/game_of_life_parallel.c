@@ -41,13 +41,11 @@ char *fname  = NULL;
 
 
 // void write_pgm_image(char *image, int maxval, int xsize, int ysize, const char *image_name)
-// /*
 //  * image        : a pointer to the memory region that contains the image
 //  * maxval       : either 255 or 65536
 //  * xsize, ysize : x and y dimensions of the image
 //  * image_name   : the name of the file to be written
 //  *
-//  */
 // {
 //   FILE* image_file; 
 //   image_file = fopen(image_name, "wb"); 
