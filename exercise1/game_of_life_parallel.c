@@ -404,7 +404,7 @@ int main ( int argc, char **argv )
   // of thread support provided by the MPI library.
 
 
-  printf("Provided Thread level: %d\n", mpi_provided_thread_level);
+  printf("Provided Thread level: %d\n", mpi_provided_threaD_level);
 
   if ( mpi_provided_thread_level < MPI_THREAD_FUNNELED ){
     printf("a problem arise when asking for MPI_THREAD_FUNNELED level\n");
