@@ -36,7 +36,7 @@ echo file compiled, executable is $execname
 
 echo initialise playground
 export OMP_NUM_THREADS=12
-mpirun -np 2 --map-by socket $execname -i -k 100 -f "$data_folder/test.pbm"
+mpirun -np 2 --map-by socket $execname -f "$data_folder/test.pbm"
 
 module purge
 

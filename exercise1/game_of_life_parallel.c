@@ -20,7 +20,7 @@
 
 // char fname_deflt[] = "game_of_life.pgm";
 
-int   action = 1;
+int   action = INIT;
 int   k      = K_DFLT;
 int   e      = ORDERED;
 int   n      = 10000;
@@ -343,7 +343,6 @@ int main ( int argc, char **argv )
 {
 
 //Get the arguments, copy of Tornatore's "get_args.c" program
-  // int action = 0;
   char *optstring = "irk:e:f:n:s:";
 
   printf("Get arguments\n");
