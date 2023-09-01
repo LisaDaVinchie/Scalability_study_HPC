@@ -34,7 +34,7 @@ char *fname  = NULL;
 // #include <stdio.h> 
 // #endif
 
-// #define MAXVAL 255
+#define MAXVAL 1
 
 
 // #if ((0x100 & 0xf) == 0x0)
@@ -372,7 +372,7 @@ int main ( int argc, char **argv )
       e = atoi(optarg); break;
 
     case 'f':
-      fname = (char*)malloc(sizeof(optarg)+1 );
+      fname = (char*)malloc(50);
       sprintf(fname, "%s", optarg );
       break;
 
@@ -390,7 +390,7 @@ int main ( int argc, char **argv )
 
   int xwidth = k;
   int ywidth = k;
-  int maxval = 1;
+  int maxval = MAXVAL;
 
   int rank, n_procs;
   int mpi_provided_thread_level;
@@ -536,5 +536,7 @@ int main ( int argc, char **argv )
     return 1;
   }
   MPI_Finalize();
+
+  free(fname);
   return 0;
 }
