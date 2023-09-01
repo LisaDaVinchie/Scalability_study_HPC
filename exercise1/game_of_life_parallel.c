@@ -466,6 +466,12 @@ int main ( int argc, char **argv )
     char* image = NULL;
     image = (char*)malloc(n_cells * sizeof(char));
 
+    if(image == NULL){
+      printf("Memory allocation of \"image\" failed\n");
+      free(fname);
+      return 1;
+    }
+
     #pragma omp parallel
     {
       int thread_id = omp_get_num_threads();
@@ -526,6 +532,7 @@ int main ( int argc, char **argv )
     }
     else{
       printf("Invalid value for flag \"-e\"\n");
+      free(fname);
       return 1;
     }
    free(image); 
@@ -533,6 +540,7 @@ int main ( int argc, char **argv )
 
   else{
     printf("Invalid value for variable \"action\"\n");
+    free(fname);
     return 1;
   }
   MPI_Finalize();
