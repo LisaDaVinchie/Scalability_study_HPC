@@ -460,7 +460,7 @@ int main ( int argc, char **argv )
       row_per_proc++;
     }
 
-    unsigned int n_cells = row_per_proc * ywidth;
+    int n_cells = row_per_proc * ywidth;
 
 
     char* image = (char*)malloc(n_cells * sizeof(char));
