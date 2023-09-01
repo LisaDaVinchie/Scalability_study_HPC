@@ -395,7 +395,7 @@ int main ( int argc, char **argv )
   int rank, n_procs;
   int mpi_provided_threaD_level;
 
-  MPI_Init_thread( &argc, &argv, MPI_THREAD_FUNNELED, &mpi_provided_thread_level);
+  MPI_Init_thread( &argc, &argv, MPI_THREAD_FUNNELED, &mpi_provided_threaD_level);
   // MPI_THREAD_FUNNELED: The process may be multi-threaded, but only the main
   // thread will make MPI calls (funneled through the main thread).
 
@@ -427,17 +427,20 @@ int main ( int argc, char **argv )
   // Get the number of OpenMP threads
   int n_threads = 0;
 
-  #pragma omp parallel{
-    #pragma omp master{
+  #pragma omp parallel
+  {
+    #pragma omp master
+    {
       n_threads = omp_get_num_threads();
       printf("OpenMP threads: %d\n", n_threads);
     }
   }
 
   // Get the number of threads per process
-  int threads_per_procs = 0;
-  #pragma omp parallel{
-    threads_per_procs = omp_get_num_threads();
+  // int threads_per_procs = 0;
+  #pragma omp parallel
+  {
+    int threads_per_procs = omp_get_num_threads();
     printf("Threads per process: %d\n", threads_per_procs); 
   }
 
@@ -462,7 +465,8 @@ int main ( int argc, char **argv )
 
     char* image = (char*)malloc(n_cells * sizeof(char));
 
-    #pragma omp parallel{
+    #pragma omp parallel
+    {
       int thread_id = omp_get_num_thread();
       
       int idx = 0;
