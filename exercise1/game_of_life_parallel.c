@@ -355,6 +355,7 @@ int main ( int argc, char **argv )
   int action = 0;
   char *optstring = "irk:e:f:n:s:";
 
+  printf("Get arguments\n");
   int c;
   while ((c = getopt(argc, argv, optstring)) != -1) {
     switch(c) {
@@ -386,7 +387,7 @@ int main ( int argc, char **argv )
       printf("argument -%c not known\n", c ); break;
     }
   }
-  printf("action = %d\nk = %d\ne = %d\nf = %s\nn_steps = %d\nn_dump = %d\n", action, k, e, fname, n, s);
+  printf("Arguments are: \naction = %d\nk = %d\ne = %d\nf = %s\nn_steps = %d\nn_dump = %d\n", action, k, e, fname, n, s);
 
   int xwidth = k;
   int ywidth = k;
