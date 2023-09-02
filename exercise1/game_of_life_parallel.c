@@ -116,7 +116,6 @@ void random_playground(char* image, int xsize, int ysize)
     for (int y = 0; y < ysize; y++){
         for (int x = 0; x < xsize; x++){
             image[idx] = (char)((int)rand()%2);
-            // printf("%d ", (int)image[idx]);
             printf("%c ", image[idx] + 48);
             idx++;
         }
@@ -406,32 +405,24 @@ int main ( int argc, char **argv )
       
       int idx = 0;
       srand(time(NULL));
-
+      
+      printf("\nInitial playground, %d part\n", rank);
       #pragma omp for schedule(static, row_per_proc)
-      for (int y = 0; y < ywidth; y++){
-          for (int x = 0; x < row_per_proc; x++){
-              // image[idx] = (char)((double)rand()/(double)RAND_MAX+0.5);
-              image[idx] = (char)((int)rand()%2);
-              // printf("%d ", (int)image[idx]);
-              printf("%c ", image[idx] + 48);
-              idx++;
-          }
-      printf("\n");
-    }
+        random_playground(image, row_per_proc, ywidth);
+      // for (int y = 0; y < ywidth; y++){
+      //     for (int x = 0; x < row_per_proc; x++){
+      //         // image[idx] = (char)((double)rand()/(double)RAND_MAX+0.5);
+      //         image[idx] = (char)((int)rand()%2);
+      //         // printf("%d ", (int)image[idx]);
+      //         printf("%c ", image[idx] + 48);
+      //         idx++;
+      //     }
+      //     printf("\n");
+      //   }
     }
 
-    // random_playground(image, xwidth, ywidth);
     //write_pgm_image(image, maxval, xwidth, ywidth, fname);
 
-    printf("\nInitial playground\n");
-    int idx = 0;
-      for (int y = 0; y < ywidth; y++){
-          for (int x = 0; x < xwidth; x++){
-              printf("%c ", image[idx] + 48);
-              idx++;
-          }
-      printf("\n");
-    }
   }
 
   else if(action == RUN){
