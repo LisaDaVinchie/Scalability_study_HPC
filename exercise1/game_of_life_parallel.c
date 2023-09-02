@@ -439,7 +439,7 @@ int main ( int argc, char **argv )
 
     // Write data in order of rank
     MPI_File_open(MPI_COMM_WORLD, fname, MPI_MODE_WRONLY, MPI_INFO_NULL, &outfile);
-    MPI_OFFSET offset = rank * sizeof(char);
+    MPI_Offset offset = rank * sizeof(char);
 
     MPI_File_write_at(outfile, offset, image, xwidth * ywidth, MPI_CHAR, MPI_STATUS_IGNORE);
 
