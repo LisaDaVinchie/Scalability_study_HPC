@@ -401,7 +401,7 @@ int main ( int argc, char **argv )
       srand(time(NULL));
       
       printf("\nInitial playground, %d part\n", rank);
-      #pragma omp for schedule(static, row_per_proc)
+      #pragma omp for schedule(static , row_per_proc)
         random_playground(image, row_per_proc, ywidth);
     }
 
