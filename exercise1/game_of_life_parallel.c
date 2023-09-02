@@ -415,7 +415,7 @@ int main ( int argc, char **argv )
 
     // MPI_Gather(image, row_per_proc * xwidth, MPI_CHAR, image, row_per_proc * xwidth, MPI_CHAR, 0, MPI_COMM_WORLD);
 
-    printf("Rank = %d\n", rank)
+    printf("Rank = %d\n", rank);
       int idx = 0;
       for (int x = 0; x < ywidth; x++){
         for(int y = 0; y < row_per_proc; y++){
