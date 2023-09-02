@@ -401,8 +401,15 @@ int main ( int argc, char **argv )
       srand(time(NULL));
       
       printf("\nInitial playground, %d part\n", rank);
-      #pragma omp for schedule(static , row_per_proc)
-        random_playground(image, row_per_proc, ywidth);
+      #pragma omp for schedule(static, row_per_proc)
+        // random_playground(image, row_per_proc, ywidth);
+        for (int y = 0; y < ywidth; y++){
+            for (int x = 0; x < row_per_proc; x++){
+                image[idx] = (char)((int)rand()%2);
+                idx++;
+            }
+            printf("\n");
+          }
     }
 
     //write_pgm_image(image, maxval, xwidth, ywidth, fname);
