@@ -7,6 +7,29 @@
 #include <omp.h>
 #include <mpi.h>
 
+
+// Definitions for the argument getting part
+#define INIT 1
+#define RUN  2
+
+#define K_DFLT 100
+
+#define ORDERED 0
+#define STATIC  1
+
+
+// char fname_deflt[] = "game_of_life.pgm";
+
+int   action = INIT;
+int   k      = K_DFLT;
+int   e      = ORDERED;
+int   n      = 10000;
+int   s      = 1;
+char *fname  = NULL;
+
+#define MAXVAL 1
+
+
 void write_pgm_image(char *image, int maxval, int xsize, int ysize, const char *image_name)
 {
   FILE* image_file; 
@@ -244,27 +267,6 @@ void static_evolution(char* image, int xsize, int ysize, int n, int s, char *des
     }
   }
 }
-
-// Definitions for the argument getting part
-#define INIT 1
-#define RUN  2
-
-#define K_DFLT 100
-
-#define ORDERED 0
-#define STATIC  1
-
-
-// char fname_deflt[] = "game_of_life.pgm";
-
-int   action = INIT;
-int   k      = K_DFLT;
-int   e      = ORDERED;
-int   n      = 10000;
-int   s      = 1;
-char *fname  = NULL;
-
-#define MAXVAL 1
 
 
 int main ( int argc, char **argv )
