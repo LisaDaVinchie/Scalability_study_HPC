@@ -403,13 +403,17 @@ int main ( int argc, char **argv )
       // int idx = 0;
       // srand(time(NULL) + rank);
       
-      unsigned int seed = (unsigned int)time(NULL);
+      unsigned int seed = (unsigned int)time(NULL)
       // printf("\nInitial playground, %d part\n", rank);
       // random_playground(image, row_per_proc, ywidth);
       #pragma omp for schedule(static)
         for (int idx = startidx; idx < endidx; idx++){
           // image[idx] = (char)((int)rand()%2);
           image[idx] = (char)((double)rand_r(&seed)/(double)RAND_MAX+0.5);
+          printf("%d ", (int)image[idx]);
+          if(idx%xwidth == 0){
+            printf("\n");
+          }
         }
     }
 
