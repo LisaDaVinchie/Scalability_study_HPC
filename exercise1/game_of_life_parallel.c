@@ -405,6 +405,7 @@ int main ( int argc, char **argv )
       // printf("\nInitial playground, %d part\n", rank);
       #pragma omp for schedule(static, row_per_proc)
         // random_playground(image, row_per_proc, ywidth);
+        int idx = 0;
         for (int y = startrow; y < endrow; y++){
             for (int x = 0; x < xwidth; x++){
                 temp_image[x + y * xwidth] = (char)((int)rand()%2);
