@@ -116,8 +116,6 @@ void random_playground(char* image, int xsize, int ysize)
     for (int y = 0; y < ysize; y++){
         for (int x = 0; x < xsize; x++){
             image[idx] = (char)((int)rand()%2);
-            printf("%d ", (int)image[idx]);
-            // printf("%c ", image[idx] + 48);
             idx++;
         }
     printf("\n");
@@ -214,10 +212,8 @@ void ordered_evolution(char* image, int xsize, int ysize, int n, int s, char *de
       int idx = 0;
         for (int y = 0; y < ysize; y++){
             for (int x = 0; x < xsize; x++){
-                // printf("%c ", image[idx] + 48);
                 idx++;
             }
-        // printf("\n");
       }
       char title[50];
       snprintf(title, 50, "%s_%d.pbm", destination_folder, step);
@@ -262,12 +258,9 @@ void static_evolution(char* image, int xsize, int ysize, int n, int s, char *des
       for(int y = 0; y < ysize; y++){
         for (int x = 0; x < xsize; x++){
           image[idx] = (char)temp_mat[x][y];
-          // printf("%c ", image[idx] + 48);
           idx++;
         }
-        // printf("\n");
       }
-      // printf("\n");
       char title[50];
       snprintf(title, 50, "%s_%d.pbm", destination_folder, step);
       write_pgm_image(image, 1, xsize, ysize, title);
@@ -335,7 +328,7 @@ int main ( int argc, char **argv )
   printf("Provided Thread level: %d\n", mpi_provided_thread_level);
 
   if ( mpi_provided_thread_level < MPI_THREAD_FUNNELED ){
-    printf("a problem arised when asking for MPI_THREAD_FUNNELED level\n");
+    printf("A problem arised when asking for MPI_THREAD_FUNNELED level\n");
     MPI_Finalize();
     exit( 1 );
   } 
@@ -410,16 +403,6 @@ int main ( int argc, char **argv )
       printf("\nInitial playground, %d part\n", rank);
       #pragma omp for schedule(static, row_per_proc)
         random_playground(image, row_per_proc, ywidth);
-      // for (int y = 0; y < ywidth; y++){
-      //     for (int x = 0; x < row_per_proc; x++){
-      //         // image[idx] = (char)((double)rand()/(double)RAND_MAX+0.5);
-      //         image[idx] = (char)((int)rand()%2);
-      //         // printf("%d ", (int)image[idx]);
-      //         printf("%c ", image[idx] + 48);
-      //         idx++;
-      //     }
-      //     printf("\n");
-      //   }
     }
 
     //write_pgm_image(image, maxval, xwidth, ywidth, fname);
@@ -438,12 +421,9 @@ int main ( int argc, char **argv )
     int idx = 0;
     for (int y = 0; y < ywidth; y++){
       for (int x = 0; x < xwidth; x++){
-          // printf("%c ", image[idx] + 48);
           idx++;
       }
-      // printf("\n");
-    }
-    // printf("\n"); 
+    } 
     if(e == ORDERED){
       ordered_evolution(image, xwidth, ywidth, n, s, "snapshots_ordered/snap");
     }
