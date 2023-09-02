@@ -401,14 +401,15 @@ int main ( int argc, char **argv )
       int thread_id = omp_get_num_threads();
       
       // int idx = 0;
-      srand(time(NULL));
+      // srand(time(NULL) + rank);
       
+      unsigned int seed = (unsigned int)time(NULL);
       // printf("\nInitial playground, %d part\n", rank);
       // random_playground(image, row_per_proc, ywidth);
       #pragma omp for schedule(static)
         for (int idx = startidx; idx < endidx; idx++){
           // image[idx] = (char)((int)rand()%2);
-          image[idx] = (char)((double)rand()/(double)RAND_MAX+0.5);
+          image[idx] = (char)((double)rand_r(&seed)/(double)RAND_MAX+0.5);
         }
     }
 
