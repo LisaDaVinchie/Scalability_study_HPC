@@ -19,6 +19,8 @@
 #define ORDERED 0
 #define STATIC  1
 
+
+
 // char fname_deflt[] = "game_of_life.pgm";
 
 int   action = 0;
@@ -414,7 +416,7 @@ int main ( int argc, char **argv )
 
   int xwidth = k;
   int ywidth = k;
-  int maxval = 1;
+  int maxval = MAXVAL;
 
   // char *destination_folder = "./snapshots"; //Where the results will be saved
   char* image = NULL;
