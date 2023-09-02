@@ -402,7 +402,7 @@ int main ( int argc, char **argv )
       // int idx = 0;
       srand(time(NULL));
       
-      printf("\nInitial playground, %d part\n", rank);
+      // printf("\nInitial playground, %d part\n", rank);
       #pragma omp for schedule(static, row_per_proc)
         // random_playground(image, row_per_proc, ywidth);
         for (int y = startrow; y < endrow; y++){
@@ -421,7 +421,7 @@ int main ( int argc, char **argv )
 
     MPI_Gather(image, row_per_proc * xwidth, MPI_CHAR, image, row_per_proc * xwidth, MPI_CHAR, 0, MPI_COMM_WORLD);
 
-    #pragma omp master{
+    if(rank == 0){
       int idx = 0;
       for (int x = 0; x < ywidth; x++){
         for(int y = 0; y < xwidth; y++){
