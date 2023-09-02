@@ -374,7 +374,7 @@ int main ( int argc, char **argv )
 
     // distribute rows between MPI processes
 
-    int row_per_proc = xwidth / (n_procs - 1); // rows for each process
+    int row_per_proc = xwidth / n_procs; // rows for each process
     int remaining_rows = xwidth % n_procs; // remaining rows
 
     // if (rank < remaining_rows){
@@ -412,6 +412,11 @@ int main ( int argc, char **argv )
             printf("\n");
           }
     }
+
+    // MPI_File filename;
+
+
+
 
     //write_pgm_image(image, maxval, xwidth, ywidth, fname);
 
