@@ -377,11 +377,12 @@ int main ( int argc, char **argv )
     int row_per_proc = xwidth / n_procs; // rows for each process
     int remaining_rows = xwidth % n_procs; // remaining rows
 
-    // int startrow = row_per_proc * rank;
-    // int endrow = row_per_proc * (rank + 1);
-    if (rank < remaining_rows){
+    if (remaining_rows > 0 && rank == 0){
       row_per_proc++;
     }
+
+    int startidx = xwidth * rank;
+    int endidx = xwidth * (rank + 1);
 
     int n_cells = row_per_proc * xwidth;
 
@@ -405,7 +406,7 @@ int main ( int argc, char **argv )
       // printf("\nInitial playground, %d part\n", rank);
       // random_playground(image, row_per_proc, ywidth);
       #pragma omp for schedule(static)
-        for (int idx = 0; idx < n_cells; idx++){
+        for (int idx = startidx; idx < endidx; idx++){
           image[idx] = (char)((int)rand()%2);
         }
     }
