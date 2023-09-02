@@ -214,10 +214,10 @@ void ordered_evolution(char* image, int xsize, int ysize, int n, int s, char *de
       int idx = 0;
         for (int y = 0; y < ysize; y++){
             for (int x = 0; x < xsize; x++){
-                printf("%c ", image[idx] + 48);
+                // printf("%c ", image[idx] + 48);
                 idx++;
             }
-        printf("\n");
+        // printf("\n");
       }
       char title[50];
       snprintf(title, 50, "%s_%d.pbm", destination_folder, step);
@@ -262,12 +262,12 @@ void static_evolution(char* image, int xsize, int ysize, int n, int s, char *des
       for(int y = 0; y < ysize; y++){
         for (int x = 0; x < xsize; x++){
           image[idx] = (char)temp_mat[x][y];
-          printf("%c ", image[idx] + 48);
+          // printf("%c ", image[idx] + 48);
           idx++;
         }
-        printf("\n");
+        // printf("\n");
       }
-      printf("\n");
+      // printf("\n");
       char title[50];
       snprintf(title, 50, "%s_%d.pbm", destination_folder, step);
       write_pgm_image(image, 1, xsize, ysize, title);
@@ -438,12 +438,12 @@ int main ( int argc, char **argv )
     int idx = 0;
     for (int y = 0; y < ywidth; y++){
       for (int x = 0; x < xwidth; x++){
-          printf("%c ", image[idx] + 48);
+          // printf("%c ", image[idx] + 48);
           idx++;
       }
-      printf("\n");
+      // printf("\n");
     }
-    printf("\n"); 
+    // printf("\n"); 
     if(e == ORDERED){
       ordered_evolution(image, xwidth, ywidth, n, s, "snapshots_ordered/snap");
     }
