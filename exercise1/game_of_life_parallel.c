@@ -407,28 +407,23 @@ int main ( int argc, char **argv )
       // printf("\nInitial playground, %d part\n", rank);
       // random_playground(image, row_per_proc, ywidth);
       #pragma omp for schedule(static)
-        for (int idx = startidx; idx < endidx; idx++){
+        for (int idx = 0; idx < n_cells; idx++){
           // image[idx] = (char)((int)rand()%2);
           image[idx] = (char)((double)rand_r(&seed)/(double)RAND_MAX+0.5);
-          printf("%d ", (int)image[idx]);
-          if(idx%xwidth == 0){
-            printf("\n");
-          }
         }
     }
 
     // MPI_Gather(image, row_per_proc * xwidth, MPI_CHAR, image, row_per_proc * xwidth, MPI_CHAR, 0, MPI_COMM_WORLD);
 
-    if(rank == 0){
+    printf("Rank = %d\n", rank)
       int idx = 0;
       for (int x = 0; x < ywidth; x++){
-        for(int y = 0; y < xwidth; y++){
+        for(int y = 0; y < row_per_proc; y++){
           printf("%d ", (int)image[idx]);
           idx++;
         }
         printf("\n");
       }
-    }
 
     free(image);
     // MPI_File filename;
