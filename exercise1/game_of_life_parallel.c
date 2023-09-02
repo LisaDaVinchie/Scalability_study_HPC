@@ -116,7 +116,8 @@ void random_playground(char* image, int xsize, int ysize)
     for (int y = 0; y < ysize; y++){
         for (int x = 0; x < xsize; x++){
             image[idx] = (char)((int)rand()%2);
-            printf("%c ", image[idx] + 48);
+            printf("%d ", (int)image[idx]);
+            // printf("%c ", image[idx] + 48);
             idx++;
         }
     printf("\n");
@@ -334,7 +335,7 @@ int main ( int argc, char **argv )
   printf("Provided Thread level: %d\n", mpi_provided_thread_level);
 
   if ( mpi_provided_thread_level < MPI_THREAD_FUNNELED ){
-    printf("a problem arise when asking for MPI_THREAD_FUNNELED level\n");
+    printf("a problem arised when asking for MPI_THREAD_FUNNELED level\n");
     MPI_Finalize();
     exit( 1 );
   } 
