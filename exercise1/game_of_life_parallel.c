@@ -407,7 +407,8 @@ int main ( int argc, char **argv )
       // random_playground(image, row_per_proc, ywidth);
       #pragma omp for schedule(static)
         for (int idx = startidx; idx < endidx; idx++){
-          image[idx] = (char)((int)rand()%2);
+          // image[idx] = (char)((int)rand()%2);
+          image[idx] = (char)((double)rand()/(double)RAND_MAX+0.5);
         }
     }
 
