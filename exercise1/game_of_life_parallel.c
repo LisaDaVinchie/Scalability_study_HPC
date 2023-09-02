@@ -406,6 +406,7 @@ int main ( int argc, char **argv )
         for (int y = 0; y < ywidth; y++){
             for (int x = 0; x < row_per_proc; x++){
                 image[idx] = (char)((int)rand()%2);
+                printf("%d ", (int)image[idx]);
                 idx++;
             }
             printf("\n");
