@@ -367,7 +367,7 @@ int main ( int argc, char **argv )
 
   
 
-  // char* image = NULL;
+  // Note that y = row index, x = col index
 
   // initialise playground
   if(action == INIT){
@@ -375,19 +375,21 @@ int main ( int argc, char **argv )
     // distribute rows between MPI processes
 
     int row_per_proc = xwidth / n_procs; // rows for each process
-    int remaining_rows = xwidth % n_procs; // remaining rows
+    // int remaining_rows = xwidth % n_procs; // remaining rows
 
+    int startrow = row_per_proc * rank;
+    int endrow = row_per_proc * (rank + 1);
     // if (rank < remaining_rows){
     //   row_per_proc++;
     // }
 
-    int n_cells = row_per_proc * ywidth;
+    int n_cells = row_per_proc * xwidth;
 
 
-    char* image = NULL;
-    image = (char*)malloc(n_cells * sizeof(char));
+    char* temp_image = NULL;
+    temp_image = (char*)malloc(n_cells * sizeof(char));
 
-    if(image == NULL){
+    if(temp_image == NULL){
       printf("Memory allocation of \"image\" failed\n");
       free(fname);
       return 1;
@@ -397,20 +399,37 @@ int main ( int argc, char **argv )
     {
       int thread_id = omp_get_num_threads();
       
-      int idx = 0;
+      // int idx = 0;
       srand(time(NULL));
       
       printf("\nInitial playground, %d part\n", rank);
       #pragma omp for schedule(static, row_per_proc)
         // random_playground(image, row_per_proc, ywidth);
-        for (int y = 0; y < ywidth; y++){
-            for (int x = 0; x < row_per_proc; x++){
-                image[idx] = (char)((int)rand()%2);
-                printf("%d ", (int)image[idx]);
+        for (int y = startrow; y < endrow; y++){
+            for (int x = 0; x < xwidth; x++){
+                temp_image[x + y * xwidth] = (char)((int)rand()%2);
+                // printf("%d ", (int)image[idx]);
                 idx++;
             }
             printf("\n");
           }
+    }
+
+    char* image = NULL;
+
+    image = (char*)malloc(xwidth * ywidth * sizeof(char));
+
+    MPI_Gather(image, row_per_proc * xwidth, MPI_CHAR, image, row_per_proc * xwidth, MPI_CHAR, 0, MPI_COMM_WORLD);
+
+    #pragma omp master{
+      int idx = 0;
+      for (int x = 0; x < ywidth; x++){
+        for(int y = 0; y < xwidth; y++){
+          printf("%d ", (int)image[idx]);
+          idx++;
+        }
+        printf("\n");
+      }
     }
 
     // MPI_File filename;
