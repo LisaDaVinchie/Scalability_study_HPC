@@ -375,21 +375,21 @@ int main ( int argc, char **argv )
     // distribute rows between MPI processes
 
     int row_per_proc = xwidth / n_procs; // rows for each process
-    // int remaining_rows = xwidth % n_procs; // remaining rows
+    int remaining_rows = xwidth % n_procs; // remaining rows
 
-    int startrow = row_per_proc * rank;
-    int endrow = row_per_proc * (rank + 1);
-    // if (rank < remaining_rows){
-    //   row_per_proc++;
-    // }
+    // int startrow = row_per_proc * rank;
+    // int endrow = row_per_proc * (rank + 1);
+    if (rank < remaining_rows){
+      row_per_proc++;
+    }
 
     int n_cells = row_per_proc * xwidth;
 
 
-    char* temp_image = NULL;
-    temp_image = (char*)malloc(n_cells * sizeof(char));
+    char* image = NULL;
+    image = (char*)malloc(n_cells * sizeof(char));
 
-    if(temp_image == NULL){
+    if(image == NULL){
       printf("Memory allocation of \"image\" failed\n");
       free(fname);
       return 1;
@@ -403,26 +403,14 @@ int main ( int argc, char **argv )
       srand(time(NULL));
       
       // printf("\nInitial playground, %d part\n", rank);
-      int idx = 0;
       // random_playground(image, row_per_proc, ywidth);
-      #pragma omp for schedule(static, row_per_proc)
-        for (int y = startrow; y < endrow; y++){
-            for (int x = 0; x < xwidth; x++){
-                temp_image[x + y * xwidth] = (char)((int)rand()%2);
-                // printf("%d ", (int)image[idx]);
-                idx++;
-            }
-            printf("\n");
-          }
+      #pragma omp for schedule(static)
+        for (int idx = 0; idx < n_cells; idx++){
+          image[idx] = (char)((int)rand()%2);
+        }
     }
 
-    char* image = NULL;
-
-    image = (char*)malloc(xwidth * ywidth * sizeof(char));
-
-    MPI_Gather(image, row_per_proc * xwidth, MPI_CHAR, image, row_per_proc * xwidth, MPI_CHAR, 0, MPI_COMM_WORLD);
-
-    free(temp_image);
+    // MPI_Gather(image, row_per_proc * xwidth, MPI_CHAR, image, row_per_proc * xwidth, MPI_CHAR, 0, MPI_COMM_WORLD);
 
     if(rank == 0){
       int idx = 0;
