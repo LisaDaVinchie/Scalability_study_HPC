@@ -401,15 +401,15 @@ int main ( int argc, char **argv )
       int thread_id = omp_get_num_threads();
       
       // int idx = 0;
-      // srand(time(NULL) + rank);
+      srand(time(NULL) + rank);
       
       unsigned int seed = (unsigned int)time(NULL); 
       // printf("\nInitial playground, %d part\n", rank);
       // random_playground(image, row_per_proc, ywidth);
       #pragma omp for schedule(static)
         for (int idx = 0; idx < n_cells; idx++){
-          // image[idx] = (char)((int)rand()%2);
-          image[idx] = (char)((double)rand_r(&seed)/(double)RAND_MAX+0.5);
+          image[idx] = (char)((int)rand()%2);
+          // image[idx] = (char)((double)rand_r(&seed)/(double)RAND_MAX+0.5);
         }
     }
 
@@ -417,8 +417,8 @@ int main ( int argc, char **argv )
 
     printf("Rank = %d\n", rank);
       int idx = 0;
-      for (int x = 0; x < ywidth; x++){
-        for(int y = 0; y < row_per_proc; y++){
+      for (int x = 0; x < row_per_proc; x++){
+        for(int y = 0; y < xwidth; y++){
           printf("%d ", (int)image[idx]);
           idx++;
         }
