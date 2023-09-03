@@ -14,51 +14,55 @@ file compiled, executable is game_of_life_parallel.exe
 initialise playground
 Get arguments
 Arguments are: 
-action = 1
+action = 2
 k = 10
 e = 0
-f = /u/dssc/ldavin00/Foundations_of_HPC_final_project/exercise1/OpenMP_scal/THIN/test.pbm
+f = /u/dssc/ldavin00/Foundations_of_HPC_final_project/exercise1/OpenMP_scal/THIN/playground.pbm
 n_steps = 10000
 n_dump = 1
 Get arguments
 Arguments are: 
-action = 1
+action = 2
 k = 10
 e = 0
-f = /u/dssc/ldavin00/Foundations_of_HPC_final_project/exercise1/OpenMP_scal/THIN/test.pbm
+f = /u/dssc/ldavin00/Foundations_of_HPC_final_project/exercise1/OpenMP_scal/THIN/playground.pbm
 n_steps = 10000
 n_dump = 1
-Provided Thread level: 1
-Rank = 0, size = 2
-OpenMP threads: 2
-Threads per process: 2
-Threads per process: 2
 Provided Thread level: 1
 Rank = 1, size = 2
 OpenMP threads: 2
 Threads per process: 2
 Threads per process: 2
-Opening file to write image
-0 0 0 0 0 0 0 0 1 1 
-0 1 0 0 1 1 0 1 1 0 
-1 1 0 0 1 0 0 0 0 0 
-0 0 0 1 1 0 1 0 0 1 
-1 0 1 1 0 1 1 0 0 1 
-1 0 1 0 1 1 0 0 0 1 
-0 1 1 0 0 0 1 0 1 1 
-1 1 1 0 1 1 0 1 0 1 
-1 0 0 0 1 0 1 1 0 0 
-0 1 0 1 1 1 1 1 0 1 
-Opening file to write image
-File opened
-Writing file
-File written
-File closed
-File opened
-Writing file
-Writing header
-Header written
-Writing content
-Content written
-File written
-File closed
+About to read playground
+Magic number read
+Comments skipped
+Playground read
+0 0 1 0 0 1 0 1 0 1 
+0 0 1 1 0 0 0 1 0 1 
+0 0 0 0 0 0 0 1 0 0 
+Provided Thread level: 1
+Rank = 0, size = 2
+1 0 1 0 1 0 0 1 1 0 
+0 0 1 0 1 0 0 0 0 0 
+0 0 1 0 1 0 0 1 0 1 
+1 1 0 1 1 0 1 0 0 0 
+0 1 0 0 1 0 0 1 0 1 
+0 0 1 0 1 1 1 0 1 1 
+0 1 0 0 0 0 1 0 0 1 
+OpenMP threads: 2
+Threads per process: 2
+Threads per process: 2
+About to read playground
+Magic number read
+Comments skipped
+Playground read
+0 0 1 0 0 1 0 1 0 1 
+0 0 1 1 0 0 0 1 0 1 
+0 0 0 0 0 0 0 1 0 0 
+1 0 1 0 1 0 0 1 1 0 
+0 0 1 0 1 0 0 0 0 0 
+0 0 1 0 1 0 0 1 0 1 
+1 1 0 1 1 0 1 0 0 0 
+0 1 0 0 1 0 0 1 0 1 
+0 0 1 0 1 1 1 0 1 1 
+0 1 0 0 0 0 1 0 0 1 
