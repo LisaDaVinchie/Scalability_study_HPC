@@ -463,14 +463,13 @@ int main ( int argc, char **argv )
         for (int i=0; i < xwidth * ywidth; i++)
                   fprintf(image_file, "%c", image[i]);
         printf("Content written\n");
+        free(full_image);
       }
       printf("File written\n");
       fclose(image_file);
       printf("File closed\n");
-    
-
-    free(full_image);
-    free(fname);
+      
+      free(fname);
 
     // MPI_File outfile;
     // char header[50];
