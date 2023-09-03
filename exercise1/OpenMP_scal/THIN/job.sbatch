@@ -38,8 +38,10 @@ echo file compiled, executable is $execname
 
 echo initialise playground
 export OMP_NUM_THREADS=2
-#mpirun -np 2 --map-by socket ./$execname -i -k 10 -f "$data_folder/playground.pbm"
+echo initialising playground
+mpirun -np 2 --map-by socket ./$execname -i -k 10 -f "$data_folder/playground.pbm"
+echo reading image
 mpirun -np 2 --map-by socket ./$execname -r -k 10 -f "$data_folder/playground.pbm"
-
+echo image read
 module purge
 rm -rf $execname
