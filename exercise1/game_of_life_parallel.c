@@ -426,6 +426,8 @@ int main ( int argc, char **argv )
 
     MPI_Gather(image, n_cells, MPI_CHAR, full_image, n_cells, MPI_CHAR, 0, MPI_COMM_WORLD);
 
+    free(image);
+
     if(rank == 0){
       int idx = 0;
       for (int x = 0; x < xwidth; x++){
@@ -436,6 +438,11 @@ int main ( int argc, char **argv )
         printf("\n");
       }
     }
+
+    write_pgm_image(full_image, maxval, xwidth, ywidth, fname);
+
+    free(full_image);
+    free(fname);
 
     // MPI_File outfile;
     // char header[50];
@@ -457,13 +464,12 @@ int main ( int argc, char **argv )
 
     // MPI_File_close(&outfile);
 
-    free(image);
     // MPI_File filename;
 
 
     MPI_Finalize();
 
-    //write_pgm_image(image, maxval, xwidth, ywidth, fname);
+    
 
   }
 
