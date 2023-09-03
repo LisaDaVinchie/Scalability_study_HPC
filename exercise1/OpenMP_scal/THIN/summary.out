@@ -30,25 +30,25 @@ f = /u/dssc/ldavin00/Foundations_of_HPC_final_project/exercise1/OpenMP_scal/THIN
 n_steps = 10000
 n_dump = 1
 Provided Thread level: 1
-Rank = 0, size = 2
-OpenMP threads: 2
-Threads per process: 2
-Threads per process: 2
-Provided Thread level: 1
 Rank = 1, size = 2
 OpenMP threads: 2
 Threads per process: 2
 Threads per process: 2
-0 1 0 0 1 1 1 1 1 0 
-0 1 0 1 1 0 0 0 0 0 
-1 0 1 0 0 0 1 1 0 0 
-1 0 1 1 0 0 1 1 1 1 
-1 0 1 0 0 1 1 0 0 0 
-1 0 0 1 1 1 0 1 0 1 
-0 0 0 1 1 1 0 0 1 1 
-0 1 1 0 0 1 0 0 1 1 
-1 0 1 0 1 0 0 0 1 1 
-1 0 0 1 1 0 1 1 0 0 
+Provided Thread level: 1
+Rank = 0, size = 2
+OpenMP threads: 2
+Threads per process: 2
+Threads per process: 2
+1 1 1 0 1 1 1 0 1 1 
+1 0 0 1 1 1 0 0 0 1 
+0 1 1 1 1 1 1 1 0 1 
+1 1 0 1 1 1 0 0 1 0 
+1 1 0 0 0 1 1 1 1 0 
+1 0 0 0 0 1 1 1 1 1 
+1 0 1 1 1 0 0 0 1 0 
+1 0 1 1 1 1 0 0 0 0 
+1 1 1 1 1 1 0 1 1 1 
+0 0 0 1 0 1 0 1 1 1 
 reading image
 Get arguments
 Arguments are: 
@@ -68,27 +68,27 @@ n_steps = 10000
 n_dump = 1
 Provided Thread level: 1
 Rank = 0, size = 2
-Provided Thread level: 1
-Rank = 1, size = 2
 OpenMP threads: 2
 Threads per process: 2
 Threads per process: 2
 About to read playground
+Provided Thread level: 1
+Rank = 1, size = 2
 Magic number read
 Comments skipped
 Playground read
-0 1 0 0 1 1 1 1 1 0 
-0 1 0 1 1 0 0 0 0 0 
-1 0 1 0 0 0 1 1 0 0 
-1 0 1 1 0 0 1 1 1 1 
-1 0 1 0 0 1 1 0 0 0 
-1 0 0 1 1 1 0 1 0 1 
-0 0 0 1 1 1 0 0 1 1 
-0 1 1 0 0 1 0 0 1 1 
+1 1 1 0 1 1 1 0 1 1 
+1 0 0 1 1 1 0 0 0 1 
+0 1 1 1 1 1 1 1 0 1 
+1 1 0 1 1 1 0 0 1 0 
+1 1 0 0 0 1 1 1 1 0 
+1 0 0 0 0 1 1 1 1 1 
+1 0 1 1 1 0 0 0 1 0 
+1 0 1 1 1 1 0 0 0 0 
+1 1 1 1 1 1 0 1 1 1 
+0 0 0 1 0 1 0 1 1 1 
 OpenMP threads: 2
 Threads per process: 2
-1 0 1 0 1 0 0 0 1 1 
-1 0 0 1 1 0 1 1 0 0 
 Threads per process: 2
 About to read playground
 image read
