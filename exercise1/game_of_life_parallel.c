@@ -470,8 +470,10 @@ int main ( int argc, char **argv )
     int idx = 0;
     for (int y = 0; y < ywidth; y++){
       for (int x = 0; x < xwidth; x++){
+          printf("%c ", image[idx] + 48);
           idx++;
       }
+      printf("\n");
     } 
     // if(e == ORDERED){
     //   ordered_evolution(image, xwidth, ywidth, n, s, "snapshots_ordered/snap");
