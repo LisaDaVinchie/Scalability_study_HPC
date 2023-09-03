@@ -439,9 +439,9 @@ int main ( int argc, char **argv )
       }
       
       write_pgm_image(full_image, maxval, xwidth, ywidth, fname);
-    }
 
-    free(full_image);
+      free(full_image);
+    }
     free(fname);
 
     // MPI_File outfile;
