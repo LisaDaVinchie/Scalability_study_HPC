@@ -464,17 +464,20 @@ int main ( int argc, char **argv )
     // image = (char*)malloc(xwidth * ywidth * sizeof(char));
     printf("About to read playground\n");
     // char *source_image = "snapshots_static/initial_conditions.pgm";
-    read_pgm_image(&image, &maxval, &xwidth, &ywidth, fname);
-    printf("Playground read\n");
 
-    int idx = 0;
-    for (int y = 0; y < ywidth; y++){
-      for (int x = 0; x < xwidth; x++){
-          printf("%c ", image[idx] + 48);
-          idx++;
-      }
-      printf("\n");
-    } 
+    if (rank == 0){
+      read_pgm_image(&image, &maxval, &xwidth, &ywidth, fname);
+      printf("Playground read\n");
+
+      int idx = 0;
+      for (int y = 0; y < ywidth; y++){
+        for (int x = 0; x < xwidth; x++){
+            printf("%c ", image[idx] + 48);
+            idx++;
+        }
+        printf("\n");
+      } 
+    }
     // if(e == ORDERED){
     //   ordered_evolution(image, xwidth, ywidth, n, s, "snapshots_ordered/snap");
     // }
