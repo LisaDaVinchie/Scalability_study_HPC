@@ -33,7 +33,7 @@ char *fname  = NULL;
 void write_pgm_image(char *image, int maxval, int xsize, int ysize, const char *image_name)
 {
   FILE* image_file; 
-  image_file = fopen(image_name, "w");
+  image_file = fopen(image_name, "wb");
   if(image_file == NULL){
     printf("Error in opening the file\n");
     MPI_Abort(MPI_COMM_WORLD, 1);
