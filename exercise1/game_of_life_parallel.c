@@ -413,8 +413,8 @@ int main ( int argc, char **argv )
         }
     }
 
+    char* full_image = NULL;
     if(rank == 0){
-      char* full_image = NULL;
       full_image = (char*)malloc(xwidth * ywidth * sizeof(char));
 
       if(full_image == NULL){
