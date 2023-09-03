@@ -24,20 +24,21 @@ data_folder=$(pwd)
 echo data folder is $data_folder
 
 cd ../..
-echo moved to program directory $(pwd)
+echo moved to $(pwd)
 
 echo compile c file
 filename=game_of_life_parallel.c
 execname=game_of_life_parallel.exe
+#filename=test.c
+#execname=test.exe
 
 mpicc -fopenmp $filename -o $execname
 
 echo file compiled, executable is $execname
 
 echo initialise playground
-export OMP_NUM_THREADS=12
-mpirun -np 2 --map-by socket $execname -f "$data_folder/test.pbm"
+export OMP_NUM_THREADS=2
+mpirun -np 2 --map-by socket ./$execname -i -k 10 -f "$data_folder/test.pbm"
 
 module purge
-
-cd $data_folder
+rm -rf $execname
