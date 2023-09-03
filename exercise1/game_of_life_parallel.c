@@ -424,7 +424,7 @@ int main ( int argc, char **argv )
       }
     }
 
-    MPI_Gather(image, n_cells, MPI_CHAR, full_image, ywidth * xwidth, MPI_CHAR, 0, MPI_COMM_WORLD);
+    MPI_Gather(image, n_cells, MPI_CHAR, full_image, n_cells, MPI_CHAR, 0, MPI_COMM_WORLD);
 
     if(rank == 0){
       int idx = 0;
