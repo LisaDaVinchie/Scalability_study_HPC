@@ -485,12 +485,15 @@ int main ( int argc, char **argv )
     //   return 1;
     // }
    
-   free(image); 
+   free(image);
+
+   MPI_Finalize(); 
   }
 
   else{
     printf("Invalid value for variable \"action\"\n");
     free(fname);
+    MPI_Finalize();
     return 1;
   }
 
