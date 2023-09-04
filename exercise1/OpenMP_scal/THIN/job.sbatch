@@ -23,16 +23,18 @@ export OMP_PROC_BIND=$alloc
 data_folder=$(pwd)
 echo data folder is $data_folder
 
-cd ../..
+cd ../../program
 echo moved to $(pwd)
 
 echo compile c file
 filename=game_of_life_parallel.c
 execname=game_of_life_parallel.exe
+libname=parallel_lib.c
+headname=parallel_header.h
 #filename=test.c
 #execname=test.exe
 
-mpicc -fopenmp $filename -o $execname
+mpicc -fopenmp -o $execname $filename
 
 echo file compiled, executable is $execname
 
@@ -40,8 +42,8 @@ echo initialise playground
 export OMP_NUM_THREADS=2
 echo initialising playground
 mpirun -np 2 --map-by socket ./$execname -i -k 10 -f "$data_folder/playground.pbm"
-echo reading image
-mpirun -np 2 --map-by socket ./$execname -r -k 10 -f "$data_folder/playground.pbm"
-echo image read
+#echo reading image
+#mpirun -np 2 --map-by socket ./$execname -r -k 10 -f "$data_folder/playground.pbm"
+#echo image read
 module purge
 rm -rf $execname
