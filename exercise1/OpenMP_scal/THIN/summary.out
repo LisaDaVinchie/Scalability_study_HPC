@@ -18,7 +18,7 @@ Arguments are:
 action = 1
 k = 10
 e = 0
-f = /u/dssc/ldavin00/Foundations_of_HPC_final_project/exercise1/OpenMP_scal/THIN/playground.pbm
+f = /u/dssc/ldavin00/Foundations_of_HPC_final_project/exercise1/OpenMP_scal/THIN/playground.pgm
 n_steps = 10000
 n_dump = 1
 Get arguments
@@ -26,26 +26,11 @@ Arguments are:
 action = 1
 k = 10
 e = 0
-f = /u/dssc/ldavin00/Foundations_of_HPC_final_project/exercise1/OpenMP_scal/THIN/playground.pbm
+f = /u/dssc/ldavin00/Foundations_of_HPC_final_project/exercise1/OpenMP_scal/THIN/playground.pgm
 n_steps = 10000
 n_dump = 1
-Provided Thread level: 1
-Provided Thread level: 1
-Rank = 1, size = 2
-Rank = 0, size = 2
-OpenMP threads: 2
-Threads per process: 2
-OpenMP threads: 2
-Threads per process: 2
-Threads per process: 2
-Threads per process: 2
-0 1 0 0 1 0 0 1 1 0 
-0 1 1 0 1 1 1 0 0 1 
-1 1 0 0 1 0 0 0 1 1 
-0 1 1 0 0 1 1 0 0 1 
-1 1 1 0 0 1 1 0 0 0 
-1 1 1 0 1 1 0 1 0 1 
-0 1 1 1 1 1 0 1 0 0 
-0 1 1 1 1 1 1 1 0 1 
-1 0 1 0 1 0 1 1 1 1 
-1 0 1 0 0 0 1 1 1 1 
+thin001:rank0.game_of_life_parallel.exe: Failed to modify UD QP to INIT on ibp59s0: Operation not permitted
+thin001:rank0.game_of_life_parallel.exe: Failed to modify UD QP to INIT on ibp59s0: Operation not permitted
+thin001:rank1.game_of_life_parallel.exe: Failed to modify UD QP to INIT on ibp59s0: Operation not permitted
+thin001:rank1.game_of_life_parallel.exe: Failed to modify UD QP to INIT on ibp59s0: Operation not permitted
+slurmstepd: error: *** JOB 25595 ON thin001 CANCELLED AT 2023-09-04T19:09:31 ***
