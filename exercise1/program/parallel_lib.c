@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
-#include "serial_header.h"
+#include "parallel_header.h"
 
 void random_playground(unsigned char* image, int xsize, int ysize)
 {
