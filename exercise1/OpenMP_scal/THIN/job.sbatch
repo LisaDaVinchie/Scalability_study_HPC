@@ -31,8 +31,7 @@ filename=game_of_life_parallel.c
 execname=game_of_life_parallel.exe
 libname=parallel_lib.c
 headname=parallel_header.h
-#filename=test.c
-#execname=test.exe
+imagename="$data_folder/playground.pgm"
 
 mpicc -fopenmp -o $execname $filename $libname
 
@@ -41,9 +40,14 @@ echo file compiled, executable is $execname
 echo initialise playground
 export OMP_NUM_THREADS=2
 echo initialising playground
-mpirun -np 2 --map-by socket ./$execname -i -k 10 -f "$data_folder/playground.pgm"
-#echo reading image
-#mpirun -np 2 --map-by socket ./$execname -r -k 10 -f "$data_folder/playground.pbm"
-#echo image read
+mpirun -np 2 --map-by socket ./$execname -i -k 10 -f $imagename
+echo reading image
+mpirun -np 2 --map-by socket ./$execname -r -f $imagename
+echo image read
+
+echo removing modules
 module purge
+echo modules removed
+echo removing executable
 rm -rf $execname
+echo executable removed
