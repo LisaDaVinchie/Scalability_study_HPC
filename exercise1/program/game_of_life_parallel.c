@@ -368,6 +368,7 @@ int main ( int argc, char **argv )
           }
           printf("\n");
         }
+      }
 
 
         // distribute rows between MPI processes
@@ -448,17 +449,13 @@ int main ( int argc, char **argv )
           }
         }
         printf("Wrote all the snapshots\n");
+    }
   }
 
   else{
       printf("Invalid value for flag \"-e\"\n");
       free(fname);
       return 1;
-    }
-   
-   free(image);
-
-   MPI_Finalize(); 
   }
 
   else{
@@ -468,6 +465,10 @@ int main ( int argc, char **argv )
     return 1;
   }
 
+  free(image);
   free(fname);
+
+  MPI_Finalize();
   return 0;
 }
+
