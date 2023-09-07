@@ -424,7 +424,9 @@ int main ( int argc, char **argv )
 
 
         for(int step = 0; step < n; step++){
-          #pragma omp parallel{
+          #pragma omp parallel
+          {
+            int thread_id = omp_get_thread_num();
             for(int y = startrow; y < endrow; y++){
               for (int x = 0; x < xwidth; x++){
                 //upgrade status of cell (x, y)
