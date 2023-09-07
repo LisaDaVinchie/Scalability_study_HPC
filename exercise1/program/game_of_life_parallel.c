@@ -437,7 +437,7 @@ int main ( int argc, char **argv )
 
           // Make the obtained image the starting point for the next cycle
 
-          #pragma omp master{
+          if(rank == 0){
             for(int i = 0; i < xwidth * ywidth; i++){
               original_image[i] = image[i];
             }
