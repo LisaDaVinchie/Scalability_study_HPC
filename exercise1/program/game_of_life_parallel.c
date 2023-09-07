@@ -371,22 +371,23 @@ int main ( int argc, char **argv )
         }
       }
 
+      #pragma omp barrier
 
-        // distribute rows between MPI processes
-        int row_per_proc = xwidth / n_procs; // rows for each process
-        int remaining_rows = xwidth % n_procs; // remaining rows
+      // distribute rows between MPI processes
+      int row_per_proc = xwidth / n_procs; // rows for each process
+      int remaining_rows = xwidth % n_procs; // remaining rows
 
-        printf("row_per_proc = %d, remaining rows = %d\n", row_per_proc, remaining_rows);
+      printf("row_per_proc = %d, remaining rows = %d\n", row_per_proc, remaining_rows);
 
-        // If there are spare rows, add one row for each process
-        if (remaining_rows > 0){
-          row_per_proc++;
-        }
+      // If there are spare rows, add one row for each process
+      if (remaining_rows > 0){
+        row_per_proc++;
+      }
 
-        int n_cells = row_per_proc * xwidth;
+      int n_cells = row_per_proc * xwidth;
 
-        int startrow = rank * row_per_proc;
-        int endrow = (rank + 1) * row_per_proc;
+      int startrow = rank * row_per_proc;
+      int endrow = (rank + 1) * row_per_proc;
 
         // Allocate partial matrices
         image = (unsigned char*)malloc(row_per_proc * ywidth * sizeof(unsigned char));
