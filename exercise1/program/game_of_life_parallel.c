@@ -385,6 +385,11 @@ int main ( int argc, char **argv )
       printf("original_image broadcasted\n");
       MPI_Barrier(MPI_COMM_WORLD);
 
+      printf("Everything broadcasted\n");
+
+      MPI_Barrier(MPI_COMM_WORLD);
+
+      printf("distribute rows between MPI processes\n");
       // distribute rows between MPI processes
       int row_per_proc = ywidth / n_procs; // rows for each process
       int remaining_rows = ywidth % n_procs; // remaining rows
