@@ -170,9 +170,9 @@ int main ( int argc, char **argv )
     }
 
     // Create a random playground in parallel
-    int thread_id = 0;
     #pragma omp parallel
     {
+      int thread_id = 0;
       thread_id = omp_get_num_threads();
       
       srand(time(NULL) + rank);
@@ -381,12 +381,12 @@ int main ( int argc, char **argv )
       int row_per_proc = ywidth / n_procs; // rows for each process
       int remaining_rows = ywidth % n_procs; // remaining rows
 
-      printf("row_per_proc = %d, remaining rows = %d\n", row_per_proc, remaining_rows);
-
       // If there are spare rows, add one row for each process
       if (rank < remaining_rows){
         row_per_proc++;
       }
+
+      // printf("row_per_proc = %d, remaining rows = %d\n", row_per_proc, remaining_rows);
 
       int n_cells = row_per_proc * xwidth;
 
