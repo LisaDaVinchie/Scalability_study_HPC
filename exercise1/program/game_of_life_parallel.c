@@ -376,28 +376,29 @@ int main ( int argc, char **argv )
 
       // MPI_Bcast(original_image, xwidth * ywidth, MPI_UNSIGNED_CHAR, 0, MPI_COMM_WORLD);
 
-      #pragma omp barrier
       // distribute rows between MPI processes
       int row_per_proc = ywidth / n_procs; // rows for each process
       int remaining_rows = ywidth % n_procs; // remaining rows
+
+      #pragma omp barrier
 
       // If there are spare rows, add one row for each process
       if (rank < remaining_rows){
         row_per_proc++;
       }
 
-      // printf("row_per_proc = %d, remaining rows = %d\n", row_per_proc, remaining_rows);
+    #pragma omp barrier
 
       int n_cells = row_per_proc * xwidth;
-
+    #pragma omp barrier
       int startrow = rank * row_per_proc;
       int endrow = (rank + 1) * row_per_proc;
-
+    #pragma omp barrier
       // Allocate partial matrices
       image = (unsigned char*)malloc(n_cells * sizeof(unsigned char));
-
+    #pragma omp barrier
       printf("\nThread %d has %d rows\n", rank, row_per_proc);
-      
+    #pragma omp barrier
       // #pragma omp barrier
     
       if(rank == 0){
