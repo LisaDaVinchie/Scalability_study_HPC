@@ -391,7 +391,7 @@ int main ( int argc, char **argv )
         
         #pragma omp barrier
       
-        #pragma omp master{
+        if(rank == 0){
           #ifdef TIME
             MPI_Barrier(MPI_COMM_WORLD);
 
