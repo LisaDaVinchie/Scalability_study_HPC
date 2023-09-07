@@ -387,18 +387,18 @@ int main ( int argc, char **argv )
         row_per_proc++;
       }
 
-    #pragma omp barrier
+    MPI_Barrier(MPI_COMM_WORLD);
 
-      int n_cells = row_per_proc * xwidth;
-    #pragma omp barrier
+    int n_cells = row_per_proc * xwidth;
+    MPI_Barrier(MPI_COMM_WORLD);
       int startrow = rank * row_per_proc;
       int endrow = (rank + 1) * row_per_proc;
-    #pragma omp barrier
+    MPI_Barrier(MPI_COMM_WORLD);
       // Allocate partial matrices
       image = (unsigned char*)malloc(n_cells * sizeof(unsigned char));
-    #pragma omp barrier
+    MPI_Barrier(MPI_COMM_WORLD);
       printf("\nThread %d has %d rows\n", rank, row_per_proc);
-    #pragma omp barrier
+    MPI_Barrier(MPI_COMM_WORLD);
       // #pragma omp barrier
     
       if(rank == 0){
