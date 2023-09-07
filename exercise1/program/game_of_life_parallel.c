@@ -269,77 +269,77 @@ int main ( int argc, char **argv )
 
     // int n_cells = row_per_proc * ywidth;
 
-    }
+    // }
 
     
     if(e == ORDERED){
       // ordered_evolution(image, xwidth, ywidth, n, s, "snapshots_ordered/snap");
-      char* title = "snapshots_ordered/snap";
-      int snap_idx = -1;
-      // int maxval = 1;
+      // char* title = "snapshots_ordered/snap";
+      // int snap_idx = -1;
+      // // int maxval = 1;
 
-      #ifdef TIME
-        MPI_Barrier(MPI_COMM_WORLD);
+      // #ifdef TIME
+      //   MPI_Barrier(MPI_COMM_WORLD);
         
-        if(rank == 0){
+      //   if(rank == 0){
 
-        }
-      #endif
+      //   }
+      // #endif
 
-      if(s == 0){
-        snap_idx = n;
-      }
-      else if(s > 0 && s < n){
-        snap_idx = s;
-      }
-      else{
-        printf("Wrong value for \"s\"\n");
-      }
+      // if(s == 0){
+      //   snap_idx = n;
+      // }
+      // else if(s > 0 && s < n){
+      //   snap_idx = s;
+      // }
+      // else{
+      //   printf("Wrong value for \"s\"\n");
+      // }
 
-      // dividing the loop among MPI processes
+      // // dividing the loop among MPI processes
       
-      #pragma omp parallel for
-      for(int step = 0; step < n; step++){
-        //ordered evolution
-        printf("step = %d ", step);
-        for(int y = 0; y < xwidth; y++){
-          for (int x = 0; x < ywidth; x++){
-            printf("    y = %d ", y);
-            printf("    x = %d\n", x);
-            //calculate status of cell in [x][y]
-            unsigned char live_neighbors = count_live_neighbors(image, x, y, xsize, ysize);
-            if (live_neighbors == 2 || live_neighbors == 3){
-              image[x + y * xwidth] = 1;
-            }
-            else if(live_neighbors < 0 || live_neighbors > 8){
-              printf("There is an issue with the count of the neighbors that are alive, they cannot be %d\n", (int)live_neighbors);
-            }
-            else{
-              image[x + y * xwidth] = 0;
-            }
-          }
-        }
+      // #pragma omp parallel for
+      // for(int step = 0; step < n; step++){
+      //   //ordered evolution
+      //   printf("step = %d ", step);
+      //   for(int y = 0; y < xwidth; y++){
+      //     for (int x = 0; x < ywidth; x++){
+      //       printf("    y = %d ", y);
+      //       printf("    x = %d\n", x);
+      //       //calculate status of cell in [x][y]
+      //       unsigned char live_neighbors = count_live_neighbors(image, x, y, xsize, ysize);
+      //       if (live_neighbors == 2 || live_neighbors == 3){
+      //         image[x + y * xwidth] = 1;
+      //       }
+      //       else if(live_neighbors < 0 || live_neighbors > 8){
+      //         printf("There is an issue with the count of the neighbors that are alive, they cannot be %d\n", (int)live_neighbors);
+      //       }
+      //       else{
+      //         image[x + y * xwidth] = 0;
+      //       }
+      //     }
+      //   }
         
 
-        if((step + 1)%snap_idx == 0){
-          printf("\nTaking snapshot\n");
-          int idx = 0;
-            for (int y = 0; y < ywidth; y++){
-                for (int x = 0; x < xwidth; x++){
-                    printf("%d ", (int)image[idx]);
-                    idx++;
-                }
-            printf("\n");
-          }
-          char title[50];
-          snprintf(title, 50, "%s_%d.pbm", destination_folder, step);
-          printf("%s\n",title);
-          // dump_idx++;
-          printf("Writing image\n");
-          write_pgm_image(image, xwidth, ywidth, maxval, title);
-          printf("Image written\n");
-        }
-      }
+      //   if((step + 1)%snap_idx == 0){
+      //     printf("\nTaking snapshot\n");
+      //     int idx = 0;
+      //       for (int y = 0; y < ywidth; y++){
+      //           for (int x = 0; x < xwidth; x++){
+      //               printf("%d ", (int)image[idx]);
+      //               idx++;
+      //           }
+      //       printf("\n");
+      //     }
+      //     char title[50];
+      //     snprintf(title, 50, "%s_%d.pbm", destination_folder, step);
+      //     printf("%s\n",title);
+      //     // dump_idx++;
+      //     printf("Writing image\n");
+      //     write_pgm_image(image, xwidth, ywidth, maxval, title);
+      //     printf("Image written\n");
+      //   }
+      // }
     }
     else if(e == STATIC){
 
@@ -439,7 +439,7 @@ int main ( int argc, char **argv )
             for(int i = 0; i < xwidth * ywidth; i++){
               original_image[i] = image[i];
             }
-            
+
             if((step + 1)%snap_idx == 0){
               save_snapshot(original_image, xwidth, ywidth, maxval, "snap_test", step);
             }
