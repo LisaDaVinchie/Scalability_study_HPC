@@ -469,11 +469,11 @@ int main ( int argc, char **argv )
           // omp_set_num_threads(num_threads);
           #pragma omp parallel for collapse(2)
           for(y = startrow; y < endrow; y++){
-            printf("Rank %d, started y cycle %d, starting x cycle %d\n", rank, y, x);
+            // printf("Rank %d, started y cycle %d, starting x cycle %d\n", rank, y, x);
             for (x = 0; x < xwidth; x++){
               //upgrade status of cell (x, y)
               static_upgrade(image, original_image, xwidth, ywidth, x, y);
-              printf("Rank %d, ended x cycle %d\n", rank, x);
+              // printf("Rank %d, ended x cycle %d\n", rank, x);
               
             }
 
