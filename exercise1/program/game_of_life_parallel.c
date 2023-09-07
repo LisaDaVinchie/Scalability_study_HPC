@@ -351,6 +351,7 @@ int main ( int argc, char **argv )
         // Read the header to get the dimensions of the playground and the color maxval
         read_header(&xwidth, &ywidth, &maxval, fname);
 
+        printf("xwidt = %d, ywidth = %d\n", xwidth, ywidth);
         // Allocate memory to read the playground
         original_image = (unsigned char*)malloc(xwidth * ywidth * sizeof(unsigned char));
 
@@ -384,7 +385,7 @@ int main ( int argc, char **argv )
         int endrow = (rank + 1) * row_per_proc;
 
         // Allocate partial matrices
-        image = (unsigned char*)malloc(xwidth * row_per_proc * sizeof(unsigned char));
+        image = (unsigned char*)malloc(xwidth * ywidth * sizeof(unsigned char));
 
         printf("Thread %d has %d rows\n", rank, row_per_proc);
 
@@ -397,7 +398,7 @@ int main ( int argc, char **argv )
             MPI_Barrier(MPI_COMM_WORLD);
 
             if(rank == 0){
-              double start_time = omp_get_wtime();
+              start_time = omp_get_wtime();
             }
           #endif
         }
