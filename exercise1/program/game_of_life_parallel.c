@@ -387,7 +387,7 @@ int main ( int argc, char **argv )
         int endrow = (rank + 1) * row_per_proc;
 
         // Allocate partial matrices
-        image = (unsigned char*)malloc(xwidth * ywidth * sizeof(unsigned char));
+        image = (unsigned char*)malloc(row_per_proc * ywidth * sizeof(unsigned char));
 
         printf("Thread %d has %d rows\n", rank, row_per_proc);
 
@@ -431,6 +431,7 @@ int main ( int argc, char **argv )
           #pragma omp parallel
           {
             int thread_id = omp_get_thread_num();
+
             for(int y = startrow; y < endrow; y++){
               for (int x = 0; x < xwidth; x++){
                 //upgrade status of cell (x, y)
@@ -440,11 +441,14 @@ int main ( int argc, char **argv )
           }
 
           // Make the obtained image the starting point for the next cycle
+          MPI_Barrier(MPI_COMM_WORLD);
 
-          if(rank == 0){
-            for(int i = 0; i < xwidth * ywidth; i++){
-              original_image[i] = image[i];
-            }
+          MPI_Gather(image, n_cells, MPI_UNSIGNED_CHAR, original_image, n_cells, MPI_UNSIGNED_CHAR, 0, MPI_COMM_WORLD);
+
+          // if(rank == 0){
+          //   for(int i = 0; i < xwidth * ywidth; i++){
+          //     original_image[i] = image[i];
+          //   }
 
             if((step + 1)%snap_idx == 0){
               save_snapshot(original_image, xwidth, ywidth, maxval, "snap_test", step);
