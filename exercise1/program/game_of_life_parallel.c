@@ -383,6 +383,8 @@ int main ( int argc, char **argv )
           row_per_proc++;
         }
 
+        int n_cells = row_per_proc * xwidth;
+
         int startrow = rank * row_per_proc;
         int endrow = (rank + 1) * row_per_proc;
 
@@ -390,10 +392,8 @@ int main ( int argc, char **argv )
         image = (unsigned char*)malloc(row_per_proc * ywidth * sizeof(unsigned char));
 
         printf("Thread %d has %d rows\n", rank, row_per_proc);
-
-        int n_cells = row_per_proc * xwidth;
         
-        #pragma omp barrier
+        // #pragma omp barrier
       
         if(rank == 0){
           #ifdef TIME
@@ -413,8 +413,9 @@ int main ( int argc, char **argv )
         int maxval = 1;
 
         // #pragma omp barrier
-      
+
         if(rank == 0){
+          printf("Define snap index\n");
           if(s == 0){
             snap_idx = n;
           }
