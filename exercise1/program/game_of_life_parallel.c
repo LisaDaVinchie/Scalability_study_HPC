@@ -170,9 +170,10 @@ int main ( int argc, char **argv )
     }
 
     // Create a random playground in parallel
+    int thread_id = 0;
     #pragma omp parallel
     {
-      int thread_id = omp_get_num_threads();
+      thread_id = omp_get_num_threads();
       
       srand(time(NULL) + rank);
       
@@ -392,22 +393,22 @@ int main ( int argc, char **argv )
       int startrow = rank * row_per_proc;
       int endrow = (rank + 1) * row_per_proc;
 
-        // Allocate partial matrices
-        image = (unsigned char*)malloc(row_per_proc * ywidth * sizeof(unsigned char));
+      // Allocate partial matrices
+      image = (unsigned char*)malloc(n_cells * sizeof(unsigned char));
 
-        printf("Thread %d has %d rows\n", rank, row_per_proc);
-        
-        // #pragma omp barrier
+      printf("\nThread %d has %d rows\n", rank, row_per_proc);
       
-        if(rank == 0){
-          #ifdef TIME
-            MPI_Barrier(MPI_COMM_WORLD);
+      // #pragma omp barrier
+    
+      if(rank == 0){
+        #ifdef TIME
+          MPI_Barrier(MPI_COMM_WORLD);
 
-            if(rank == 0){
-              start_time = omp_get_wtime();
-            }
-          #endif
-        }
+          if(rank == 0){
+            start_time = omp_get_wtime();
+          }
+        #endif
+      }
 
         // #pragma omp barrier
 
