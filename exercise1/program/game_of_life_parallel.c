@@ -467,17 +467,15 @@ int main ( int argc, char **argv )
           int x = 0;
           int y = 0;
           // omp_set_num_threads(num_threads);
-          #pragma omp parallel for private (x)
+          #pragma omp parallel for collapse(2)
           for(y = startrow; y < endrow; y++){
             printf("Rank %d, started y cycle %d, starting x cycle %d\n", rank, y, x);
-            #pragma omp for
             for (x = 0; x < xwidth; x++){
               //upgrade status of cell (x, y)
               static_upgrade(image, original_image, xwidth, ywidth, x, y);
               printf("Rank %d, ended x cycle %d\n", rank, x);
               
             }
-            #pragma omp barrier
 
             printf("Rank %d, ended y cycle %d\n", rank, y);
           }
