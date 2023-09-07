@@ -445,10 +445,10 @@ int main ( int argc, char **argv )
 
           MPI_Gather(image, n_cells, MPI_UNSIGNED_CHAR, original_image, n_cells, MPI_UNSIGNED_CHAR, 0, MPI_COMM_WORLD);
 
-          // if(rank == 0){
-          //   for(int i = 0; i < xwidth * ywidth; i++){
-          //     original_image[i] = image[i];
-          //   }
+          if(rank == 0){
+            // for(int i = 0; i < xwidth * ywidth; i++){
+            //   original_image[i] = image[i];
+            // }
 
             if((step + 1)%snap_idx == 0){
               save_snapshot(original_image, xwidth, ywidth, maxval, "snap_test", step);
