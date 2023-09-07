@@ -375,10 +375,12 @@ int main ( int argc, char **argv )
       #pragma omp barrier
 
       // MPI_Bcast(original_image, xwidth * ywidth, MPI_UNSIGNED_CHAR, 0, MPI_COMM_WORLD);
+       MPI_Barrier(MPI_COMM_WORLD);
 
       // distribute rows between MPI processes
       int row_per_proc = ywidth / n_procs; // rows for each process
       int remaining_rows = ywidth % n_procs; // remaining rows
+      printf("rank = %d,ywidth = %d, nprocs = %d, rows per procs = %d\n", rank, ywidth, n_procs, row_per_proc);
 
       #pragma omp barrier
 
@@ -391,21 +393,21 @@ int main ( int argc, char **argv )
 
     int n_cells = row_per_proc * xwidth;
     MPI_Barrier(MPI_COMM_WORLD);
-      int startrow = rank * row_per_proc;
-      int endrow = (rank + 1) * row_per_proc;
+    int startrow = rank * row_per_proc;
+    int endrow = (rank + 1) * row_per_proc;
     MPI_Barrier(MPI_COMM_WORLD);
-      // Allocate partial matrices
-      image = (unsigned char*)malloc(n_cells * sizeof(unsigned char));
+    // Allocate partial matrices
+    image = (unsigned char*)malloc(n_cells * sizeof(unsigned char));
     MPI_Barrier(MPI_COMM_WORLD);
-      printf("\nThread %d has %d rows\n", rank, row_per_proc);
+    printf("\nThread %d has %d rows\n", rank, row_per_proc);
     MPI_Barrier(MPI_COMM_WORLD);
-      // #pragma omp barrier
-    
-      if(rank == 0){
-        #ifdef TIME
-          MPI_Barrier(MPI_COMM_WORLD);
+    // #pragma omp barrier
+  
+    if(rank == 0){
+      #ifdef TIME
+        MPI_Barrier(MPI_COMM_WORLD);
 
-          if(rank == 0){
+        if(rank == 0){
             start_time = omp_get_wtime();
           }
         #endif
