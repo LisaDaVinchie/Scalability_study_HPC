@@ -477,7 +477,7 @@ int main ( int argc, char **argv )
               
             }
 
-            printf("Rank %d, ended y cycle %d\n", rank, y);
+            // printf("Rank %d, ended y cycle %d\n", rank, y);
           }
           printf("Ended upgrade\n");
 
