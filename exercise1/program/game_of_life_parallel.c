@@ -452,9 +452,9 @@ int main ( int argc, char **argv )
         printf("Start cycle\n");
         for(int step = 0; step < n; step++){
           printf("Step %d\n", step);
-          #pragma omp parallel
-          {
-            int thread_id = omp_get_thread_num();
+          // #pragma omp parallel
+          // {
+            // int thread_id = omp_get_thread_num();
 
             printf("Upgrade cells\n");
             for(int y = startrow; y < endrow; y++){
@@ -463,7 +463,7 @@ int main ( int argc, char **argv )
                 static_upgrade(image, original_image, xwidth, ywidth, x, y);
               }
             }
-          }
+          // }
 
           // Make the obtained image the starting point for the next cycle
           MPI_Barrier(MPI_COMM_WORLD);
