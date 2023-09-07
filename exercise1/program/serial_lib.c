@@ -166,7 +166,6 @@ unsigned char count_live_neighbors(unsigned char* image, int row, int col, int x
 return sum;
 }
 
-
 void ordered_evolution(unsigned char* image, int xsize, int ysize, int n, int s, char *destination_folder){
   // int dump_idx = 0;
 
@@ -274,4 +273,33 @@ void static_evolution(unsigned char* image, int xsize, int ysize, int n, int s, 
       write_pgm_image(image, xsize, ysize, maxval, title);
     }
   }
+}
+
+void static_upgrade(unsigned char* image, unsigned char* original_image, int xwidth, int ywidth, int x, int y){
+  unsigned char live_neighbors = count_live_neighbors(original_image, x, y, xwidth, ywidth);
+  if (live_neighbors == 2 || live_neighbors == 3){
+    image[x + y * xwidth] = 1;
+  }
+  else if(live_neighbors < 0 || live_neighbors > 8){
+    printf("There is an issue with the count of the neighbors that are alive, they cannot be %d\n", (int)live_neighbors);
+  }
+  else{
+    image[x + y * xwidth] = 0;
+  }
+}
+
+void save_snapshot(unsigned char* image, int xwidth, int ywidth, int maxval, char* snap_title, int image_idx){
+  int idx = 0;
+  printf("Snapshot %d\n", image_idx);
+  for(int y = 0; y < ywidth; y++){
+    for (int x = 0; x < xwidth; x++){
+      printf("%c ", image[idx] + 48);
+      idx++;
+    }
+    printf("\n");
+  }
+  printf("\n");
+  char title[50];
+  snprintf(title, 50, "%s_%d.pbm", snap_title, image_idx);
+  write_pgm_image(image, xwidth, ywidth, maxval, title);
 }

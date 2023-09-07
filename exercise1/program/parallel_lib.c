@@ -225,53 +225,31 @@ void ordered_evolution(unsigned char* image, int xsize, int ysize, int n, int s,
   }
 }
 
-void static_evolution(unsigned char* image, int xsize, int ysize, int n, int s, char *destination_folder){
-  int snap_idx = -1;
-  int maxval = 1;
-  if(s == 0){
-    snap_idx = n;
+void static_upgrade(unsigned char* image, unsigned char* original_image, int xwidth, int ywidth, int x, int y){
+  unsigned char live_neighbors = count_live_neighbors(original_image, x, y, xwidth, ywidth);
+  if (live_neighbors == 2 || live_neighbors == 3){
+    image[x + y * xwidth] = 1;
   }
-  else if(s > 0 && s < n){
-    snap_idx = s;
+  else if(live_neighbors < 0 || live_neighbors > 8){
+    printf("There is an issue with the count of the neighbors that are alive, they cannot be %d\n", (int)live_neighbors);
   }
   else{
-    printf("Wrong value for \"s\"\n");
+    image[x + y * xwidth] = 0;
   }
-  unsigned char temp_mat[xsize][ysize];
-  for(int step = 0; step < n; step++){
-      for(int y = 0; y < ysize; y++){
-        for (int x = 0; x < xsize; x++){
-          temp_mat[x][y] = -1;
-          //calculate status of cell in [x][y]
-          unsigned char live_neighbors = count_live_neighbors(image, x, y, xsize, ysize);
-          if (live_neighbors == 2 || live_neighbors == 3){
-            temp_mat[x][y] = 1;
-          }
-          else if(live_neighbors < 0 || live_neighbors > 8){
-            printf("There is an issue with the count of the neighbors that are alive, they cannot be %d\n", (int)live_neighbors);
-          }
-          else{
-            temp_mat[x][y] = 0;
-          }
-          // printf("%d", temp_mat[x][y]);
-        }
-        // printf("\n");
-      }
+}
 
-    if((step + 1)%snap_idx == 0){
-      int idx = 0;
-      for(int y = 0; y < ysize; y++){
-        for (int x = 0; x < xsize; x++){
-          image[idx] = temp_mat[x][y];
-          printf("%c ", image[idx] + 48);
-          idx++;
-        }
-        printf("\n");
-      }
-      printf("\n");
-      char title[50];
-      snprintf(title, 50, "%s_%d.pbm", destination_folder, step);
-      write_pgm_image(image, xsize, ysize, maxval, title);
+void save_snapshot(unsigned char* image, int xwidth, int ywidth, int maxval, char* snap_title, int image_idx){
+  int idx = 0;
+  printf("Snapshot %d\n", image_idx);
+  for(int y = 0; y < ywidth; y++){
+    for (int x = 0; x < xwidth; x++){
+      printf("%c ", image[idx] + 48);
+      idx++;
     }
+    printf("\n");
   }
+  printf("\n");
+  char title[50];
+  snprintf(title, 50, "%s_%d.pbm", snap_title, image_idx);
+  write_pgm_image(image, xwidth, ywidth, maxval, title);
 }
