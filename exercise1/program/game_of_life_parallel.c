@@ -373,7 +373,7 @@ int main ( int argc, char **argv )
 
       #pragma omp barrier
 
-      MPI_Bcast(original_image, xwidth * ywidth, MPI_UNSIGNED_CHAR, 0, MPI_COMM_WORLD);
+      // MPI_Bcast(original_image, xwidth * ywidth, MPI_UNSIGNED_CHAR, 0, MPI_COMM_WORLD);
 
       #pragma omp barrier
       // distribute rows between MPI processes
