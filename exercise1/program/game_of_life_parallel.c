@@ -373,9 +373,17 @@ int main ( int argc, char **argv )
       }
 
       #pragma omp barrier
-
-      // MPI_Bcast(original_image, xwidth * ywidth, MPI_UNSIGNED_CHAR, 0, MPI_COMM_WORLD);
-       MPI_Barrier(MPI_COMM_WORLD);
+      MPI_Barrier(MPI_COMM_WORLD);
+      printf("Broadcast original_image\n");
+      MPI_Bcast(original_image, xwidth * ywidth, MPI_UNSIGNED_CHAR, 0, MPI_COMM_WORLD);
+      printf("original_image broadcasted\n");
+      MPI_Barrier(MPI_COMM_WORLD);
+      printf("Broadcast xwidth, ywidth, maxval\n");
+      MPI_Bcast(&xwidth, 1, MPI_INT, 0, MPI_COMM_WORLD);
+      MPI_Bcast(&ywidth, 1, MPI_INT, 0, MPI_COMM_WORLD);
+      MPI_Bcast(&maxval, 1, MPI_INT, 0, MPI_COMM_WORLD);
+      printf("xwidth, ywidth, maxval broadcasted\n");
+      MPI_Barrier(MPI_COMM_WORLD);
 
       // distribute rows between MPI processes
       int row_per_proc = ywidth / n_procs; // rows for each process
