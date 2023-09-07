@@ -405,14 +405,14 @@ int main ( int argc, char **argv )
           #endif
         }
 
-        #pragma omp barrier
+        // #pragma omp barrier
 
         char* title =  "snap_test";
 
         int snap_idx = -1;
         int maxval = 1;
 
-        #pragma omp barrier
+        // #pragma omp barrier
       
         if(rank == 0){
           if(s == 0){
