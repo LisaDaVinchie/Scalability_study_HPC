@@ -380,10 +380,10 @@ int main ( int argc, char **argv )
       MPI_Bcast(&maxval, 1, MPI_INT, 0, MPI_COMM_WORLD);
       printf("xwidth, ywidth, maxval broadcasted\n");
       MPI_Barrier(MPI_COMM_WORLD);
-      printf("Broadcast original_image\n");
-      MPI_Bcast(original_image, xwidth * ywidth, MPI_UNSIGNED_CHAR, 0, MPI_COMM_WORLD);
-      printf("original_image broadcasted\n");
-      MPI_Barrier(MPI_COMM_WORLD);
+      // printf("Broadcast original_image\n");
+      // MPI_Bcast(original_image, xwidth * ywidth, MPI_UNSIGNED_CHAR, 0, MPI_COMM_WORLD);
+      // printf("original_image broadcasted\n");
+      // MPI_Barrier(MPI_COMM_WORLD);
 
       printf("Everything broadcasted\n");
 
