@@ -376,6 +376,8 @@ int main ( int argc, char **argv )
         int row_per_proc = xwidth / n_procs; // rows for each process
         int remaining_rows = xwidth % n_procs; // remaining rows
 
+        printf("row_per_proc = %d, remaining rows = %d\n", row_per_proc, remaining_rows);
+
         // If there are spare rows, add one row for each process
         if (remaining_rows > 0){
           row_per_proc++;
