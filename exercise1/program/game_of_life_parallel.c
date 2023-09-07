@@ -435,6 +435,7 @@ int main ( int argc, char **argv )
           {
             int thread_id = omp_get_thread_num();
 
+            printf("Upgrade cells\n");
             for(int y = startrow; y < endrow; y++){
               for (int x = 0; x < xwidth; x++){
                 //upgrade status of cell (x, y)
@@ -446,6 +447,7 @@ int main ( int argc, char **argv )
           // Make the obtained image the starting point for the next cycle
           MPI_Barrier(MPI_COMM_WORLD);
 
+          printf("Gather info\n");
           MPI_Gather(image, n_cells, MPI_UNSIGNED_CHAR, original_image, n_cells, MPI_UNSIGNED_CHAR, 0, MPI_COMM_WORLD);
 
           if(rank == 0){
