@@ -470,7 +470,7 @@ int main ( int argc, char **argv )
           #pragma omp parallel for private (x)
           for(y = startrow; y < endrow; y++){
             printf("Rank %d, started y cycle %d, starting x cycle %d\n", rank, y, x);
-            #pragma omp parallel for
+            #pragma omp for
             for (x = 0; x < xwidth; x++){
               //upgrade status of cell (x, y)
               static_upgrade(image, original_image, xwidth, ywidth, x, y);
