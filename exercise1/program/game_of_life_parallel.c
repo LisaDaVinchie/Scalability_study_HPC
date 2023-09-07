@@ -448,12 +448,25 @@ int main ( int argc, char **argv )
           }
         }
         printf("Define snap index\n");
+
+        int num_threads = -1;
+        int max_threads = omp_get_max_threads();
+        printf("Max threads: %d\n", max_threads);
+
+        if(row_per_proc <= max_threads){
+          num_threads = row_per_proc;
+        }
+        else{
+          num_threads = max_threads;
+        }
         
         printf("Start cycle\n");
         for(int step = 0; step < n; step++){
           printf("Step %d\n", step);
-          // #pragma omp parallel
-          // {
+
+          omp_set_num_threads(num_threads);
+          #pragma omp parallel for
+          {
             // int thread_id = omp_get_thread_num();
 
             printf("Upgrade cells\n");
@@ -463,7 +476,7 @@ int main ( int argc, char **argv )
                 static_upgrade(image, original_image, xwidth, ywidth, x, y);
               }
             }
-          // }
+          }
 
           // Make the obtained image the starting point for the next cycle
           MPI_Barrier(MPI_COMM_WORLD);
