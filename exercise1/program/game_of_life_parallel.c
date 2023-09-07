@@ -373,14 +373,17 @@ int main ( int argc, char **argv )
 
       #pragma omp barrier
 
+      MPI_Bcast(original_image, xwidth * ywidth, MPI_UNSIGNED_CHAR, 0, MPI_COMM_WORLD);
+
+      #pragma omp barrier
       // distribute rows between MPI processes
-      int row_per_proc = xwidth / n_procs; // rows for each process
-      int remaining_rows = xwidth % n_procs; // remaining rows
+      int row_per_proc = ywidth / n_procs; // rows for each process
+      int remaining_rows = ywidth % n_procs; // remaining rows
 
       printf("row_per_proc = %d, remaining rows = %d\n", row_per_proc, remaining_rows);
 
       // If there are spare rows, add one row for each process
-      if (remaining_rows > 0){
+      if (rank < remaining_rows){
         row_per_proc++;
       }
 
