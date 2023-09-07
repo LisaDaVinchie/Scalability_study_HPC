@@ -475,7 +475,10 @@ int main ( int argc, char **argv )
               //upgrade status of cell (x, y)
               static_upgrade(image, original_image, xwidth, ywidth, x, y);
               printf("Rank %d, ended x cycle %d\n", rank, x);
+              MPI_Barrier(MPI_COMM_WORLD);
             }
+            MPI_Barrier(MPI_COMM_WORLD);
+
             printf("Rank %d, ended y cycle %d\n", rank, y);
           }
           printf("Ended upgrade\n");
