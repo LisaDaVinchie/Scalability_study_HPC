@@ -464,17 +464,15 @@ int main ( int argc, char **argv )
         for(int step = 0; step < n; step++){
           printf("Step %d\n", step);
 
-          omp_set_num_threads(num_threads);
-          #pragma omp parallel for
-          {
-            // int thread_id = omp_get_thread_num();
-
-            printf("Upgrade cells\n");
-            for(int y = startrow; y < endrow; y++){
-              for (int x = 0; x < xwidth; x++){
-                //upgrade status of cell (x, y)
-                static_upgrade(image, original_image, xwidth, ywidth, x, y);
-              }
+          int x = 0;
+          int y = 0;
+          // omp_set_num_threads(num_threads);
+          #pragma omp parallel for private (x)
+          for(y = startrow; y < endrow; y++){
+            #pragma omp parallel for
+            for (x = 0; x < xwidth; x++){
+              //upgrade status of cell (x, y)
+              static_upgrade(image, original_image, xwidth, ywidth, x, y);
             }
           }
 
