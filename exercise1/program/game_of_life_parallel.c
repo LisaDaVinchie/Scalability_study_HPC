@@ -478,7 +478,7 @@ int main ( int argc, char **argv )
             }
             printf("Rank %d, ended y cycle %d\n", rank, y);
           }
-          printf("Ended upgrade\n")
+          printf("Ended upgrade\n");
 
           // Make the obtained image the starting point for the next cycle
           MPI_Barrier(MPI_COMM_WORLD);
