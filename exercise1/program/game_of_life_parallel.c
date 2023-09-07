@@ -469,7 +469,7 @@ int main ( int argc, char **argv )
           // omp_set_num_threads(num_threads);
           #pragma omp parallel for private (x)
           for(y = startrow; y < endrow; y++){
-            printf("Started y cycle, starting x cycle\n");
+            printf("Rank %d, started y cycle %d, starting x cycle %d\n", rank, y, x);
             #pragma omp parallel for
             for (x = 0; x < xwidth; x++){
               //upgrade status of cell (x, y)
