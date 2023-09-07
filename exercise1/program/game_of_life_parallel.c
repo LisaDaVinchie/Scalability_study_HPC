@@ -449,15 +449,15 @@ int main ( int argc, char **argv )
         }
         printf("Define snap index\n");
 
-        int num_threads = -1;
+        int my_num_threads = -1;
         int max_threads = omp_get_max_threads();
         printf("Max threads: %d\n", max_threads);
 
         if(row_per_proc <= max_threads){
-          num_threads = row_per_proc;
+          my_num_threads = row_per_proc;
         }
         else{
-          num_threads = max_threads;
+          my_num_threads = max_threads;
         }
         
         printf("Start cycle\n");
@@ -467,9 +467,9 @@ int main ( int argc, char **argv )
           int x = 0;
           int y = 0;
           // omp_set_num_threads(num_threads);
-          #pragma omp parallel for collapse(2)
+          #pragma omp parallel for num_threads(my_num_threads) collapse(2)
           for(y = startrow; y < endrow; y++){
-            // printf("Rank %d, started y cycle %d, starting x cycle %d\n", rank, y, x);
+            printf("Rank %d, started y cycle %d, starting x cycle %d\n", rank, y, x);
             for (x = 0; x < xwidth; x++){
               //upgrade status of cell (x, y)
               static_upgrade(image, original_image, xwidth, ywidth, x, y);
