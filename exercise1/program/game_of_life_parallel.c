@@ -481,7 +481,7 @@ int main ( int argc, char **argv )
             //   printf("somehing is strange in your max_active_level: I've got the value %u\n", max_nesting_levels );
             //   MPI_Abort(MPI_COMM_WORLD, 1);
             //   }
-          #pragma omp parallel for num_threads(my_num_threads) collapse(2)
+          #pragma omp parallel for
           for(y = startrow; y < endrow; y++){
             for (x = 0; x < xwidth; x++){
               printf("Rank %d, started y cycle %d, starting x cycle %d\n", rank, y, x);
