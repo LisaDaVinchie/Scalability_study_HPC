@@ -495,7 +495,7 @@ int main ( int argc, char **argv )
     }
   
    
-   free(image);
+  //  free(image);
 
    MPI_Finalize();
   }
