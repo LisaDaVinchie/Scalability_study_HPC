@@ -472,13 +472,8 @@ int main ( int argc, char **argv )
           for(y = startrow; y < endrow; y++){
             for (x = 0; x < xwidth; x++){
               printf("Rank %d, started y cycle %d, starting x cycle %d\n", rank, y, x);
-              //upgrade status of cell (x, y)
               static_upgrade(image, original_image, xwidth, ywidth, x, y);
-              // printf("Rank %d, ended x cycle %d\n", rank, x);
-              
             }
-
-            // printf("Rank %d, ended y cycle %d\n", rank, y);
           }
           printf("Ended upgrade\n");
           MPI_Barrier(MPI_COMM_WORLD);
