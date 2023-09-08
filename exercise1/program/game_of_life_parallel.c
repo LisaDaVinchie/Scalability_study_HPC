@@ -231,7 +231,8 @@ int main ( int argc, char **argv )
     //   double start_time;
     // #endif
     int xwidth = -1, ywidth = -1, maxval = -1;
-    // unsigned char* image = NULL;
+    unsigned char* image = NULL;
+    unsigned char* original_image = NULL;
 
     printf("About to read header\n");
     read_header(&xwidth, &ywidth, &maxval, fname);
@@ -243,12 +244,34 @@ int main ( int argc, char **argv )
     // MPI_Bcast(&maxval, 1, MPI_INT, 0, MPI_COMM_WORLD);
     // printf("xwidth, ywidth, maxval broadcasted\n");
 
-    // MPI_Barrier(MPI_COMM_WORLD);
+    MPI_Barrier(MPI_COMM_WORLD);
 
     printf("xwidth = %d, ywidth = %d\n", xwidth, ywidth);
-    // unsigned char* original_image = NULL;
-    // original_image = (unsigned char*)malloc(xwidth * ywidth * sizeof(unsigned char));
-    // printf("Allocated memory to read the playground\n");
+    
+    original_image = (unsigned char*)malloc(xwidth * ywidth * sizeof(unsigned char));
+    printf("Allocated memory to read the playground\n");
+
+    printf("distribute rows between MPI processes\n");
+    // distribute rows between MPI processes
+    int row_per_proc = ywidth / n_procs; // rows for each process
+    int remaining_rows = ywidth % n_procs; // remaining rows
+    printf("rank = %d,ywidth = %d, nprocs = %d, rows per procs = %d\n", rank, ywidth, n_procs, row_per_proc);
+
+
+
+    // If there are spare rows, add one row for each process
+    if (rank < remaining_rows){
+      row_per_proc++;
+    }
+
+    int n_cells = row_per_proc * xwidth;
+    image = (unsigned char*)malloc(n_cells * sizeof(unsigned char));
+=
+    int startrow = rank * row_per_proc;
+    int endrow = (rank + 1) * row_per_proc;
+
+
+    printf("\nThread %d has %d rows\n", rank, row_per_proc);
 
 
     
