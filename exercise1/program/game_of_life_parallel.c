@@ -481,12 +481,14 @@ int main ( int argc, char **argv )
             // printf("Rank %d, ended y cycle %d\n", rank, y);
           }
           printf("Ended upgrade\n");
-
-          // Make the obtained image the starting point for the next cycle
-          // MPI_Barrier(MPI_COMM_WORLD);
+          MPI_Barrier(MPI_COMM_WORLD);
 
           printf("Gather info\n");
+
+          // Make the obtained image the starting point for the next cycle
+          //MPI_Gather(image, n_cells, MPI_UNSIGNED_CHAR, full_image, n_cells, MPI_UNSIGNED_CHAR, 0, MPI_COMM_WORLD);
           MPI_Gather(image, n_cells, MPI_UNSIGNED_CHAR, original_image, n_cells, MPI_UNSIGNED_CHAR, 0, MPI_COMM_WORLD);
+          printf("Matrices gathered succesfully\n");
 
           if(rank == 0){
             // for(int i = 0; i < xwidth * ywidth; i++){
