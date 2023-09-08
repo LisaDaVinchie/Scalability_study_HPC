@@ -468,31 +468,31 @@ int main ( int argc, char **argv )
           int y = 0;
           // omp_set_num_threads(num_threads);
           // num_threads(my_num_threads)
+          
+          
+            // #pragma omp single
+            // {
+            //   if( nesting_is_active  = omp_get_nested() )
+            //     max_nesting_levels  = omp_get_max_active_levels();
+            // }
+
+
+            // if ( max_nesting_levels > 1000000 ) {
+            //   printf("somehing is strange in your max_active_level: I've got the value %u\n", max_nesting_levels );
+            //   MPI_Abort(MPI_COMM_WORLD, 1);
+            //   }
           #pragma omp parallel for num_threads(my_num_threads) collapse(2)
-          {
-            #pragma omp single
-            {
-              if( nesting_is_active  = omp_get_nested() )
-                max_nesting_levels  = omp_get_max_active_levels();
-            }
-
-
-            if ( max_nesting_levels > 1000000 ) {
-              printf("somehing is strange in your max_active_level: I've got the value %u\n", max_nesting_levels );
-              MPI_Abort(MPI_COMM_WORLD, 1);
+          for(y = startrow; y < endrow; y++){
+            for (x = 0; x < xwidth; x++){
+              printf("Rank %d, started y cycle %d, starting x cycle %d\n", rank, y, x);
+              int check = static_upgrade(image, original_image, xwidth, ywidth, x, y);
+              
+              if(check != 0){
+                MPI_Abort(MPI_COMM_WORLD, 1);
               }
-
-            for(y = startrow; y < endrow; y++){
-              for (x = 0; x < xwidth; x++){
-                printf("Rank %d, started y cycle %d, starting x cycle %d\n", rank, y, x);
-                int check = static_upgrade(image, original_image, xwidth, ywidth, x, y);
-                
-                if(check != 0){
-                  MPI_Abort(MPI_COMM_WORLD, 1);
-                }
-                }
             }
           }
+          
           printf("Ended upgrade\n");
           
 
