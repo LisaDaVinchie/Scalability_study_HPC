@@ -481,15 +481,16 @@ int main ( int argc, char **argv )
             //   printf("somehing is strange in your max_active_level: I've got the value %u\n", max_nesting_levels );
             //   MPI_Abort(MPI_COMM_WORLD, 1);
             //   }
+          
           #pragma omp parallel for num_threads(my_num_threads)
           for(y = startrow; y < endrow; y++){
             for (x = 0; x < xwidth; x++){
-              printf("Rank %d, started y cycle %d, starting x cycle %d\n", rank, y, x);
-              int check = static_upgrade(image, original_image, xwidth, ywidth, x, y);
+              printf("Rank %d, y = %d, x = %d, live n. = %d\n", rank, y, x, (int)count_live_neighbors(original_image, x, y, xwidth, ywidth));
+              // int check = static_upgrade(image, original_image, xwidth, ywidth, x, y);
               
-              if(check == 1){
-                MPI_Abort(MPI_COMM_WORLD, 1);
-              }
+              // if(check == 1){
+              //   MPI_Abort(MPI_COMM_WORLD, 1);
+              // }
             }
           }
           

@@ -150,7 +150,7 @@ unsigned char count_live_neighbors(unsigned char* image, int row, int col, int x
 
 //   int sum = 0;
 
-    unsigned char sum = 0;
+  unsigned char sum = 0;
   for(int j = 0; j < 3; j++){
     for(int i = 0; i < 3; i++){
       if (i==1 && j==1){
