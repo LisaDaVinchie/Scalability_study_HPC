@@ -467,7 +467,8 @@ int main ( int argc, char **argv )
           int x = 0;
           int y = 0;
           // omp_set_num_threads(num_threads);
-          #pragma omp parallel for num_threads(my_num_threads)
+          // num_threads(my_num_threads)
+          #pragma omp parallel for 
           for(y = startrow; y < endrow; y++){
             for (x = 0; x < xwidth; x++){
               printf("Rank %d, started y cycle %d, starting x cycle %d\n", rank, y, x);
