@@ -479,7 +479,7 @@ int main ( int argc, char **argv )
 
             if ( max_nesting_levels > 1000000 ) {
               printf("somehing is strange in your max_active_level: I've got the value %u\n", max_nesting_levels );
-              return 1;
+              MPI_Abort(MPI_COMM_WORLD, 1);
             }
 
             for(y = startrow; y < endrow; y++){
