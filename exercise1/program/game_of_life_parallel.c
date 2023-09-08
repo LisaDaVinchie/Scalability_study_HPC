@@ -471,7 +471,11 @@ int main ( int argc, char **argv )
           for(y = startrow; y < endrow; y++){
             for (x = 0; x < xwidth; x++){
               printf("Rank %d, started y cycle %d, starting x cycle %d\n", rank, y, x);
-              static_upgrade(image, original_image, xwidth, ywidth, x, y);
+              int check = static_upgrade(image, original_image, xwidth, ywidth, x, y);
+
+              if(check != 0){
+                MPI_Abort(MPI_COMM_WORLD, 1);
+              }
             }
           }
           printf("Ended upgrade\n");

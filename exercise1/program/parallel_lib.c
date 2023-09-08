@@ -225,18 +225,20 @@ void ordered_evolution(unsigned char* image, int xsize, int ysize, int n, int s,
   }
 }
 
-void static_upgrade(unsigned char* image, unsigned char* original_image, int xwidth, int ywidth, int x, int y){
+int static_upgrade(unsigned char* image, unsigned char* original_image, int xwidth, int ywidth, int x, int y){
   unsigned char live_neighbors = count_live_neighbors(original_image, x, y, xwidth, ywidth);
   if (live_neighbors == 2 || live_neighbors == 3){
     image[x + y * xwidth] = 1;
   }
   else if(live_neighbors < 0 || live_neighbors > 8){
     printf("There is an issue with the count of the neighbors that are alive, they cannot be %d\n", (int)live_neighbors);
-    MPI_Abort(MPI_COMM_WORLD, 1);
+    return 1;
   }
   else{
     image[x + y * xwidth] = 0;
   }
+
+  return 0;
 }
 
 void save_snapshot(unsigned char* image, int xwidth, int ywidth, int maxval, char* snap_title, int image_idx){
