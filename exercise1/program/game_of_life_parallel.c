@@ -444,91 +444,91 @@ int main ( int argc, char **argv )
 
     // // #pragma omp barrier
 
-    // if(rank == 0){
-    //   printf("Define snap index\n");
-    //   if(s == 0){
-    //     snap_idx = n;
-    //   }
-    //   else if(s > 0 && s < n){
-    //     snap_idx = s;
-    //   }
-    //   else{
-    //     printf("Wrong value for \"s\"\n");
-    //   }
-    // }
-    // printf("Define snap index\n");
+    if(rank == 0){
+      printf("Define snap index\n");
+      if(s == 0){
+        snap_idx = n;
+      }
+      else if(s > 0 && s < n){
+        snap_idx = s;
+      }
+      else{
+        printf("Wrong value for \"s\"\n");
+      }
+    }
+    printf("Define snap index\n");
 
-    // int my_num_threads = -1;
-    // int max_threads = omp_get_max_threads();
-    // printf("Max threads: %d\n", max_threads);
+    int my_num_threads = -1;
+    int max_threads = omp_get_max_threads();
+    printf("Max threads: %d\n", max_threads);
 
-    // if(row_per_proc <= max_threads){
-    //   my_num_threads = row_per_proc;
-    // }
-    // else{
-    //   my_num_threads = max_threads;
-    // }
+    if(row_per_proc <= max_threads){
+      my_num_threads = row_per_proc;
+    }
+    else{
+      my_num_threads = max_threads;
+    }
         
-    //     printf("Start cycle\n");
-    //     for(int step = 0; step < n; step++){
-    //       printf("Step %d\n", step);
+        printf("Start cycle\n");
+        for(int step = 0; step < n; step++){
+          printf("Step %d\n", step);
 
-    //       int x = 0;
-    //       int y = 0;
-    //       // omp_set_num_threads(num_threads);
-    //       // num_threads(my_num_threads)
+          int x = 0;
+          int y = 0;
+          // omp_set_num_threads(num_threads);
+          // num_threads(my_num_threads)
           
           
-    //         // #pragma omp single
-    //         // {
-    //         //   if( nesting_is_active  = omp_get_nested() )
-    //         //     max_nesting_levels  = omp_get_max_active_levels();
-    //         // }
+            // #pragma omp single
+            // {
+            //   if( nesting_is_active  = omp_get_nested() )
+            //     max_nesting_levels  = omp_get_max_active_levels();
+            // }
 
 
-    //         // if ( max_nesting_levels > 1000000 ) {
-    //         //   printf("somehing is strange in your max_active_level: I've got the value %u\n", max_nesting_levels );
-    //         //   MPI_Abort(MPI_COMM_WORLD, 1);
-    //         //   }
+            // if ( max_nesting_levels > 1000000 ) {
+            //   printf("somehing is strange in your max_active_level: I've got the value %u\n", max_nesting_levels );
+            //   MPI_Abort(MPI_COMM_WORLD, 1);
+            //   }
           
-    //       #pragma omp parallel for num_threads(my_num_threads)
-    //       for(y = startrow; y < endrow; y++){
-    //         for (x = 0; x < xwidth; x++){
-    //           unsigned char liven = count_live_neighbors(original_image, y, x, xwidth, ywidth);
-    //           printf("Rank %d, y = %d, x = %d, live n. = %d\n", rank, y, x, (int)liven );
-    //           // int check = static_upgrade(image, original_image, xwidth, ywidth, x, y);
+          #pragma omp parallel for num_threads(my_num_threads)
+          for(y = startrow; y < endrow; y++){
+            for (x = 0; x < xwidth; x++){
+              unsigned char liven = count_live_neighbors(original_image, y, x, xwidth, ywidth);
+              printf("Rank %d, y = %d, x = %d, live n. = %d\n", rank, y, x, (int)liven );
+              // int check = static_upgrade(image, original_image, xwidth, ywidth, x, y);
               
-    //           // if(check == 1){
-    //           //   MPI_Abort(MPI_COMM_WORLD, 1);
-    //           // }
-    //         }
-    //       }
+              // if(check == 1){
+              //   MPI_Abort(MPI_COMM_WORLD, 1);
+              // }
+            }
+          }
           
-    //       printf("Ended upgrade\n");
+          printf("Ended upgrade\n");
           
 
-    //       // MPI_Barrier(MPI_COMM_WORLD);
+          // MPI_Barrier(MPI_COMM_WORLD);
 
-    //       #pragma omp barrier
+          #pragma omp barrier
 
-    //       printf("Gather info\n");
+          printf("Gather info\n");
 
-    //       // Make the obtained image the starting point for the next cycle
-    //       //MPI_Gather(image, n_cells, MPI_UNSIGNED_CHAR, full_image, n_cells, MPI_UNSIGNED_CHAR, 0, MPI_COMM_WORLD);
-    //       MPI_Gather(image, n_cells, MPI_UNSIGNED_CHAR, original_image, n_cells, MPI_UNSIGNED_CHAR, 0, MPI_COMM_WORLD);
-    //       printf("Matrices gathered succesfully\n");
+          // Make the obtained image the starting point for the next cycle
+          //MPI_Gather(image, n_cells, MPI_UNSIGNED_CHAR, full_image, n_cells, MPI_UNSIGNED_CHAR, 0, MPI_COMM_WORLD);
+          MPI_Gather(image, n_cells, MPI_UNSIGNED_CHAR, original_image, n_cells, MPI_UNSIGNED_CHAR, 0, MPI_COMM_WORLD);
+          printf("Matrices gathered succesfully\n");
 
-    //       if(rank == 0){
-    //         // for(int i = 0; i < xwidth * ywidth; i++){
-    //         //   original_image[i] = image[i];
-    //         // }
+          if(rank == 0){
+            // for(int i = 0; i < xwidth * ywidth; i++){
+            //   original_image[i] = image[i];
+            // }
 
-    //         if((step + 1)%snap_idx == 0){
-    //           save_snapshot(original_image, xwidth, ywidth, maxval, "snap_test", step);
-    //         }
-    //       }
-    //     }
-    //     printf("Wrote all the snapshots\n");
+            if((step + 1)%snap_idx == 0){
+              save_snapshot(original_image, xwidth, ywidth, maxval, "snap_test", step);
+            }
+          }
+        }
+        printf("Wrote all the snapshots\n");
     }
 
     else{
