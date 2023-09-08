@@ -468,7 +468,7 @@ int main ( int argc, char **argv )
           int y = 0;
           // omp_set_num_threads(num_threads);
           // num_threads(my_num_threads)
-          #pragma omp parallel num_threads(my_num_threads)
+          #pragma omp parallel
           {
             #pragma omp single
             {
@@ -480,15 +480,18 @@ int main ( int argc, char **argv )
             if ( max_nesting_levels > 1000000 ) {
               printf("somehing is strange in your max_active_level: I've got the value %u\n", max_nesting_levels );
               MPI_Abort(MPI_COMM_WORLD, 1);
-            }
+              }
 
             for(y = startrow; y < endrow; y++){
-              for (x = 0; x < xwidth; x++){
-                printf("Rank %d, started y cycle %d, starting x cycle %d\n", rank, y, x);
-                int check = static_upgrade(image, original_image, xwidth, ywidth, x, y);
-                
-                if(check != 0){
-                  MPI_Abort(MPI_COMM_WORLD, 1);
+              #pragma omp parallel
+              {
+                for (x = 0; x < xwidth; x++){
+                  printf("Rank %d, started y cycle %d, starting x cycle %d\n", rank, y, x);
+                  int check = static_upgrade(image, original_image, xwidth, ywidth, x, y);
+                  
+                  if(check != 0){
+                    MPI_Abort(MPI_COMM_WORLD, 1);
+                  }
                 }
               }
             }
