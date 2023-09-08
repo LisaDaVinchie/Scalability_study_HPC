@@ -236,9 +236,10 @@ int main ( int argc, char **argv )
     printf("About to read header\n");
     read_header(&xwidth, &ywidth, &maxval, fname);
 
-    printf("xwidt = %d, ywidth = %d\n", xwidth, ywidth);
-    // Allocate memory to read the playground
+    printf("xwidth = %d, ywidth = %d\n", xwidth, ywidth);
+    unsigned char* original_image = NULL;
     original_image = (unsigned char*)malloc(xwidth * ywidth * sizeof(unsigned char));
+    printf("Allocated memory to read the playground\n");
 
     // printf("About to read playground\n");
 
@@ -352,8 +353,6 @@ int main ( int argc, char **argv )
       // }
     }
     else if(e == STATIC){
-      
-      unsigned char* original_image = NULL;
       
       if (rank == 0){
         printf("About to read playground\n");
