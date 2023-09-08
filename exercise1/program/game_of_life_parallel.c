@@ -29,7 +29,8 @@ int   n      = 10000;
 int   s      = 1;
 char *fname  = NULL;
 
-
+int nesting_is_active  = 0;
+int max_nesting_levels = 1;
 
 int main ( int argc, char **argv )
 {
@@ -468,7 +469,19 @@ int main ( int argc, char **argv )
           int y = 0;
           // omp_set_num_threads(num_threads);
           // num_threads(my_num_threads)
-          #pragma omp parallel for 
+          #pragma omp parallel num_threads(my_num_threads)
+          #pragma omp single
+          {
+            if( nesting_is_active  = omp_get_nested() )
+              max_nesting_levels  = omp_get_max_active_levels();
+          }
+
+
+          if ( max_nesting_levels > 1000000 ) {
+            printf("somehing is strange in your max_active_level: I've got the value %u\n", max_nesting_levels );
+            return 1;
+          }
+          
           for(y = startrow; y < endrow; y++){
             for (x = 0; x < xwidth; x++){
               printf("Rank %d, started y cycle %d, starting x cycle %d\n", rank, y, x);
