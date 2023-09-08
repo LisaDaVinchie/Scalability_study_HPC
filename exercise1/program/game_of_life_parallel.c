@@ -230,25 +230,25 @@ int main ( int argc, char **argv )
     // #ifdef TIME
     //   double start_time;
     // #endif
-    // int xwidth = -1, ywidth = -1, maxval = -1;
+    int xwidth = -1, ywidth = -1, maxval = -1;
     // unsigned char* image = NULL;
 
-    // printf("About to read header\n");
-    // read_header(&xwidth, &ywidth, &maxval, fname);
+    printf("About to read header\n");
+    read_header(&xwidth, &ywidth, &maxval, fname);
 
-    // // MPI_Barrier(MPI_COMM_WORLD);
-    // // printf("Broadcast xwidth, ywidth, maxval\n");
-    // // MPI_Bcast(&xwidth, 1, MPI_INT, 0, MPI_COMM_WORLD);
-    // // MPI_Bcast(&ywidth, 1, MPI_INT, 0, MPI_COMM_WORLD);
-    // // MPI_Bcast(&maxval, 1, MPI_INT, 0, MPI_COMM_WORLD);
-    // // printf("xwidth, ywidth, maxval broadcasted\n");
+    // MPI_Barrier(MPI_COMM_WORLD);
+    // printf("Broadcast xwidth, ywidth, maxval\n");
+    // MPI_Bcast(&xwidth, 1, MPI_INT, 0, MPI_COMM_WORLD);
+    // MPI_Bcast(&ywidth, 1, MPI_INT, 0, MPI_COMM_WORLD);
+    // MPI_Bcast(&maxval, 1, MPI_INT, 0, MPI_COMM_WORLD);
+    // printf("xwidth, ywidth, maxval broadcasted\n");
 
-    // // MPI_Barrier(MPI_COMM_WORLD);
+    // MPI_Barrier(MPI_COMM_WORLD);
 
-    // printf("xwidth = %d, ywidth = %d\n", xwidth, ywidth);
-    // // unsigned char* original_image = NULL;
-    // // original_image = (unsigned char*)malloc(xwidth * ywidth * sizeof(unsigned char));
-    // // printf("Allocated memory to read the playground\n");
+    printf("xwidth = %d, ywidth = %d\n", xwidth, ywidth);
+    // unsigned char* original_image = NULL;
+    // original_image = (unsigned char*)malloc(xwidth * ywidth * sizeof(unsigned char));
+    // printf("Allocated memory to read the playground\n");
 
 
     
