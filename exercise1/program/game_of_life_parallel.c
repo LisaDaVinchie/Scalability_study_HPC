@@ -472,14 +472,13 @@ int main ( int argc, char **argv )
             for (x = 0; x < xwidth; x++){
               printf("Rank %d, started y cycle %d, starting x cycle %d\n", rank, y, x);
               static_upgrade(image, original_image, xwidth, ywidth, x, y);
-              # pragma omp barrier
             }
           }
           printf("Ended upgrade\n");
 
           // MPI_Barrier(MPI_COMM_WORLD);
 
-          // #pragma omp barrier
+          #pragma omp barrier
 
           printf("Gather info\n");
 
