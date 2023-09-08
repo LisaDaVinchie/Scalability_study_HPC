@@ -438,11 +438,13 @@ int main ( int argc, char **argv )
 
     // // #pragma omp barrier
 
-    // char* title =  "snap_test";
+    MPI_Barrier(MPI_COMM_WORLD);
+    
+    char* title =  "snap_test";
 
-    // int snap_idx = -1;
+    int snap_idx = -1;
 
-    // // #pragma omp barrier
+    // #pragma omp barrier
 
     if(rank == 0){
       printf("Define snap index\n");
