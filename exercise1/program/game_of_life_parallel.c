@@ -345,12 +345,11 @@ int main ( int argc, char **argv )
       // }
     }
     else if(e == STATIC){
-
-      printf("About to read playground\n");
       
       unsigned char* original_image = NULL;
       
       if (rank == 0){
+        printf("About to read playground\n");
         // Read the header to get the dimensions of the playground and the color maxval
         read_header(&xwidth, &ywidth, &maxval, fname);
 
@@ -374,14 +373,14 @@ int main ( int argc, char **argv )
         }
       }
 
-      #pragma omp barrier
-      MPI_Barrier(MPI_COMM_WORLD);
+      // #pragma omp barrier
+      // MPI_Barrier(MPI_COMM_WORLD);
       printf("Broadcast xwidth, ywidth, maxval\n");
       MPI_Bcast(&xwidth, 1, MPI_INT, 0, MPI_COMM_WORLD);
       MPI_Bcast(&ywidth, 1, MPI_INT, 0, MPI_COMM_WORLD);
       MPI_Bcast(&maxval, 1, MPI_INT, 0, MPI_COMM_WORLD);
       printf("xwidth, ywidth, maxval broadcasted\n");
-      MPI_Barrier(MPI_COMM_WORLD);
+      // MPI_Barrier(MPI_COMM_WORLD);
       // printf("Broadcast original_image\n");
       // MPI_Bcast(original_image, xwidth * ywidth, MPI_UNSIGNED_CHAR, 0, MPI_COMM_WORLD);
       // printf("original_image broadcasted\n");
@@ -389,7 +388,7 @@ int main ( int argc, char **argv )
 
       printf("Everything broadcasted\n");
 
-      MPI_Barrier(MPI_COMM_WORLD);
+      // MPI_Barrier(MPI_COMM_WORLD);
 
       printf("distribute rows between MPI processes\n");
       // distribute rows between MPI processes
@@ -404,18 +403,18 @@ int main ( int argc, char **argv )
         row_per_proc++;
       }
 
-    MPI_Barrier(MPI_COMM_WORLD);
+    // MPI_Barrier(MPI_COMM_WORLD);
 
     int n_cells = row_per_proc * xwidth;
-    MPI_Barrier(MPI_COMM_WORLD);
+    // MPI_Barrier(MPI_COMM_WORLD);
     int startrow = rank * row_per_proc;
     int endrow = (rank + 1) * row_per_proc;
-    MPI_Barrier(MPI_COMM_WORLD);
+    // MPI_Barrier(MPI_COMM_WORLD);
     // Allocate partial matrices
     image = (unsigned char*)malloc(n_cells * sizeof(unsigned char));
-    MPI_Barrier(MPI_COMM_WORLD);
+    // MPI_Barrier(MPI_COMM_WORLD);
     printf("\nThread %d has %d rows\n", rank, row_per_proc);
-    MPI_Barrier(MPI_COMM_WORLD);
+    // MPI_Barrier(MPI_COMM_WORLD);
     // #pragma omp barrier
   
     if(rank == 0){
@@ -481,7 +480,7 @@ int main ( int argc, char **argv )
             printf("somehing is strange in your max_active_level: I've got the value %u\n", max_nesting_levels );
             return 1;
           }
-          
+
           for(y = startrow; y < endrow; y++){
             for (x = 0; x < xwidth; x++){
               printf("Rank %d, started y cycle %d, starting x cycle %d\n", rank, y, x);
