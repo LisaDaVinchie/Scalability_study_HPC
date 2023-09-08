@@ -487,7 +487,7 @@ int main ( int argc, char **argv )
               printf("Rank %d, started y cycle %d, starting x cycle %d\n", rank, y, x);
               int check = static_upgrade(image, original_image, xwidth, ywidth, x, y);
               
-              if(check != 0){
+              if(check == 1){
                 MPI_Abort(MPI_COMM_WORLD, 1);
               }
             }
