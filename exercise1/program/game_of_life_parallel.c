@@ -266,7 +266,7 @@ int main ( int argc, char **argv )
 
     int n_cells = row_per_proc * xwidth;
     image = (unsigned char*)malloc(n_cells * sizeof(unsigned char));
-=
+
     int startrow = rank * row_per_proc;
     int endrow = (rank + 1) * row_per_proc;
 
