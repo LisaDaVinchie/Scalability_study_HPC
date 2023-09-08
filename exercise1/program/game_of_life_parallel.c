@@ -87,6 +87,7 @@ int main ( int argc, char **argv )
   int rank, n_procs;
   int mpi_provided_thread_level;
 
+  printf("Start MPI environment\n");
   MPI_Init_thread(&argc, &argv, MPI_THREAD_FUNNELED, &mpi_provided_thread_level);
   // MPI_THREAD_FUNNELED: The process may be multi-threaded, but only the main
   // thread will make MPI calls (funneled through the main thread).
