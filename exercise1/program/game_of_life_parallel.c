@@ -485,7 +485,7 @@ int main ( int argc, char **argv )
           #pragma omp parallel for num_threads(my_num_threads)
           for(y = startrow; y < endrow; y++){
             for (x = 0; x < xwidth; x++){
-              unsigned char liven = count_live_neighbors(original_image, x, y, xwidth, ywidth)
+              unsigned char liven = count_live_neighbors(original_image, x, y, xwidth, ywidth);
               printf("Rank %d, y = %d, x = %d, live n. = %d\n", rank, y, x, (int)liven );
               // int check = static_upgrade(image, original_image, xwidth, ywidth, x, y);
               
