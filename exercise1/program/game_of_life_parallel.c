@@ -491,7 +491,6 @@ int main ( int argc, char **argv )
                 MPI_Abort(MPI_COMM_WORLD, 1);
               }
             }
-            printf("\n");
           }
           printf("Ended upgrade\n");
           
