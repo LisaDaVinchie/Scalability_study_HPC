@@ -274,6 +274,26 @@ int main ( int argc, char **argv )
     printf("\nThread %d has %d rows\n", rank, row_per_proc);
 
 
+    printf("About to read playground\n");
+    read_pgm_image(original_image, xwidth, ywidth, maxval, fname);
+
+    printf("Playground read\n");
+
+    if(rank == 0){
+      // Print the playground
+      int idx = 0;
+      for (int y = 0; y < ywidth; y++){
+        for (int x = 0; x < xwidth; x++){
+            printf("%d ", (int)original_image[idx]);
+            idx++;
+        }
+        printf("\n");
+      }
+    }
+  
+
+
+
     
     if(e == ORDERED){
       // ordered_evolution(image, xwidth, ywidth, n, s, "snapshots_ordered/snap");
