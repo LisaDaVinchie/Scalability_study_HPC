@@ -230,9 +230,7 @@ int main ( int argc, char **argv )
     // #ifdef TIME
     //   double start_time;
     // #endif
-    int xwidth = -1, ywidth = -1, maxval = -1;
-    unsigned char* image = NULL;
-    unsigned char* original_image = NULL;
+    int xwidth = -1, ywidth = -1, maxval = -1;    
 
     printf("About to read header\n");
     read_header(&xwidth, &ywidth, &maxval, fname);
@@ -248,7 +246,10 @@ int main ( int argc, char **argv )
 
     printf("xwidth = %d, ywidth = %d\n", xwidth, ywidth);
     
-    original_image = (unsigned char*)malloc(xwidth * ywidth * sizeof(unsigned char));
+    if(e == STATIC){
+      unsigned char* original_image = (unsigned char*)malloc(xwidth * ywidth * sizeof(unsigned char));
+    
+    unsigned char* image = (unsigned char*)malloc(xwidth * ywidth * sizeof(unsigned char));
     printf("Allocated memory to read the playground\n");
 
     printf("distribute rows between MPI processes\n");
@@ -265,7 +266,6 @@ int main ( int argc, char **argv )
     }
 
     int n_cells = row_per_proc * xwidth;
-    image = (unsigned char*)malloc(n_cells * sizeof(unsigned char));
 
     int startrow = rank * row_per_proc;
     int endrow = (rank + 1) * row_per_proc;
@@ -290,6 +290,8 @@ int main ( int argc, char **argv )
         printf("\n");
       }
     }
+
+    MPI_Barrier(MPI_COMM_WORLD);
   
 
 
@@ -438,8 +440,6 @@ int main ( int argc, char **argv )
 
     // // #pragma omp barrier
 
-    MPI_Barrier(MPI_COMM_WORLD);
-    
     char* title =  "snap_test";
 
     int snap_idx = -1;
