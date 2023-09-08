@@ -233,6 +233,13 @@ int main ( int argc, char **argv )
     int xwidth = -1, ywidth = -1, maxval = -1;
     unsigned char* image = NULL;
 
+    printf("About to read header\n");
+    read_header(&xwidth, &ywidth, &maxval, fname);
+
+    printf("xwidt = %d, ywidth = %d\n", xwidth, ywidth);
+    // Allocate memory to read the playground
+    original_image = (unsigned char*)malloc(xwidth * ywidth * sizeof(unsigned char));
+
     // printf("About to read playground\n");
 
     
@@ -351,11 +358,11 @@ int main ( int argc, char **argv )
       if (rank == 0){
         printf("About to read playground\n");
         // Read the header to get the dimensions of the playground and the color maxval
-        read_header(&xwidth, &ywidth, &maxval, fname);
+        // read_header(&xwidth, &ywidth, &maxval, fname);
 
-        printf("xwidt = %d, ywidth = %d\n", xwidth, ywidth);
-        // Allocate memory to read the playground
-
+        // printf("xwidt = %d, ywidth = %d\n", xwidth, ywidth);
+        // // Allocate memory to read the playground
+        // original_image = (unsigned char*)malloc(xwidth * ywidth * sizeof(unsigned char));
         // Read the playground and store it in a array
         read_pgm_image(original_image, xwidth, ywidth, maxval, fname);
 
@@ -380,11 +387,10 @@ int main ( int argc, char **argv )
       MPI_Bcast(&maxval, 1, MPI_INT, 0, MPI_COMM_WORLD);
       printf("xwidth, ywidth, maxval broadcasted\n");
       // MPI_Barrier(MPI_COMM_WORLD);
-      // printf("Broadcast original_image\n");
-      // MPI_Bcast(original_image, xwidth * ywidth, MPI_UNSIGNED_CHAR, 0, MPI_COMM_WORLD);
-      // printf("original_image broadcasted\n");
+      printf("Broadcast original_image\n");
+      MPI_Bcast(original_image, xwidth * ywidth, MPI_UNSIGNED_CHAR, 0, MPI_COMM_WORLD);
+      printf("original_image broadcasted\n");
       // MPI_Barrier(MPI_COMM_WORLD);
-      original_image = (unsigned char*)malloc(xwidth * ywidth * sizeof(unsigned char));
 
       printf("Everything broadcasted\n");
 
@@ -427,38 +433,38 @@ int main ( int argc, char **argv )
         #endif
       }
 
-        // #pragma omp barrier
+    // #pragma omp barrier
 
-        char* title =  "snap_test";
+    char* title =  "snap_test";
 
-        int snap_idx = -1;
+    int snap_idx = -1;
 
-        // #pragma omp barrier
+    // #pragma omp barrier
 
-        if(rank == 0){
-          printf("Define snap index\n");
-          if(s == 0){
-            snap_idx = n;
-          }
-          else if(s > 0 && s < n){
-            snap_idx = s;
-          }
-          else{
-            printf("Wrong value for \"s\"\n");
-          }
-        }
-        printf("Define snap index\n");
+    if(rank == 0){
+      printf("Define snap index\n");
+      if(s == 0){
+        snap_idx = n;
+      }
+      else if(s > 0 && s < n){
+        snap_idx = s;
+      }
+      else{
+        printf("Wrong value for \"s\"\n");
+      }
+    }
+    printf("Define snap index\n");
 
-        int my_num_threads = -1;
-        int max_threads = omp_get_max_threads();
-        printf("Max threads: %d\n", max_threads);
+    int my_num_threads = -1;
+    int max_threads = omp_get_max_threads();
+    printf("Max threads: %d\n", max_threads);
 
-        if(row_per_proc <= max_threads){
-          my_num_threads = row_per_proc;
-        }
-        else{
-          my_num_threads = max_threads;
-        }
+    if(row_per_proc <= max_threads){
+      my_num_threads = row_per_proc;
+    }
+    else{
+      my_num_threads = max_threads;
+    }
         
         printf("Start cycle\n");
         for(int step = 0; step < n; step++){
@@ -485,7 +491,7 @@ int main ( int argc, char **argv )
           #pragma omp parallel for num_threads(my_num_threads)
           for(y = startrow; y < endrow; y++){
             for (x = 0; x < xwidth; x++){
-              unsigned char liven = count_live_neighbors(original_image, x, y, xwidth, ywidth);
+              unsigned char liven = count_live_neighbors(original_image, y, x, xwidth, ywidth);
               printf("Rank %d, y = %d, x = %d, live n. = %d\n", rank, y, x, (int)liven );
               // int check = static_upgrade(image, original_image, xwidth, ywidth, x, y);
               
