@@ -236,60 +236,20 @@ int main ( int argc, char **argv )
     printf("About to read header\n");
     read_header(&xwidth, &ywidth, &maxval, fname);
 
-    MPI_Barrier(MPI_COMM_WORLD);
-    printf("Broadcast xwidth, ywidth, maxval\n");
-    MPI_Bcast(&xwidth, 1, MPI_INT, 0, MPI_COMM_WORLD);
-    MPI_Bcast(&ywidth, 1, MPI_INT, 0, MPI_COMM_WORLD);
-    MPI_Bcast(&maxval, 1, MPI_INT, 0, MPI_COMM_WORLD);
-    printf("xwidth, ywidth, maxval broadcasted\n");
-    
-    MPI_Barrier(MPI_COMM_WORLD);
+    // MPI_Barrier(MPI_COMM_WORLD);
+    // printf("Broadcast xwidth, ywidth, maxval\n");
+    // MPI_Bcast(&xwidth, 1, MPI_INT, 0, MPI_COMM_WORLD);
+    // MPI_Bcast(&ywidth, 1, MPI_INT, 0, MPI_COMM_WORLD);
+    // MPI_Bcast(&maxval, 1, MPI_INT, 0, MPI_COMM_WORLD);
+    // printf("xwidth, ywidth, maxval broadcasted\n");
+
+    // MPI_Barrier(MPI_COMM_WORLD);
 
     printf("xwidth = %d, ywidth = %d\n", xwidth, ywidth);
-    unsigned char* original_image = NULL;
-    original_image = (unsigned char*)malloc(xwidth * ywidth * sizeof(unsigned char));
-    printf("Allocated memory to read the playground\n");
+    // unsigned char* original_image = NULL;
+    // original_image = (unsigned char*)malloc(xwidth * ywidth * sizeof(unsigned char));
+    // printf("Allocated memory to read the playground\n");
 
-    // printf("About to read playground\n");
-
-    
-    // if (rank == 0){
-    //   // Read the header to get the dimensions of the playground and the color maxval
-    //   read_header(&xwidth, &ywidth, &maxval, fname);
-
-    //   // Allocate memory to read the playground
-    //   image = (unsigned char*)malloc(xwidth * ywidth * sizeof(unsigned char));
-
-    //   // Read the playground and store it in a array
-    //   read_pgm_image(image, xwidth, ywidth, maxval, fname);
-
-    //   printf("Playground read\n");
-
-    //   // Print the playground
-    //   int idx = 0;
-    //   for (int y = 0; y < ywidth; y++){
-    //     for (int x = 0; x < xwidth; x++){
-    //         printf("%d ", (int)image[idx]);
-    //         idx++;
-    //     }
-    //     printf("\n");
-    //   }
-
-
-    // // distribute rows between MPI processes
-    // int row_per_proc = xwidth / n_procs; // rows for each process
-    // int remaining_rows = xwidth % n_procs; // remaining rows
-
-    // // If there are spare rows, add one row for each process
-    // if (remaining_rows > 0){
-    //   row_per_proc++;
-    // }
-
-    // printf("Thread %d has %d rows\n", rank, row_per_proc);
-
-    // int n_cells = row_per_proc * ywidth;
-
-    // }
 
     
     if(e == ORDERED){
@@ -363,177 +323,169 @@ int main ( int argc, char **argv )
     }
     else if(e == STATIC){
       
-      if (rank == 0){
-        printf("About to read playground\n");
-        // Read the header to get the dimensions of the playground and the color maxval
-        // read_header(&xwidth, &ywidth, &maxval, fname);
+    //   if (rank == 0){
+    //     printf("About to read playground\n");
+    //     read_pgm_image(original_image, xwidth, ywidth, maxval, fname);
 
-        // printf("xwidt = %d, ywidth = %d\n", xwidth, ywidth);
-        // // Allocate memory to read the playground
-        // original_image = (unsigned char*)malloc(xwidth * ywidth * sizeof(unsigned char));
-        // Read the playground and store it in a array
-        read_pgm_image(original_image, xwidth, ywidth, maxval, fname);
+    //     printf("Playground read\n");
 
-        printf("Playground read\n");
+    //     // Print the playground
+    //     int idx = 0;
+    //     for (int y = 0; y < ywidth; y++){
+    //       for (int x = 0; x < xwidth; x++){
+    //           printf("%d ", (int)original_image[idx]);
+    //           idx++;
+    //       }
+    //       printf("\n");
+    //     }
+    //   }
 
-        // Print the playground
-        int idx = 0;
-        for (int y = 0; y < ywidth; y++){
-          for (int x = 0; x < xwidth; x++){
-              printf("%d ", (int)original_image[idx]);
-              idx++;
-          }
-          printf("\n");
-        }
-      }
 
-      // #pragma omp barrier
-      // MPI_Barrier(MPI_COMM_WORLD);
-      printf("Broadcast xwidth, ywidth, maxval\n");
-      MPI_Bcast(&xwidth, 1, MPI_INT, 0, MPI_COMM_WORLD);
-      MPI_Bcast(&ywidth, 1, MPI_INT, 0, MPI_COMM_WORLD);
-      MPI_Bcast(&maxval, 1, MPI_INT, 0, MPI_COMM_WORLD);
-      printf("xwidth, ywidth, maxval broadcasted\n");
-      // MPI_Barrier(MPI_COMM_WORLD);
-      printf("Broadcast original_image\n");
-      MPI_Bcast(original_image, xwidth * ywidth, MPI_UNSIGNED_CHAR, 0, MPI_COMM_WORLD);
-      printf("original_image broadcasted\n");
-      // MPI_Barrier(MPI_COMM_WORLD);
+    //   printf("Broadcast xwidth, ywidth, maxval\n");
+    //   MPI_Bcast(&xwidth, 1, MPI_INT, 0, MPI_COMM_WORLD);
+    //   MPI_Bcast(&ywidth, 1, MPI_INT, 0, MPI_COMM_WORLD);
+    //   MPI_Bcast(&maxval, 1, MPI_INT, 0, MPI_COMM_WORLD);
+    //   printf("xwidth, ywidth, maxval broadcasted\n");
 
-      printf("Everything broadcasted\n");
+    //   printf("Broadcast original_image\n");
+    //   MPI_Bcast(original_image, xwidth * ywidth, MPI_UNSIGNED_CHAR, 0, MPI_COMM_WORLD);
+    //   printf("original_image broadcasted\n");
 
-      // MPI_Barrier(MPI_COMM_WORLD);
 
-      printf("distribute rows between MPI processes\n");
-      // distribute rows between MPI processes
-      int row_per_proc = ywidth / n_procs; // rows for each process
-      int remaining_rows = ywidth % n_procs; // remaining rows
-      printf("rank = %d,ywidth = %d, nprocs = %d, rows per procs = %d\n", rank, ywidth, n_procs, row_per_proc);
+    //   printf("Everything broadcasted\n");
 
-      #pragma omp barrier
 
-      // If there are spare rows, add one row for each process
-      if (rank < remaining_rows){
-        row_per_proc++;
-      }
 
-    // MPI_Barrier(MPI_COMM_WORLD);
+    //   printf("distribute rows between MPI processes\n");
+    //   // distribute rows between MPI processes
+    //   int row_per_proc = ywidth / n_procs; // rows for each process
+    //   int remaining_rows = ywidth % n_procs; // remaining rows
+    //   printf("rank = %d,ywidth = %d, nprocs = %d, rows per procs = %d\n", rank, ywidth, n_procs, row_per_proc);
 
-    int n_cells = row_per_proc * xwidth;
-    // MPI_Barrier(MPI_COMM_WORLD);
-    int startrow = rank * row_per_proc;
-    int endrow = (rank + 1) * row_per_proc;
-    // MPI_Barrier(MPI_COMM_WORLD);
-    // Allocate partial matrices
-    image = (unsigned char*)malloc(n_cells * sizeof(unsigned char));
-    // MPI_Barrier(MPI_COMM_WORLD);
-    printf("\nThread %d has %d rows\n", rank, row_per_proc);
-    // MPI_Barrier(MPI_COMM_WORLD);
-    // #pragma omp barrier
+    //   #pragma omp barrier
+
+    //   // If there are spare rows, add one row for each process
+    //   if (rank < remaining_rows){
+    //     row_per_proc++;
+    //   }
+
+    // // MPI_Barrier(MPI_COMM_WORLD);
+
+    // int n_cells = row_per_proc * xwidth;
+    // // MPI_Barrier(MPI_COMM_WORLD);
+    // int startrow = rank * row_per_proc;
+    // int endrow = (rank + 1) * row_per_proc;
+    // // MPI_Barrier(MPI_COMM_WORLD);
+    // // Allocate partial matrices
+    // image = (unsigned char*)malloc(n_cells * sizeof(unsigned char));
+    // // MPI_Barrier(MPI_COMM_WORLD);
+    // printf("\nThread %d has %d rows\n", rank, row_per_proc);
+    // // MPI_Barrier(MPI_COMM_WORLD);
+    // // #pragma omp barrier
   
-    if(rank == 0){
-      #ifdef TIME
-        MPI_Barrier(MPI_COMM_WORLD);
+    // if(rank == 0){
+    //   #ifdef TIME
+    //     MPI_Barrier(MPI_COMM_WORLD);
 
-        if(rank == 0){
-            start_time = omp_get_wtime();
-          }
-        #endif
-      }
+    //     if(rank == 0){
+    //         start_time = omp_get_wtime();
+    //       }
+    //     #endif
+    //   }
 
-    // #pragma omp barrier
+    // // #pragma omp barrier
 
-    char* title =  "snap_test";
+    // char* title =  "snap_test";
 
-    int snap_idx = -1;
+    // int snap_idx = -1;
 
-    // #pragma omp barrier
+    // // #pragma omp barrier
 
-    if(rank == 0){
-      printf("Define snap index\n");
-      if(s == 0){
-        snap_idx = n;
-      }
-      else if(s > 0 && s < n){
-        snap_idx = s;
-      }
-      else{
-        printf("Wrong value for \"s\"\n");
-      }
-    }
-    printf("Define snap index\n");
+    // if(rank == 0){
+    //   printf("Define snap index\n");
+    //   if(s == 0){
+    //     snap_idx = n;
+    //   }
+    //   else if(s > 0 && s < n){
+    //     snap_idx = s;
+    //   }
+    //   else{
+    //     printf("Wrong value for \"s\"\n");
+    //   }
+    // }
+    // printf("Define snap index\n");
 
-    int my_num_threads = -1;
-    int max_threads = omp_get_max_threads();
-    printf("Max threads: %d\n", max_threads);
+    // int my_num_threads = -1;
+    // int max_threads = omp_get_max_threads();
+    // printf("Max threads: %d\n", max_threads);
 
-    if(row_per_proc <= max_threads){
-      my_num_threads = row_per_proc;
-    }
-    else{
-      my_num_threads = max_threads;
-    }
+    // if(row_per_proc <= max_threads){
+    //   my_num_threads = row_per_proc;
+    // }
+    // else{
+    //   my_num_threads = max_threads;
+    // }
         
-        printf("Start cycle\n");
-        for(int step = 0; step < n; step++){
-          printf("Step %d\n", step);
+    //     printf("Start cycle\n");
+    //     for(int step = 0; step < n; step++){
+    //       printf("Step %d\n", step);
 
-          int x = 0;
-          int y = 0;
-          // omp_set_num_threads(num_threads);
-          // num_threads(my_num_threads)
+    //       int x = 0;
+    //       int y = 0;
+    //       // omp_set_num_threads(num_threads);
+    //       // num_threads(my_num_threads)
           
           
-            // #pragma omp single
-            // {
-            //   if( nesting_is_active  = omp_get_nested() )
-            //     max_nesting_levels  = omp_get_max_active_levels();
-            // }
+    //         // #pragma omp single
+    //         // {
+    //         //   if( nesting_is_active  = omp_get_nested() )
+    //         //     max_nesting_levels  = omp_get_max_active_levels();
+    //         // }
 
 
-            // if ( max_nesting_levels > 1000000 ) {
-            //   printf("somehing is strange in your max_active_level: I've got the value %u\n", max_nesting_levels );
-            //   MPI_Abort(MPI_COMM_WORLD, 1);
-            //   }
+    //         // if ( max_nesting_levels > 1000000 ) {
+    //         //   printf("somehing is strange in your max_active_level: I've got the value %u\n", max_nesting_levels );
+    //         //   MPI_Abort(MPI_COMM_WORLD, 1);
+    //         //   }
           
-          #pragma omp parallel for num_threads(my_num_threads)
-          for(y = startrow; y < endrow; y++){
-            for (x = 0; x < xwidth; x++){
-              unsigned char liven = count_live_neighbors(original_image, y, x, xwidth, ywidth);
-              printf("Rank %d, y = %d, x = %d, live n. = %d\n", rank, y, x, (int)liven );
-              // int check = static_upgrade(image, original_image, xwidth, ywidth, x, y);
+    //       #pragma omp parallel for num_threads(my_num_threads)
+    //       for(y = startrow; y < endrow; y++){
+    //         for (x = 0; x < xwidth; x++){
+    //           unsigned char liven = count_live_neighbors(original_image, y, x, xwidth, ywidth);
+    //           printf("Rank %d, y = %d, x = %d, live n. = %d\n", rank, y, x, (int)liven );
+    //           // int check = static_upgrade(image, original_image, xwidth, ywidth, x, y);
               
-              // if(check == 1){
-              //   MPI_Abort(MPI_COMM_WORLD, 1);
-              // }
-            }
-          }
+    //           // if(check == 1){
+    //           //   MPI_Abort(MPI_COMM_WORLD, 1);
+    //           // }
+    //         }
+    //       }
           
-          printf("Ended upgrade\n");
+    //       printf("Ended upgrade\n");
           
 
-          // MPI_Barrier(MPI_COMM_WORLD);
+    //       // MPI_Barrier(MPI_COMM_WORLD);
 
-          #pragma omp barrier
+    //       #pragma omp barrier
 
-          printf("Gather info\n");
+    //       printf("Gather info\n");
 
-          // Make the obtained image the starting point for the next cycle
-          //MPI_Gather(image, n_cells, MPI_UNSIGNED_CHAR, full_image, n_cells, MPI_UNSIGNED_CHAR, 0, MPI_COMM_WORLD);
-          MPI_Gather(image, n_cells, MPI_UNSIGNED_CHAR, original_image, n_cells, MPI_UNSIGNED_CHAR, 0, MPI_COMM_WORLD);
-          printf("Matrices gathered succesfully\n");
+    //       // Make the obtained image the starting point for the next cycle
+    //       //MPI_Gather(image, n_cells, MPI_UNSIGNED_CHAR, full_image, n_cells, MPI_UNSIGNED_CHAR, 0, MPI_COMM_WORLD);
+    //       MPI_Gather(image, n_cells, MPI_UNSIGNED_CHAR, original_image, n_cells, MPI_UNSIGNED_CHAR, 0, MPI_COMM_WORLD);
+    //       printf("Matrices gathered succesfully\n");
 
-          if(rank == 0){
-            // for(int i = 0; i < xwidth * ywidth; i++){
-            //   original_image[i] = image[i];
-            // }
+    //       if(rank == 0){
+    //         // for(int i = 0; i < xwidth * ywidth; i++){
+    //         //   original_image[i] = image[i];
+    //         // }
 
-            if((step + 1)%snap_idx == 0){
-              save_snapshot(original_image, xwidth, ywidth, maxval, "snap_test", step);
-            }
-          }
-        }
-        printf("Wrote all the snapshots\n");
+    //         if((step + 1)%snap_idx == 0){
+    //           save_snapshot(original_image, xwidth, ywidth, maxval, "snap_test", step);
+    //         }
+    //       }
+    //     }
+    //     printf("Wrote all the snapshots\n");
     }
 
     else{
