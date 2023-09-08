@@ -355,7 +355,6 @@ int main ( int argc, char **argv )
 
         printf("xwidt = %d, ywidth = %d\n", xwidth, ywidth);
         // Allocate memory to read the playground
-        original_image = (unsigned char*)malloc(xwidth * ywidth * sizeof(unsigned char));
 
         // Read the playground and store it in a array
         read_pgm_image(original_image, xwidth, ywidth, maxval, fname);
@@ -385,6 +384,7 @@ int main ( int argc, char **argv )
       // MPI_Bcast(original_image, xwidth * ywidth, MPI_UNSIGNED_CHAR, 0, MPI_COMM_WORLD);
       // printf("original_image broadcasted\n");
       // MPI_Barrier(MPI_COMM_WORLD);
+      original_image = (unsigned char*)malloc(xwidth * ywidth * sizeof(unsigned char));
 
       printf("Everything broadcasted\n");
 
@@ -485,7 +485,8 @@ int main ( int argc, char **argv )
           #pragma omp parallel for num_threads(my_num_threads)
           for(y = startrow; y < endrow; y++){
             for (x = 0; x < xwidth; x++){
-              printf("Rank %d, y = %d, x = %d, live n. = %d\n", rank, y, x, (int)count_live_neighbors(original_image, x, y, xwidth, ywidth));
+              unsigned char liven = count_live_neighbors(original_image, x, y, xwidth, ywidth)
+              printf("Rank %d, y = %d, x = %d, live n. = %d\n", rank, y, x, (int)liven );
               // int check = static_upgrade(image, original_image, xwidth, ywidth, x, y);
               
               // if(check == 1){
