@@ -432,7 +432,6 @@ int main ( int argc, char **argv )
         char* title =  "snap_test";
 
         int snap_idx = -1;
-        int maxval = 1;
 
         // #pragma omp barrier
 
@@ -476,7 +475,10 @@ int main ( int argc, char **argv )
             }
           }
           printf("Ended upgrade\n");
-          MPI_Barrier(MPI_COMM_WORLD);
+
+          // MPI_Barrier(MPI_COMM_WORLD);
+
+          #pragma omp barrier
 
           printf("Gather info\n");
 
