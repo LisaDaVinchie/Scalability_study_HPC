@@ -38,12 +38,12 @@ mpicc -fopenmp -o $execname $filename $libname
 echo file compiled, executable is $execname
 
 echo initialise playground
-export OMP_NUM_THREADS=2
-echo initialising playground
-mpirun -np 2 --map-by socket ./$execname -i -k 10 -f $imagename
-echo reading image
-mpirun -np 2 --map-by socket ./$execname -r -f $imagename
-echo image read
+export OMP_NUM_THREADS=3
+# echo initialising playground
+# mpirun -np 2 --map-by socket ./$execname -i -k 15 -f $imagename
+echo running static evolution
+mpirun -np 2 --map-by socket ./$execname -r -f $imagename -e 1 -n 5 -s 2
+echo program finished
 
 echo removing modules
 module purge
