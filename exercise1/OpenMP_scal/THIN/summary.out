@@ -8,7 +8,6 @@ While processing the following module(s):
 
 set topology
 data folder is /u/dssc/ldavin00/Foundations_of_HPC_final_project/exercise1/OpenMP_scal/THIN
-moved to /u/dssc/ldavin00/Foundations_of_HPC_final_project/exercise1/program
 compile c file
 file compiled, executable is game_of_life_parallel.exe
 initialise playground
@@ -18,7 +17,7 @@ Arguments are:
 action = 2
 k = 100
 e = 1
-f = /u/dssc/ldavin00/Foundations_of_HPC_final_project/exercise1/OpenMP_scal/THIN/playground.pgm
+f = playground.pgm
 n_steps = 5
 n_dump = 2
 Define at which steps a snapshot will be taken
@@ -28,201 +27,400 @@ Arguments are:
 action = 2
 k = 100
 e = 1
-f = /u/dssc/ldavin00/Foundations_of_HPC_final_project/exercise1/OpenMP_scal/THIN/playground.pgm
+f = playground.pgm
 n_steps = 5
 n_dump = 2
 Define at which steps a snapshot will be taken
 Start MPI environment
 Provided Thread level: 1
-OpenMP threads: 3
-Threads per process: 3
 Provided Thread level: 1
-Threads per process: 3
-Threads per process: 3
+Number of processes: 2
+OpenMP threads per process: 12
 About to read header
-OpenMP threads: 3
-Threads per process: 3
-Threads per process: 3
-Threads per process: 3
 About to read header
 About to read playground
 Playground read
 distribute rows between MPI processes
 Allocated memory to evolve the playground
-distribute rows between threads
-rank: 1, thread: 0, start: 0, end: 34
+rank = 1, thread = 0, cells per thread = 9
+Calculate displacement and counts
+rank = 1, thread = 8, cells per thread = 9
+Calculate displacement and counts
+rank = 1, thread = 10, cells per thread = 8
 About to read playground
-distribute rows between threads
-rank: 1, thread: 1, start: 35, end: 69
 Playground read
-0 1 1 1 1 0 1 1 1 0 0 0 1 1 0 
-0 1 0 1 0 1 0 0 1 1 0 0 1 1 0 
-0 1 0 0 1 1 0 0 1 0 0 1 1 1 1 
-0 1 1 1 0 0 0 1 1 0 0 1 0 1 0 
-0 1 0 0 0 0 0 1 0 1 1 0 0 0 1 
-0 1 0 1 0 0 1 1 1 1 0 1 1 1 0 
-0 0 1 1 0 0 1 0 1 0 0 1 0 0 0 
-0 0 1 0 1 1 0 0 0 1 0 1 0 1 0 
-0 0 0 1 0 1 1 0 0 1 0 1 0 1 1 
-0 1 0 1 1 1 0 0 0 0 1 0 1 0 0 
-1 1 0 1 0 0 0 0 1 0 1 1 0 0 1 
-0 0 0 1 1 1 1 0 0 1 1 1 0 1 1 
-0 0 1 1 0 0 1 0 1 0 0 0 0 1 0 
-1 1 0 0 1 0 0 0 1 1 1 1 0 0 1 
-1 1 0 1 1 0 0 1 1 0 0 1 0 1 0 
+0 0 1 1 1 0 0 0 0 0 0 0 1 1 1 
+0 0 0 0 0 0 0 1 0 0 1 1 0 0 1 
+Calculate displacement and counts
+rank = 1, thread = 7, cells per thread = 9
+Calculate displacement and counts
+rank = 1, thread = 6, cells per thread = 9
+0 0 1 0 0 1 0 1 1 0 0 0 0 1 1 
+0 0 1 0 1 1 0 1 1 1 0 0 0 1 1 
+Calculate displacement and counts
+rank = 1, thread = 3, cells per thread = 9
+Calculate displacement and counts
+rank = 1, thread = 5, cells per thread = 9
+Calculate displacement and counts
+0 1 0 1 0 0 1 0 1 1 0 1 1 1 0 
+0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 
+0 1 1 1 0 0 0 1 0 0 0 0 1 1 1 
+0 0 0 0 0 1 1 1 0 0 0 0 0 0 1 
+1 1 0 1 0 0 0 0 1 0 1 0 0 0 1 
+0 1 1 1 0 0 0 1 0 0 0 1 0 0 0 
+1 0 0 0 1 0 0 1 0 1 0 1 1 0 0 
+rank = 1, thread = 9, cells per thread = 8
+Calculate displacement and counts
+1 0 0 0 1 0 0 0 1 0 1 0 1 1 1 
+0 0 1 1 0 0 0 1 0 0 0 1 1 1 1 
+1 0 1 0 1 1 1 1 1 1 0 0 0 0 0 
+0 0 1 0 0 0 0 1 1 0 0 1 1 1 1 
 distribute rows between MPI processes
-distribute rows between threads
-rank: 1, thread: 2, start: 70, end: 104
-Ended for cycle
-Ended for cycle
-Ended for cycle
-Gather was succesful
-Gather was succesful
+rank = 1, thread = 4, cells per thread = 9
+Calculate displacement and counts
 Allocated memory to evolve the playground
-distribute rows between threads
-rank: 0, thread: 0, start: 0, end: 39
-distribute rows between threads
-Gather was succesful
-Ended for cycle
-rank: 0, thread: 1, start: 40, end: 79
-distribute rows between threads
-rank: 0, thread: 2, start: 80, end: 119
-Ended for cycle
-Ended for cycle
-Gather was succesful
-Gather was succesful
-Ended for cycle
-Ended for cycle
-Ended for cycle
+distribute rows between 12 threads
+rank = 0, thread = 4, cells per thread = 10
+rank = 0, thread = 10, cells per thread = 10
+rank = 0, thread = 7, cells per thread = 10
+rank = 0, thread = 11, cells per thread = 10
+rank = 0, thread = 5, cells per thread = 10
+rank = 0, thread = 2, cells per thread = 10
+rank = 0, thread = 6, cells per thread = 10
+rank = 0, thread = 1, cells per thread = 10
+rank = 0, thread = 3, cells per thread = 10
+rank = 0, thread = 8, cells per thread = 10
+Calculate displacement and counts
+Calculate displacement and counts
+Calculate displacement and counts
+Calculate displacement and counts
+Calculate displacement and counts
+Calculate displacement and counts
+Calculate displacement and counts
+Calculate displacement and counts
+Calculate displacement and counts
+Calculate displacement and counts
+rank = 0, thread = 0, cells per thread = 10
 Calculate displacement and counts
 Displacement: 0, 120
  Counts: 120, 105
-Gather was succesful
-Ended for cycle
-Ended for cycle
-Gather was succesful
-Gather was succesful
-Ended for cycle
-Gather was succesful
-Gather was succesful
-Gather was succesful
-Gather was succesful
-Ended for cycle
+rank = 0, thread = 9, cells per thread = 10
+Calculate displacement and counts
+rank = 1, thread = 1, cells per thread = 9
+Calculate displacement and counts
+rank = 1, thread = 2, cells per thread = 9
+Calculate displacement and counts
+rank = 1, thread = 11, cells per thread = 8
 Calculate displacement and counts
 Ended for cycle
-Displacement: 0, 120
- Counts: 120, 105
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Gather was succesful
 Ended for cycle
 Ended for cycle
 Gather was succesful
 Gather was succesful
 Ended for cycle
 Ended for cycle
-Gather was succesful
-Gather was succesful
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
 Gather was succesful
 Gather was succesful
 Print evolved playground at step 1
-1 1 1 0 0 1 0 1 0 1 0 1 1 1 1 
-1 0 1 0 0 1 1 1 0 1 0 0 1 0 0 
-0 1 0 1 0 0 0 1 1 1 0 1 1 0 0 
-0 1 0 1 0 0 0 1 0 0 1 1 1 1 1 
-0 1 0 0 0 0 0 1 0 0 1 1 0 0 1 
-0 1 0 1 0 0 1 1 0 0 1 1 0 0 0 
-0 0 0 1 1 0 1 0 1 1 0 1 0 0 0 
-0 1 1 0 0 1 1 1 1 1 0 1 0 1 1 
-0 0 0 0 0 0 1 0 0 0 1 1 0 0 0 
-0 1 0 0 0 0 0 0 0 1 1 0 0 0 0 
-0 1 0 0 0 1 1 0 0 0 1 1 0 0 1 
-0 1 0 1 1 1 1 1 0 0 0 1 0 0 0 
-0 1 0 1 1 0 0 0 0 0 0 0 0 0 1 
+0 0 0 Gather was succesful
+Gather was succesful
 Ended for cycle
 Ended for cycle
+Gather was succesful
 Ended for cycle
-1 1 0 1 1 1 1 0 0 0 0 1 1 1 1 
-0 1 0 0 0 0 1 0 0 0 0 1 0 1 1 
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Gather was succesful
+0 0 0 0 0 0 0 0 1 1 1 0 
+0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+0 0 0 0 0 0 0 1 1 0 0 0 1 0 1 
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Gather was succesful
+0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 
+0 0 0 0 0 0 1 1 0 1 0 0 1 1 0 
+0 0 0 0 0 0 1 1 1 1 1 1 0 0 0 
+0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 
+0 0 0 0 0 0 0 0 0 0 0 1 1 1 0 
+1 1 1 1 0 0 1 1 1 1 1 0 0 0 0 
+1 1 1 0 1 1 1 1 1 1 0 1 0 0 0 
+1 Gather was succesful
+1 0 1 1 1 0 0 0 0 1 1 1 0 0 
+1 1 1 0 1 1 0 0 0 0 1 1 0 0 0 
+1 0 1 1 1 1 1 0 0 0 0 0 1 1 1 
+1 1 0 1 1 0 1 0 0 1 1 1 0 0 1 
+1 0 1 0 1 1 0 0 0 1 0 0 0 1 1 
 Snapshot 1
-1 1 1 0 0 1 0 1 0 1 0 1 1 1 1 
-1 0 1 0 0 1 1 1 0 1 0 0 1 0 0 
-0 1 0 1 0 0 0 1 1 1 0 1 1 0 0 
-0 1 0 1 0 0 0 1 0 0 1 1 1 1 1 
-0 1 0 0 0 0 0 1 0 0 1 1 0 0 1 
-0 1 0 1 0 0 1 1 0 0 1 1 0 0 0 
-0 0 0 1 1 0 1 0 1 1 0 1 0 0 0 
-0 1 1 0 0 1 1 1 1 1 0 1 0 1 1 
-0 0 0 0 0 0 1 0 0 0 1 1 0 0 0 
-0 1 0 0 0 0 0 0 0 1 1 0 0 0 0 
-0 1 0 0 0 1 1 0 0 0 1 1 0 0 1 
-0 1 0 1 1 1 1 1 0 0 0 1 0 0 0 
-0 1 0 1 1 0 0 0 0 0 0 0 0 0 1 
-Gather was succesful
-Gather was succesful
-Gather was succesful
-1 1 0 1 1 1 1 0 0 0 0 1 1 1 1 
-0 1 0 0 0 0 1 0 0 0 0 1 0 1 1 
+0 0 0 0 0 0 0 0 0 0 0 1 1 1 0 
+0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+0 0 0 0 0 0 0 1 1 0 0 0 1 0 1 
+0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 
+0 0 0 0 0 0 1 1 0 1 0 0 1 1 0 
+0 0 0 0 0 0 1 1 1 1 1 1 0 0 0 
+0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 
+0 0 0 0 0 0 0 0 0 0 0 1 1 1 0 
+1 1 1 1 0 0 1 1 1 1 1 0 0 0 0 
+1 1 1 0 1 1 1 1 1 1 0 1 0 0 0 
+1 1 0 1 1 1 0 0 0 0 1 1 1 0 0 
+1 1 1 0 1 1 0 0 0 0 1 1 0 0 0 
+1 0 1 1 1 1 1 0 0 0 0 0 1 1 1 
+1 1 0 1 1 0 1 0 0 1 1 1 0 0 1 
+1 0 1 0 1 1 0 0 0 1 0 0 0 1 1 
 
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Gather was succesful
 Snapshot saved
 Ended for cycle
 Ended for cycle
-Calculate displacement and counts
-Displacement: 0, 120
- Counts: 120, 105
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
 Ended for cycle
 Gather was succesful
 Gather was succesful
 Gather was succesful
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Gather was succesful
 Ended for cycle
-Calculate displacement and counts
-Displacement: 0, 120
- Counts: 120, 105
 Ended for cycle
 Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Gather was succesful
 Gather was succesful
 Gather was succesful
 Gather was succesful
 Print evolved playground at step 3
-1 1 1 0 0 0 0 0 1 0 1 0 1 1 1 
-1 1 0 0 0 0 0 0 1 0 1 0 0 0 0 
-0 0 0 0 0 0 0 1 1 0 1 0 0 1 0 
-0 1 0 0 0 0 1 1 0 1 1 0 0 1 1 
-0 1 0 0 0 0 0 0 1 0 0 0 0 1 1 
-0 0 0 0 0 0 1 1 1 1 1 1 1 0 0 
-0 0 0 0 0 0 1 0 0 0 1 1 0 1 0 
-1 0 1 0 1 1 0 0 0 0 0 1 0 1 0 
-0 0 0 0 0 0 1 0 0 0 1 1 0 0 0 
-0 1 0 0 0 0 0 0 0 1 1 0 0 0 0 
-0 1 0 0 0 1 1 0 0 0 1 1 0 0 1 
-0 1 0 1 1 1 1 1 0 0 0 1 0 0 0 
-0 1 0 1 1 0 0 0 0 0 0 0 0 0 1 
-1 1 0 1 1 1 1 0 0 0 0 1 1 1 1 
-0 1 0 0 0 0 1 0 0 0 0 1 0 1 1 
+0 0 1 1 0 1 1 1 1 1 1 0 1 1 0 
+0 0 1 1 1 1 1 1 1 0 0 0 1 0 1 
+1 1 0 0 0 0 1 0 0 0 0 0 1 1 0 
+1 0 0 0 0 1 1 1 1 0 0 0 1 1 0 
+1 0 0 0 1 0 0 1 1 0 0 0 0 0 1 
+1 0 0 0 1 0 0 0 0 1 1 1 0 0 1 
+0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 
+0 0 0 1 1 1 0 0 0 0 0 1 1 0 0 
+1 1 1 1 0 0 1 1 1 1 1 0 0 0 0 
+1 1 1 0 1 1 1 1 1 1 0 1 0 0 0 
+1 1 0 1 1 1 0 0 0 0 1 1 1 0 0 
+1 1 1 0 1 1 0 0 0 0 1 1 0 0 0 
+1 0 1 1 1 1 1 0 0 0 0 0 1 1 1 
+1 1 0 1 1 0 1 0 0 1 1 1 0 0 1 
+1 0 1 0 1 1 0 0 0 1 0 0 0 1 1 
 Snapshot 3
-1 1 1 0 0 0 0 0 1 0 1 0 1 1 1 
-1 1 0 0 0 0 0 0 1 0 1 0 0 0 0 
-0 0 0 0 0 0 0 1 1 0 1 0 0 1 0 
-0 1 0 0 0 0 1 1 0 1 1 0 0 1 1 
-0 1 0 0 0 0 0 0 1 0 0 0 0 1 1 
-0 0 0 0 0 0 1 1 1 1 1 1 1 0 0 
-0 0 0 0 0 0 1 0 0 0 1 1 0 1 0 
-1 0 1 0 1 1 0 0 0 0 0 1 0 1 0 
-0 0 0 0 0 0 1 0 0 0 1 1 0 0 0 
-0 1 0 0 0 0 0 0 0 1 1 0 0 0 0 
-0 1 0 0 0 1 1 0 0 0 1 1 0 0 1 
-0 1 0 1 1 1 1 1 0 0 0 1 0 0 0 
-0 1 0 1 1 0 0 0 0 0 0 0 0 0 1 
-1 1 0 1 1 1 1 0 0 0 0 1 1 1 1 
-0 1 0 0 0 0 1 0 0 0 0 1 0 1 1 
+0 0 1 1 0 1 1 1 1 1 1 0 1 1 0 
+Gather was succesful
+0 0 1 1 1 1 1 1 1 0 0 0 1 0 1 
+1 1 0 0 0 0 1 0 0 0 0 0 1 1 0 
+1 0 0 0 0 1 1 1 1 0 0 0 1 1 0 
+1 0 0 0 1 0 0 1 1 0 0 0 0 0 1 
+1 0 0 0 1 0 0 0 0 1 1 1 0 0 1 
+0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 
+0 0 0 1 1 1 0 0 0 0 0 1 1 0 0 
+1 1 1 1 0 0 1 1 1 1 1 0 0 0 0 
+1 1 1 0 1 1 1 1 1 1 0 1 0 0 0 
+1 1 0 1 1 1 0 0 0 0 1 1 1 0 0 
+1 1 1 0 1 1 0 0 0 0 1 1 0 0 0 
+1 0 1 1 1 1 1 0 0 0 0 0 1 1 1 
+1 1 0 1 1 0 1 0 0 1 1 1 0 0 1 
+1 0 1 0 1 1 0 0 0 1 0 0 0 1 1 
 
+Gather was succesful
 Snapshot saved
 Ended for cycle
 Ended for cycle
-Calculate displacement and counts
-Displacement: 0, 120
- Counts: 120, 105
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
+Ended for cycle
 Ended for cycle
 Gather was succesful
 Gather was succesful
 Gather was succesful
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Gather was succesful
+Elapsed time is: 0.014182
 program finished
 removing modules
 modules removed

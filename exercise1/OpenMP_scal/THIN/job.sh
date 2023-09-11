@@ -21,24 +21,22 @@ export OMP_PLACES=cores
 export OMP_PROC_BIND=$alloc
 
 data_folder=$(pwd)
+program_folder=../../program
 echo data folder is $data_folder
 
-cd ../../program
-echo moved to $(pwd)
-
 echo compile c file
-filename=game_of_life_parallel.c
+filename="$program_folder/game_of_life_parallel.c"
 execname=game_of_life_parallel.exe
-libname=parallel_lib.c
-headname=parallel_header.h
-imagename="$data_folder/playground.pgm"
+libname="$program_folder/parallel_lib.c"
+headname="$program_folder/parallel_header.h"
+imagename="playground.pgm"
 
-mpicc -fopenmp -o $execname $filename $libname
+mpicc -fopenmp -DTIME -o $execname $filename $libname
 
 echo file compiled, executable is $execname
 
 echo initialise playground
-export OMP_NUM_THREADS=3
+export OMP_NUM_THREADS=12
 # echo initialising playground
 # mpirun -np 2 --map-by socket ./$execname -i -k 15 -f $imagename
 echo running static evolution
