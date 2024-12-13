@@ -4,3 +4,4 @@
 
 # Ignore vscode files
 .vscode
+*/.vscode
