@@ -1,6 +1,8 @@
-# Exercise 2
+## Exercise 1
 
-## Structure of this directory
+## Exercise 2
+
+### Structure of this directory
 
 This directory contains:
 
@@ -93,7 +95,7 @@ A simple scheme of how this directory is made is:
                 openblas_d.csv
                 openblas_f.csv
 
-## Makefile
+### Makefile
 
 The two makefile files are identical and are repeated just for convenience. Their structure can be divided into 3 parts:
 
@@ -101,7 +103,7 @@ The two makefile files are identical and are repeated just for convenience. Thei
 2- Compile gemm.c for each library, assigning different names to the three executable files that will be given as output; the precision can be selected using the phony targets *double* and *float*.
 3- Remove the executable files using the *clean* phony target.
 
-## Sbatch files
+### Sbatch files
 
 In total there are four sbatch files, that must be used depending on which kind of node we want to allocate and on the parameter that we want to keep fixed during the scalability test (number of cores or matrix size). The four files, however, share a common structure:
 
